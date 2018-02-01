@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -27,11 +28,18 @@ export class FbauthComponent implements OnInit {
   login() {
     this.authService.login(this.email, this.password);
     this.email = this.password = '';
+  
   }
 
   logout() {
     this.authService.logout();
+  
 
   }
 
+  
+  
+  
 }
+  
+
