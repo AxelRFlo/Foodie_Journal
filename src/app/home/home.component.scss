@@ -264,3 +264,28 @@ div .header {
         width: 100%;
     }
 }
+
+footer{
+  position: relative;
+	background-color:rgb(255, 255, 255);
+  padding: 20px 0px;
+  height: 30px;
+  margin-bottom: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+} 
+
+.logo-acc{
+    max-width:120px; /* you can use % */
+    height: auto;
+}
+
+.logo-accenture {
+ padding: 10px;
+}
