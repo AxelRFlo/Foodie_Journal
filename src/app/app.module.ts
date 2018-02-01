@@ -13,6 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
+import { HomeComponent } from './home/home.component';
+
 
 export const environment = {
   production: false,
@@ -30,7 +32,9 @@ export const environment = {
   declarations: [
     AppComponent,
     FbauthComponent,
-    PopoverComponent
+    PopoverComponent,
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,
