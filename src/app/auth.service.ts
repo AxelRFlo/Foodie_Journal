@@ -13,7 +13,7 @@ export class AuthService {
     this.user = firebaseAuth.authState;
   }
 
-  signup(name: string, email: string, password: string) {
+  signup(displayName: string, email: string, password: string) {
     this.firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password)

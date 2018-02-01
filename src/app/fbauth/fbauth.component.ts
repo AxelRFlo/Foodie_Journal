@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 export class FbauthComponent implements OnInit {
 
   /* Variables for the credentials (Signup /login form)*/
-  name: string;
+  displayName: string;
   email: string;
   password: string;
 
@@ -20,8 +20,8 @@ export class FbauthComponent implements OnInit {
   }
   /* Click events (Template) */
   signup() {
-    this.authService.signup(this.name, this.email, this.password);
-    this.name = this.email = this.password = '';
+    this.authService.signup(this.displayName, this.email, this.password);
+    this.displayName = this.email = this.password = '';
   }
 
   login() {
