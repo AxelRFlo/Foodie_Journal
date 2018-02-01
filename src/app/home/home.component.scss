@@ -6,14 +6,16 @@
   // background-size: 100% auto;
   background-size: cover;
   background-position-x: 60%;
-  position: fixed;
+  //position: fixed;
   // margin-top: 0px;
 }
 .row::after {
   content: "";
   clear: both;
+  // height: 100%;
   display: block;
 }
+
 [class*="col-"] {
   float: left;
   padding: 15px;
@@ -65,7 +67,7 @@ div .header {
   color: white;
 }
 #btnLog {
-  margin-top: 15px;
+
   color: white;
   position: absolute;
   right: 20px;
@@ -92,6 +94,10 @@ div .header {
   position: absolute;
   bottom: 0px;
   text-align: center;
+}
+
+.menu {
+  margin-top: 120px
 }
 
 .menu h1 {
@@ -128,6 +134,66 @@ div .header {
   transform: translateY(4px);
 }
 
+// Segunda seccion
+
+.section2 {
+  //height: 50%;
+  width: 100%;
+  background: url('../../assets/backgroundImg_2_opacity_2.png');
+  background-repeat: no-repeat;
+  // background-size: 100% auto;
+  background-size: cover;
+  background-position-x: 60%;
+  text-align: center;
+  //position: fixed;
+}
+
+.button {
+  background-color: #FF513D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 50%;
+  width : 80px;
+  height: 80px;
+}
+
+
+.button.btn-xl:hover {
+  opacity: 0.4;
+  background-color: rgb(254, 82, 64);
+  color: white;
+}
+
+.button.btn-xl:active {
+  background-color: rgb(255, 89, 71);
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.center-block {
+  float: none;
+}
+
+.textButton{
+  text-align: center;
+  color: black;
+  font-size: 100%;
+  padding: 10%;
+}
+
+.info{
+  height: 50%;
+}
+
+.btnSpace{
+  padding-top: 60px;
+}
 // @media only screen and (max-width: 768px) {
 //   /* For mobile phones: */
 //   .bodySection{
@@ -150,24 +216,52 @@ div .header {
 // }
 
 /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;
-    margin-top: 120px;}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%; 
+  align-items: center; 
+}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;
+  height: 100%;
+}
 
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     /* For mobile phones: */
     [class*="col-"] {
         width: 100%;
     }
+}
+
+
+footer{
+  position: relative;
+	background-color:rgb(255, 255, 255);
+  padding: 20px 0px;
+  height: 30px;
+  margin-bottom: 100px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+} 
+
+.logo-acc{
+    max-width:120px; /* you can use % */
+    height: auto;
+}
+
+.logo-accenture {
+ padding: 10px;
 }
