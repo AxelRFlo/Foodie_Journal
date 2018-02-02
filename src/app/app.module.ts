@@ -8,13 +8,10 @@ import { AuthService } from './auth.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
-
 import { HomeComponent } from './home/home.component';
-
 
 export const environment = {
   production: false,
