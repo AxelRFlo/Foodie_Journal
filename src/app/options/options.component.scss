@@ -1,0 +1,264 @@
+#logo {
+  margin-top: 16px;
+  position: absolute;
+  left: 30px;
+  top: 0px;
+  z-index: -1;
+  width: 145px;
+  font-size: 1.4em;
+  font-weight: 400;
+  height: 30px;
+  color: white;
+}
+
+.section {
+  height: 30%;
+  width: 100%;
+  position: relative;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.imgS {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-left: 24px;
+  margin-top: 22px;
+}
+
+.header2 {
+  background-color: rgb(254, 82, 64);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 320px;
+  height: 53px;
+  z-index: 247;
+}
+
+.header2 {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  // overflow: hidden;
+  padding: 0 50px;
+  position: relative;
+  width: 100%;
+}
+
+.btn-menu {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-top: 12px;
+    margin-left: -45px;
+}
+
+.title-logo {
+  float: left;
+  margin-top: 20px;
+  margin-left: 4px;
+}
+
+.user-info {
+  float: right;
+  height: 53px;
+  width: 146px;
+  margin-right: -50px;
+  // background-color: darkkhaki;
+}
+
+.user {
+  float: right;
+  width: 84px;
+  margin-right: 62px;
+  margin-top: 22px;
+  margin-bottom: 7px;
+}
+
+.userImg {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: -41px;
+  margin-right: 33px;
+  margin-bottom: 10px;
+}
+
+.row{
+  // margin-bottom: 50px;
+  // margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.select {
+  background-color: crimson;
+  height: 80px;
+  width: 20px;
+}
+
+#title {
+  float: right;
+  margin-right: 24px;
+}
+
+#info {
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+#duration {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-img-top {
+  // width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.portafolio-item {
+  height: 380px
+}
+
+.img-overlay-wrap {
+  height: 160px;
+}
+
+.card-img-top {
+  height: 40%;
+  position: absolute;
+  display: inline-block;
+}
+
+.list {
+  top: 42px;
+  left: -140px;
+}
+
+.d-inline-block {
+  top: 8px;
+  right: -100px;
+}
+
+.btn-outline-primary {
+  color: rgb(254, 82, 64);
+  background-color: transparent;
+  background-image: none;
+  border-color: rgb(254, 82, 64);
+}
+
+.show>.btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(254, 82, 64);
+  border-color: rgb(254, 82, 64);
+}
+
+.btn {
+  width: 0;
+}
+
+.dropdown-toggle:empty::after {
+  margin-left: -5px;
+  color: white;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(254, 82, 64);
+  border-color: rgb(254, 82, 64);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgb(254, 82, 64);
+  box-shadow: 0 0 0 0.2rem rgb(254, 82, 64);
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: rgb(254, 82, 64);
+  border-color: rgb(254, 82, 64);
+}

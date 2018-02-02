@@ -14,6 +14,10 @@ import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
+import { OptionsComponent } from './options/options.component';
+
+import { RouterModule, Routes } from '@angular/router';
+// import { AppRoutingModule } from './app-routing.module';
 
 
 export const environment = {
@@ -33,8 +37,8 @@ export const environment = {
     AppComponent,
     FbauthComponent,
     PopoverComponent,
-    HomeComponent
-
+    HomeComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,7 @@ export const environment = {
     AngularFireAuthModule,
     NgbModule.forRoot(),
     PopoverModule
+    // AppRoutingModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
