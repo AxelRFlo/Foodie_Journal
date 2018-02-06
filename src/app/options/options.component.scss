@@ -229,9 +229,10 @@ h1, h2 {
   position: absolute;
   display: inline-block;
   width: 50%;
-    position: relative;
-    margin-left: 94px;
-    margin-top: 44px;
+  position: relative;
+  // margin-left: 94px;
+  margin-left: 60px;
+  margin-top: 44px;
 }
 
 .backColor {
