@@ -21,6 +21,7 @@ import { ChallengeComponent } from './challenge/challenge.component';
 // import { AppRoutingModule } from './app-routing.module';
 import { routes } from './app-routing.module';
 import { JourneysComponent } from './journeys/journeys.component';
+import { HeaderComponent } from './header/header.component';
 
 
 export const environment = {
@@ -43,7 +44,8 @@ export const environment = {
     HomeComponent,
     OptionsComponent,
     ChallengeComponent,
-    JourneysComponent
+    JourneysComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

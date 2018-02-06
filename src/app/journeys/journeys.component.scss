@@ -284,8 +284,24 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* Nav bar */
-  .btn {
+  .btn1 {
     border: 1px solid #a1a1a1;
     color: #a1a1a1;
     background: #ffffff;
@@ -297,14 +313,14 @@
   
   }
   
-  .btn:hover {
+  .btn1:hover {
     background: #f44336;
     border: 1px solid #f44336;
     color: white;
   
   }
   
-  .btn.active {
+  .btn1.active {
     background-color: #f44336;
     color: white;
     border: 1px solid #f44336;
@@ -430,7 +446,7 @@
       display:block;
     }
 
-.dropdown {
+.dropdown-botones {
       display:none;
     } 
 
