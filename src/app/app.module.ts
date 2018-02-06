@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
-import { YelpService } from './services/yelp.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -14,11 +13,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
+import { HomeComponent } from './home/home.component';
+import { OptionsComponent } from './options/options.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { ChallengeComponent } from './challenge/challenge.component';
+// import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app-routing.module';
+import { JourneysComponent } from './journeys/journeys.component';
+import { HeaderComponent } from './header/header.component';
+
+import { YelpService } from './services/yelp.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule} from '@agm/core';
 //import { AgmDirectionModule } from 'agm-direction';
 
-import { HomeComponent } from './home/home.component';
 import { FoodTypesComponent } from './food-types/food-types.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
@@ -43,10 +54,13 @@ export const environment = {
     FbauthComponent,
     PopoverComponent,
     HomeComponent,
+    OptionsComponent,
+    ChallengeComponent,
+    JourneysComponent,
+    HeaderComponent,
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent
-
   ],
   imports: [
     BrowserModule,
@@ -54,16 +68,15 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NgbModule.forRoot(),
+    RouterModule.forRoot(routes),
     PopoverModule,
-    BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
     }),
     //AgmDirectionModule,
-    FormsModule,
-    NgbModule.forRoot()
+    // AppRoutingModule
   ],
   providers: [AuthService,YelpService],
   bootstrap: [AppComponent]
