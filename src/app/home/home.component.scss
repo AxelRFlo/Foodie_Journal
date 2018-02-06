@@ -45,7 +45,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
   padding: 0 50px;
   position: relative;
   width: 100%;
@@ -241,7 +241,7 @@ div .header {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {
         width: 100%;

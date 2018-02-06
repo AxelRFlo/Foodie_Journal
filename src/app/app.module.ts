@@ -17,7 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { OptionsComponent } from './options/options.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ChallengeComponent } from './challenge/challenge.component';
 // import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app-routing.module';
 
 
 export const environment = {
@@ -38,7 +40,8 @@ export const environment = {
     FbauthComponent,
     PopoverComponent,
     HomeComponent,
-    OptionsComponent
+    OptionsComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NgbModule.forRoot(),
+    RouterModule.forRoot(routes),
     PopoverModule
     // AppRoutingModule
   ],

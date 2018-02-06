@@ -1,25 +1,21 @@
 <div class="header2">
-  <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS">
-    <a class="title-logo" id="logo">FoodieJournal</a>
-    <div class="user-info">
-      <p class="user">Hi Josh!</p>
-      <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="user" class="userImg imgS">
-
-
-      <div class="row">
-          <div class="col">
-            <div ngbDropdown placement="down-right" class="d-inline-block">
-              <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle></button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="list">
-                <button class="dropdown-item">My Account</button>
-                <button class="dropdown-item">Log Out</button>
-              </div>
-            </div>
+  <div class="row">
+    <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS">
+      <a class="title-logo" id="logo">FoodieJournal</a>
+      <div class="col text-right">
+        <div ngbDropdown  placement="down-right" class="d-inline-block">
+          <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+            <p class="user">Hi Josh!</p>
+            <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+            <button class="dropdown-item">My Account</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item">Log Out</button>
           </div>
-          </div>
-
-
-    </div>
+        </div>
+      </div>
+  </div>
 </div>
 
 <div class="section">
@@ -109,3 +105,4 @@
     </div>
   </div>
 </div>
+
