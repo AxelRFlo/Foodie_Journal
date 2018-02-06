@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navpaths.component.scss']
 })
 export class NavpathsComponent implements OnInit {
-  private currentPath: string = "American";
+  private currentPath: string = "Korean";
 
   constructor() { }
 
