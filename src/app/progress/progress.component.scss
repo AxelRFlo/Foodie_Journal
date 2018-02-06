@@ -1,3 +1,44 @@
+.btnDuration {
+    display: block;
+    height: 50px;
+    width: 150px;
+    //margin: 0 auto;
+    background-color: rgb(199, 194, 194);
+    color: rgb(15, 10, 10);
+    border: none;
+    cursor: pointer;
+  }
+  .btnDuration:hover {
+    opacity: 0.6;
+    background: rgb(233, 222, 220);
+  }
+  .btnDuration:active {
+    background-color: rgb(173, 171, 170);
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
+
+
+.btnGS {
+    display: block;
+    height: 50px;
+    width: 150px;
+    //margin: 0 auto;
+    background-color: rgb(254, 82, 64);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .btnGS:hover {
+    opacity: 0.6;
+    background: rgb(254, 82, 64);
+  }
+  .btnGS:active {
+    background-color: rgb(255, 89, 71);
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
+
 .row::after {
     content: "";
     clear: both;
@@ -10,7 +51,8 @@
     padding: 15px;
 }
 
-/* For desktop: */
+
+// For desktop: 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -26,15 +68,14 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;
   height: 100%;
-  align-content: center;
-}
+} 
 
 @media only screen and (max-width: 767px) {
-    /* For mobile phones: */
+     //For mobile phones: 
     [class*="col-"] {
         width: 100%;
     }
-}
+} 
   
 .progress{
     width: 100px;
