@@ -1,0 +1,56 @@
+<!-- Header -->
+<div id="main">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
+    <!-- <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a> -->
+  </div>
+  <div class="header2">
+    <div class="row">
+      <span class="btn-menu imgS" (click)='openNav()'>&#9776;</span>
+    <!-- <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS"> -->
+      <a class="title-logo" id="logo" (click)='foodieJ()' [routerLink]="['/home']">FoodieJournal</a>
+      <div class="col text-right">
+        <div ngbDropdown  placement="down-right" class="d-inline-block">
+          <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+            <p class="user">Hi Josh!</p>
+            <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+            <button class="dropdown-item">My Account</button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Navbar -->
+<nav class="nav-paths-list">
+  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'American'}">American</button>
+  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Korean'}">Korean</button>
+  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Italian'}">Italian</button>
+  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Mexican'}">Mexican</button>
+  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Japanese'}">Japanese</button>
+</nav>  
+
+<div class="dropdown">
+  <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{ currentPath }}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'American'}">American</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Korean'}">Korean</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Italian'}">Italian</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Mexican'}">Mexican</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Japanese'}">Japanese</a>
+  </div>
+</div>
+<!-- Journey 1 -->
+
+<!-- Journey api -->
+test
+</div>
