@@ -14,12 +14,9 @@ import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
 import { ProgressComponent } from './progress/progress.component';
 import { FoodTypesComponent } from './food-types/food-types.component';
-=======
-import { FoodTypesComponent } from './food-types/food-types.component';
->>>>>>> f28cf3c8607c12452a0082c953b83b46ef7a591b
+
 
 
 export const environment = {
