@@ -14,6 +14,7 @@ import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
+import { ProgressComponent } from './progress/progress.component';
 
 
 export const environment = {
@@ -33,7 +34,8 @@ export const environment = {
     AppComponent,
     FbauthComponent,
     PopoverComponent,
-    HomeComponent
+    HomeComponent,
+    ProgressComponent
 
   ],
   imports: [
