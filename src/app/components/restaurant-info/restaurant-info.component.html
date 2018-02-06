@@ -1,0 +1,40 @@
+<div class="row PathRestaurant">
+  <div class="col-md-3 col-sm-6 resInfo">
+    <span>{{ restaurant.name}}</span><br>
+    <span>
+      <i class="{{restaurant.rating>=1 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=2 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=3 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=4 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=5 ? 'fas fa-star' : 'far fa-star'}}"></i>
+    </span>
+    <span>{{restaurant.review_count}} reviews</span><br>
+    <span *ngIf="restaurant.price">{{restaurant.price}} - </span>
+    <b *ngFor="let cat of restaurant.categories; let isLast=last">
+      {{cat.title}}{{isLast ? '' : ', '}}
+    </b>
+    <address>{{restaurant.location.display_address}}</address>
+  </div>
+
+  <div class="col-md-3 col-sm-6 bushours">
+    <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
+    <div class="underline"></div>
+    <i class="fas fa-phone"></i> {{restaurant.display_phone.length>0 ? restaurant.display_phone : 'Not available'}}
+  </div>
+
+  <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">
+    <img class="respic" [src]="restaurant.image_url">
+  </div>
+  <ng-template #nopictemplate>
+    <div class="col-md-3 hidden-sm-down">
+      <img class="respic" [src]="imgerror">
+    </div>
+  </ng-template>
+  
+  <div class="col-md-3 hidden-sm-down">
+    <agm-map [latitude]="25.658365" [longitude]="-120.369708" [zoom]=15>
+        <agm-marker [latitude]="25.658365" [longitude]="-120.369708"></agm-marker>
+    </agm-map>
+  </div>
+  
+</div>

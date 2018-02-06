@@ -2,16 +2,25 @@ body {
   background-color: rgb(235, 235, 235);
 }
 
-*{
-border-radius: 0 !important;
-}
 
 .panel-heading {
   background-color: white !important;
+  border-radius: 0 !important;
 }
 
-
-
+.step {
+  background: #4a4a4a;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em; 
+}
 
 
 

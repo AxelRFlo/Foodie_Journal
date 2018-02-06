@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YelpService } from '../services/yelp.service';
 
 @Component({
   selector: 'app-food-types',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./food-types.component.scss']
 })
 export class FoodTypesComponent implements OnInit {
-
-  constructor() { }
+  Categories;
+  constructor(private _YelpService: YelpService) { }
 
   ngOnInit() {
+    this.Categories=this._YelpService.Getcat(0);
+    console.log(this.Categories);
   }
 
 }

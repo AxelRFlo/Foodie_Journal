@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
+import { YelpService } from './services/yelp.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -13,8 +14,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AgmCoreModule} from '@agm/core';
+//import { AgmDirectionModule } from 'agm-direction';
+
 import { HomeComponent } from './home/home.component';
 import { FoodTypesComponent } from './food-types/food-types.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export const environment = {
@@ -35,7 +43,9 @@ export const environment = {
     FbauthComponent,
     PopoverComponent,
     HomeComponent,
-    FoodTypesComponent
+    FoodTypesComponent,
+    RestaurantsComponent,
+    RestaurantInfoComponent
 
   ],
   imports: [
@@ -44,9 +54,18 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NgbModule.forRoot(),
-    PopoverModule
+    PopoverModule,
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
+    }),
+    //AgmDirectionModule,
+    FormsModule,
+    NgbModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService,YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
