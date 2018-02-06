@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChallengeComponent } from './challenge/challenge.component';
 // import { AppRoutingModule } from './app-routing.module';
 import { routes } from './app-routing.module';
+import { JourneysComponent } from './journeys/journeys.component';
 
 
 export const environment = {
@@ -41,7 +42,8 @@ export const environment = {
     PopoverComponent,
     HomeComponent,
     OptionsComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    JourneysComponent
   ],
   imports: [
     BrowserModule,
