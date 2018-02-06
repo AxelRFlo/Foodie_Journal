@@ -7,8 +7,8 @@ import { ChallengeComponent } from './challenge/challenge.component';
 
 
 export const routes: Route[] = [
-  // { path: '', pathMatch: 'full', component: HomeComponent },
-  {path: '', component: HomeComponent},
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  {path: 'home', component: HomeComponent},
   {path: 'popover', component: PopoverComponent},
   {path: 'options', component: OptionsComponent},
   {path: 'challenge', component: ChallengeComponent}

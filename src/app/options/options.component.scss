@@ -1,7 +1,7 @@
 #logo {
   margin-top: 15px;
   position: absolute;
-  left: 30px;
+  left: 36px;
   top: 0px;
   z-index: 1;
   width: 145px;
@@ -15,6 +15,12 @@
   height: 30%;
   width: 100%;
   position: relative;
+}
+
+.section2 {
+  width: 100%;
+  position: absolute;
+  margin-top: 200px;
 }
 
 h1, h2 {
@@ -55,7 +61,10 @@ h1, h2 {
   width: 30px;
   height: 30px;
   float: left;
-  margin-top: 12px;
+  margin-top: 6px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
   // margin-left: -45px;
 }
 
@@ -168,6 +177,10 @@ h1, h2 {
     }
 }
 
+.positions {
+  position: relative;
+}
+
 .card {
   position: relative;
   display: -webkit-box;
@@ -278,4 +291,53 @@ h1, h2 {
   margin: .5rem 0;
   overflow: hidden;
   background-color: #eceeef;
+}
+
+/* Button Menu */
+.sidenav {
+  background-color: rgb(254, 82, 64);
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
 }
