@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
     this._router.navigate(['/options']);
   }
 
+  homee(): void {
+    this._router.navigate(['/home']);
+  }
+
   popover(): void {
     this._router.navigate(['/challenge']);
   }

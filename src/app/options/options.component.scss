@@ -227,6 +227,14 @@ h1, h2 {
   height: 40%;
   position: absolute;
   display: inline-block;
+  width: 50%;
+    position: relative;
+    margin-left: 94px;
+    margin-top: 44px;
+}
+
+.backColor {
+  background-color: rgb(254, 82, 64);
 }
 
 .dropdown-menu {
