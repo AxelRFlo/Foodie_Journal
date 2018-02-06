@@ -6,7 +6,6 @@ import { OptionsComponent } from './options/options.component';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { JourneysComponent } from './journeys/journeys.component';
 
-
 export const routes: Route[] = [
   // { path: '', pathMatch: 'full', component: HomeComponent },
   {path: '', component: HomeComponent},
