@@ -32,8 +32,8 @@
   </ng-template>
   
   <div class="col-md-3 hidden-sm-down">
-    <agm-map [latitude]="25.658365" [longitude]="-120.369708" [zoom]=15>
-        <agm-marker [latitude]="25.658365" [longitude]="-120.369708"></agm-marker>
+    <agm-map [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude " [zoom]=15>
+        <agm-marker [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" ></agm-marker>
     </agm-map>
   </div>
   
