@@ -197,6 +197,31 @@ div .header {
   padding: 10%;
 }
 
+/*
+@media (max-width: 768px) {
+  .button-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .button-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 993px) {
+  .button-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}*/
+
 .info{
   height: 50%;
 }
@@ -265,10 +290,25 @@ footer{
 }
 
 .logo-acc{
-    max-width:120px; /* you can use % */
-    height: auto;
+  max-width:120px; /* you can use % */
+  height: auto;
 }
 
 .logo-accenture {
  padding: 10px;
+}
+
+.fork-spoon {
+ width: 27px;
+ height: 27px;
+}
+
+.directions{
+ width: 35px;
+ height: 35px;
+}
+
+.check{
+ width: 30px;
+ height: auto; 
 }

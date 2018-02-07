@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-challenge',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
+  }
+
+  foodieJ(): void {
+    this._router.navigate(['/home']);
+  }
+
+  openNav() {
+  }
+
+  closeNav() {
   }
 
 }

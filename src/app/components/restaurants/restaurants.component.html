@@ -1,0 +1,15 @@
+<div *ngIf="restaurants.length>0 else notfound">
+  <div *ngFor="let restaurant of restaurants; let i=index">
+    <app-restaurant-info [restaurant]="restaurant"></app-restaurant-info>
+  </div>
+</div>
+<ng-template #notfound>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 dnotfound">
+      <i class="far fa-frown fa-7x"></i>
+      <span class="notFound">Restaurants not found</span>
+    </div> 
+  </div>
+
+</ng-template>
+
