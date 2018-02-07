@@ -72,8 +72,8 @@ export const environment = {
     PopoverModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
-    }),
+      apiKey: 'AIzaSyCpHIbt_qDK9479Vba3tTvc-MMezfhQr7U'
+    })
     // AgmDirectionModule,
   ],
   providers: [AuthService, YelpService],
