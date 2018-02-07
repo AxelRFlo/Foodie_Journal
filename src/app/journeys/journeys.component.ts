@@ -27,14 +27,4 @@ export class JourneysComponent implements OnInit, OnDestroy{
     this.sub.unsubscribe();
   }
 
-  foodieJo(): void {
-    this._router.navigate(['/home']);
-  }
-
-  openNav() {
-  }
-
-  closeNav() {
-  }
-
 }

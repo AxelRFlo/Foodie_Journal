@@ -13,14 +13,4 @@ export class ChallengeComponent implements OnInit {
   ngOnInit() {
   }
 
-  foodieJ(): void {
-    this._router.navigate(['/home']);
-  }
-
-  openNav() {
-  }
-
-  closeNav() {
-  }
-
 }
