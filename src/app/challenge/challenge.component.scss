@@ -98,7 +98,10 @@
 
 .dropdown-menu {
   top: 50px !important;
-  left: 0px !important;
+  // left: 0px !important;
+  left: -35px !important;
+  min-width: 18rem;
+  font-size: 2rem;
 }
 
 .show>.btn-outline-primary.dropdown-toggle {

@@ -28,6 +28,14 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
 .imgS {
   width: 30px;
   height: 30px;
@@ -157,6 +165,35 @@ h1, h2 {
   margin-left: 10px;
 }
 
+.imgLink {
+  height: 100%;
+  width: 100%;
+}
+
+.textType{
+  float: right;
+  position: absolute;
+  display: inline-block;
+  margin-right: 98px;
+  margin-top: 54px;
+  font-size: 34px;
+  color: white;
+  right: 0px;
+}
+
+.textType1{
+  float: right;
+  position: absolute;
+  display: inline-block;
+  margin-right: 96px;
+  margin-top: 38px;
+  margin-bottom: 0px;
+  margin-right: 39px;
+  font-size: 34px;
+  color: white;
+  right: 0px;
+}
+
 /* For desktop: */
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -225,23 +262,27 @@ h1, h2 {
 }
 
 .card-img-top {
-  height: 40%;
+  height: 20%;
   position: absolute;
   display: inline-block;
-  width: 50%;
+  width: 20%;
+  // float: left;
   position: relative;
-  // margin-left: 94px;
-  margin-left: 60px;
-  margin-top: 44px;
+  margin-left: 40px;
+  margin-top: 60px;
 }
 
 .backColor {
   background-color: rgb(254, 82, 64);
+  text-align: center;
 }
 
 .dropdown-menu {
   top: 50px !important;
-  left: 0px !important;
+  // left: 0px !important;
+  left: -35px !important;
+  min-width: 18rem;
+  font-size: 2rem;
 }
 
 .show>.btn-outline-primary.dropdown-toggle {
