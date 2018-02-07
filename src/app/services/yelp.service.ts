@@ -21,19 +21,25 @@ export class YelpService {
       3:{cat:"chicken_wings",name:"Chicken wings"},
       4:{cat:"bbq",name:"BBQ"},
       5:{cat:"sandwiches",name:"Sandwiches"}},
-    1:{0:{cat:"italian",name:"Italian"}},
-    2:{0:{cat:"mexican",name:"Mexican"},
+    1:{0:{cat:"korean",name:"korean"},
+      1:{cat:"ramen",name:"Ramen"},
+      2:{cat:"japacurry",name:"Curry"},
+      3:{cat:"unagi",name:"unagi"},
+      4:{cat:"yakitori",name:"yakitori"},
+      5:{cat:"tempura",name:"tempura"}},
+    2:{0:{cat:"italian",name:"Italian"}},
+    3:{0:{cat:"mexican",name:"Mexican"},
       1:{cat:"tacos",name:"Tacos"},
       2:{cat:"tamales",name:"Tamales"},
       3:{cat:"northernmexican",name:"Northernmexican"},
       4:{cat:"easternmexican",name:"Easternmexican"},
       5:{cat:"yucatan",name:"Yucatan"}},
-    3:{0:{cat:"japanese",name:"Japanese"},
+    4:{0:{cat:"japanese",name:"Japanese"},
       1:{cat:"ramen",name:"Ramen"},
       2:{cat:"japacurry",name:"Curry"},
-      3:{cat:"unagi",name:"unagi"},
-      4:{cat:"yakitori",name:"yakitori"},
-      5:{cat:"tempura",name:"tempura"}}
+      3:{cat:"unagi",name:"Unagi"},
+      4:{cat:"yakitori",name:"Yakitori"},
+      5:{cat:"tempura",name:"Tempura"}}
   };
   private weekday=[6,0,1,2,3,4,5];
   public loading: BehaviorSubject<boolean>;
