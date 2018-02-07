@@ -12,13 +12,22 @@
     <div class="row">
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods()' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/american_wIcon.png" alt="American">
-            <!-- <svg viewBox="0 0 200 200">
+          <div class="img-overlay-wrap backColor">
+            <div class="row">
+              <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']">
+                <div class="col-4">
+                  <img class="card-img-top" src="../../assets/american.png" alt="American">
+                </div>
+                <div class="col-8">
+                  <p class="textType">American</p>
+                </div>
+              </a>
+            </div>
+          <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">0%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">One characteristic of American cookingis the fusion of
               multiple ethnic or regional approaches into completely new cooking styles.</p>
@@ -31,13 +40,22 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods()' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/italian_wIcon.png" alt="Italian">
+          <div class="img-overlay-wrap backColor">
+            <div class="row">
+              <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']">
+                <div class="col-4">
+                  <img class="card-img-top" src="../../assets/italian.png" alt="Italian">
+                </div>
+                <div class="col-8">
+                  <p class="textType1">Italian</p>
+                </div>
+              </a>
+            </div>
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">An Italian meal is famous for its structure into several
               sections: the appetiser, pasta or nice dish, a meat course and dolce dessert.</p>
@@ -50,13 +68,22 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods()' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/mexican_wIcon.png" alt="Mexican">
+          <div class="img-overlay-wrap backColor">
+            <div class="row">
+              <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']">
+                <div class="col-4">
+                  <img class="card-img-top" src="../../assets/mexican.png" alt="Mexican">
+                </div>
+                <div class="col-8">
+                  <p class="textType">Mexican</p>
+                </div>
+              </a>
+            </div>
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">Know for ts varied flavours and spices, the food of Mexico
               is a result of the Spanish conquistadores interaction with the Aztec culture.</p>
@@ -69,13 +96,22 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods()' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/japanese_wIcon.png" alt="Japanese">
+          <div class="img-overlay-wrap backColor">
+            <div class="row">
+              <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']">
+                <div class="col-4">
+                  <img class="card-img-top" src="../../assets/japanese.png" alt="Japanese">
+                </div>
+                <div class="col-8">
+                  <p class="textType">Japanese</p>
+                </div>
+              </a>
+            </div>
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">In 2014, 14 restaurants in Tokyo and Shonan maintain a
               Michelin three-stars rating, the ultimate international recognition in the culinary world.</p>
