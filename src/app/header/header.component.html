@@ -1,9 +1,9 @@
 <nav class="nav-paths-list">
-  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'American'}">American</button>
-  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Korean'}">Korean</button>
-  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Italian'}">Italian</button>
-  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Mexican'}">Mexican</button>
-  <button type="button" class="btn" [ngClass]="{'active': currentPath == 'Japanese'}">Japanese</button>
+  <button type="button" class="btn" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '0'}">American</button>
+  <button type="button" class="btn" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '1'}">Korean</button>
+  <button type="button" class="btn" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '2'}">Italian</button>
+  <button type="button" class="btn" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '3'}">Mexican</button>
+  <button type="button" class="btn" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '4'}">Japanese</button>
 </nav>  
 
 <!-- <section class="styleSelect">
@@ -21,10 +21,10 @@
     {{ currentPath }}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'American'}">American</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Korean'}">Korean</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Italian'}">Italian</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Mexican'}">Mexican</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == 'Japanese'}">Japanese</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '0'}">American</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '1'}">Korean</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '2'}">Italian</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '3'}">Mexican</a>
+    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '4'}">Japanese</a>
   </div>
 </div>

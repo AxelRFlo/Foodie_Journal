@@ -17,8 +17,8 @@ export class OptionsComponent implements OnInit {
     this._router.navigate(['/home']);
   }
 
-  foods(): void {
-    this._router.navigate(['/journeys']);
+  foods(id): void {
+    this._router.navigate(['/journeys/'+id]);
   }
 
   openNav() {
