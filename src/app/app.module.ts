@@ -21,6 +21,17 @@ import { ChallengeComponent } from './challenge/challenge.component';
 // import { AppRoutingModule } from './app-routing.module';
 import { routes } from './app-routing.module';
 import { JourneysComponent } from './journeys/journeys.component';
+import { HeaderComponent } from './header/header.component';
+
+import { YelpService } from './services/yelp.service';
+
+import { AgmCoreModule} from '@agm/core';
+// import { AgmDirectionModule } from 'agm-direction';
+
+import { FoodTypesComponent } from './food-types/food-types.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export const environment = {
@@ -43,7 +54,11 @@ export const environment = {
     HomeComponent,
     OptionsComponent,
     ChallengeComponent,
-    JourneysComponent
+    JourneysComponent,
+    HeaderComponent,
+    FoodTypesComponent,
+    RestaurantsComponent,
+    RestaurantInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -52,10 +67,15 @@ export const environment = {
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
-    PopoverModule
-    // AppRoutingModule
+    PopoverModule,
+    HttpClientModule,
+    // AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
+    }),
+    // AgmDirectionModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

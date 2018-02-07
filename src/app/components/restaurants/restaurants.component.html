@@ -1,0 +1,12 @@
+<div *ngIf="restaurants.length>0 else notfound">
+  <div  *ngIf="hidden">
+    <div *ngFor="let restaurant of restaurants; let i=index">
+      <app-restaurant-info [restaurant]="restaurant"></app-restaurant-info>
+    </div>
+  </div>
+</div>
+<ng-template #notfound>
+  <div class="col-md-3">
+    error
+  </div>
+</ng-template>

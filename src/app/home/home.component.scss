@@ -197,6 +197,31 @@ div .header {
   padding: 10%;
 }
 
+/*
+@media (max-width: 768px) {
+  .button-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .button-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 993px) {
+  .button-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}*/
+
 .info{
   height: 50%;
 }
@@ -224,6 +249,14 @@ div .header {
 //     height: 1200px;
 //   }
 // }
+#title {
+  font-size: 34px;
+}
+
+#subtitle{
+  font-size: 20px;
+}
+
 .align {
   align-items: center;
 }
@@ -267,10 +300,13 @@ footer{
 .logo-acc{
   max-width:120px; /* you can use % */
   height: auto;
+  margin-top: -29px;
 }
 
 .logo-accenture {
- padding: 10px;
+  padding: 10px;
+  margin-right: -54px;
+  margin-left: 34px;
 }
 
 .fork-spoon {
@@ -287,4 +323,3 @@ footer{
  width: 30px;
  height: auto; 
 }
-
