@@ -25,10 +25,8 @@ import { HeaderComponent } from './header/header.component';
 
 import { YelpService } from './services/yelp.service';
 
-
-//import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule} from '@agm/core';
-//import { AgmDirectionModule } from 'agm-direction';
+// import { AgmDirectionModule } from 'agm-direction';
 
 import { FoodTypesComponent } from './food-types/food-types.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
@@ -73,14 +71,12 @@ export const environment = {
     RouterModule.forRoot(routes),
     PopoverModule,
     HttpClientModule,
-    //AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
     }),
-    //AgmDirectionModule,
-    // AppRoutingModule
+    // AgmDirectionModule,
   ],
-  providers: [AuthService,YelpService],
+  providers: [AuthService, YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
