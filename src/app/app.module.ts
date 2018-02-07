@@ -34,6 +34,7 @@ import { FoodTypesComponent } from './food-types/food-types.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProgressComponent } from './progress/progress.component';
 
 
 export const environment = {
@@ -60,7 +61,8 @@ export const environment = {
     HeaderComponent,
     FoodTypesComponent,
     RestaurantsComponent,
-    RestaurantInfoComponent
+    RestaurantInfoComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,

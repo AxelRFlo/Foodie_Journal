@@ -12,7 +12,7 @@ export const routes: Route[] = [
   {path: 'popover', component: PopoverComponent},
   {path: 'options', component: OptionsComponent},
   {path: 'challenge', component: ChallengeComponent},
-  {path: 'journeys', component: JourneysComponent}
+  {path: 'journeys/:id', component: JourneysComponent}
 ];
 
 // @NgModule({
