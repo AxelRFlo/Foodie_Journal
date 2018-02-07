@@ -13,14 +13,4 @@ export class JourneysComponent implements OnInit {
   ngOnInit() {
   }
 
-  foodieJo(): void {
-    this._router.navigate(['/home']);
-  }
-
-  openNav() {
-  }
-
-  closeNav() {
-  }
-
 }

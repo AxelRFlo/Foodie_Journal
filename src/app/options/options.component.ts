@@ -13,18 +13,8 @@ export class OptionsComponent implements OnInit {
   ngOnInit() {
   }
 
-  foodie(): void {
-    this._router.navigate(['/home']);
-  }
-
   foods(): void {
     this._router.navigate(['/journeys']);
-  }
-
-  openNav() {
-  }
-
-  closeNav() {
   }
 
 }
