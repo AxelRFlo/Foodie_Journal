@@ -26,14 +26,4 @@ export class JourneysComponent implements OnInit{
     this.sub.unsubscribe();
   }
 
-  foodieJo(): void {
-    this._router.navigate(['/home']);
-  }
-
-  openNav() {
-  }
-
-  closeNav() {
-  }
-
 }

@@ -31,8 +31,9 @@ export class FbauthComponent implements OnInit {
     this.authService.login(this.email, this.password);
     this.email = this.password = '';
 
-  
   }
+
+
 
   logout() {
     this.authService.logout();
@@ -45,6 +46,7 @@ export class FbauthComponent implements OnInit {
   signInWithGoogle(){
 
   }
+  
   
   
 }

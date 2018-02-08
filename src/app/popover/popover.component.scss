@@ -12,9 +12,30 @@ button {
     
 }
 
+
+
 button:hover {
     opacity: 0.8;
 }
+
+#btnLog {
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    z-index: 200;
+    display: inline;
+    font-size: 1.4em;
+    font-weight: 400;
+    text-decoration: none;
+    margin-right: 0px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  #btnLog:hover {
+    opacity: 0.4;
+    background-color: rgb(254, 82, 64);
+  }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
