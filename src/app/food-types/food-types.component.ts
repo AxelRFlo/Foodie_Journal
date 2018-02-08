@@ -12,7 +12,7 @@ export class FoodTypesComponent implements OnInit {
   constructor(private _YelpService: YelpService) { }
 
   ngOnInit() {
-    this.Categories=this._YelpService.Getcat(this.idJourney);
+    this.Categories = this._YelpService.Getcat(this.idJourney);
     console.log(this.Categories);
   }
 

@@ -6,25 +6,15 @@
   <button type="button" class="btn" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '4'}">Japanese</button>
 </nav>  
 
-<!-- <section class="styleSelect">
-<select class="selectpicker">
-  <option value="" selected>American</option>
-  <option value="">Korean</option>
-  <option value="">Italian</option>
-  <option value="">Mexican</option>
-  <option value="">Japanese</option>
-</select>
-</section> -->
-
 <div class="dropdown">
   <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {{ currentPath }}
+    {{ nombre[idJourney] }}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '0'}">American</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '1'}">Korean</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '2'}">Italian</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '3'}">Mexican</a>
-    <a class="dropdown-item" href="#" [ngClass]="{'orange': currentPath == '4'}">Japanese</a>
+    <a class="dropdown-item" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '0'}">American</a>
+    <a class="dropdown-item" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '1'}">Korean</a>
+    <a class="dropdown-item" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '2'}">Italian</a>
+    <a class="dropdown-item" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '3'}">Mexican</a>
+    <a class="dropdown-item" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '4'}">Japanese</a>
   </div>
 </div>

@@ -1,53 +1,28 @@
-<div id="main">
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
-    <!-- <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a> -->
-  </div>
-  <div class="header2">
-    <div class="row">
-      <span class="btn-menu imgS" (click)='openNav()'>&#9776;</span>
-    <!-- <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS"> -->
-      <a class="title-logo" id="logo" (click)='foodie()' [routerLink]="['/home']">FoodieJournal</a>
-      <div class="col text-right">
-        <div ngbDropdown  placement="down-right" class="d-inline-block">
-          <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
-            <p class="user">Hi Josh!</p>
-            <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-            <button class="dropdown-item">My Account</button>
-            <div class="dropdown-divider"></div>
-            <button class="dropdown-item">Log Out</button>
-          </div>
-        </div>
-      </div>
+<div class="section">
+  <div class="row">
+    <div class="col-12">
+      <h1>Welcome!</h1> <br>
+      <h2>Choose a track to get started.</h2>
     </div>
   </div>
-
-  <div class="section">
-    <div class="row">
-      <div class="col-12">
-        <h1>Welcome!</h1> <br>
-        <h2>Choose a track to get started.</h2>
-      </div>
-    </div>
-  </div>
+</div>
 
   <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
   <div class="section2">
     <div class="row">
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods(0)' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/american_wIcon.png" alt="American">
-            <!-- <svg viewBox="0 0 200 200">
+          <div class="img-overlay-wrap backColor">
+              <!-- <a class="imgLink" > -->
+                  <img class="card-img-top" (click)='foods(0)' [routerLink]="['/journeys']" src="../../assets/american_wIcon.png" alt="American">
+                  <!-- <p class="textType">American</p> -->
+              <!-- </a> -->
+
+          <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">0%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">One characteristic of American cookingis the fusion of
               multiple ethnic or regional approaches into completely new cooking styles.</p>
@@ -60,13 +35,17 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods(2)' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/italian_wIcon.png" alt="Italian">
+          <div class="img-overlay-wrap backColor">
+              <!-- <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']">         -->
+                <img class="card-img-top" (click)='foods(1)' [routerLink]="['/journeys']" src="../../assets/italian_wIcon.png" alt="Italian">
+                <!-- <p class="textType1">Italian</p>
+              </a> -->
+
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">An Italian meal is famous for its structure into several
               sections: the appetiser, pasta or nice dish, a meat course and dolce dessert.</p>
@@ -79,13 +58,17 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods(3)' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/mexican_wIcon.png" alt="Mexican">
+          <div class="img-overlay-wrap backColor">
+              <!-- <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']"> -->
+                <img class="card-img-top" (click)='foods(2)' [routerLink]="['/journeys']" src="../../assets/mexican_wIcon.png" alt="Mexican">
+                <!-- <p class="textType">Mexican</p>
+              </a> -->
+
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">Know for ts varied flavours and spices, the food of Mexico
               is a result of the Spanish conquistadores interaction with the Aztec culture.</p>
@@ -98,13 +81,17 @@
 
       <div class="col-lg-3 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a class="img-overlay-wrap backColor">
-            <img (click)='foods(4)' [routerLink]="['/journeys']" class="card-img-top" src="../../assets/japanese_wIcon.png" alt="Japanese">
+          <div class="img-overlay-wrap backColor">
+              <!-- <a class="imgLink" (click)='foods()' [routerLink]="['/journeys']"> -->
+            <img class="card-img-top" (click)='foods(3)' [routerLink]="['/journeys']" src="../../assets/japanese_wIcon.png" alt="Japanese">
+                <!-- <p class="textType">Japanese</p> -->
+              <!-- </a> -->
+
             <!-- <svg viewBox="0 0 200 200">
               <rect width="60" height="110" class="challenge-progress" />
               <text x="85" y="90" class="challenge-progress-text">20%</text>
             </svg> -->
-          </a>
+          </div>
           <div class="card-body">
             <p class="card-text challenge-caption-text">In 2014, 14 restaurants in Tokyo and Shonan maintain a
               Michelin three-stars rating, the ultimate international recognition in the culinary world.</p>
@@ -116,4 +103,4 @@
       </div>
     </div>
   </div>
-</div>
+
