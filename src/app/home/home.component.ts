@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  // constructor() {}
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
 
+  options(): void {
+    // alert('cambio de pantalla');
+    this._router.navigate(['/options']);
+  }
+
+  homee(): void {
+    this._router.navigate(['/home']);
+  }
+
+  // popover(): void {
+  //   this._router.navigate(['/challenge']);
+  // }
 }

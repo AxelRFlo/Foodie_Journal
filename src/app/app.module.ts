@@ -16,7 +16,24 @@ import { PopoverModule } from 'ng2-popover';
 import { HomeComponent } from './home/home.component';
 import { ProgressComponent } from './progress/progress.component';
 import { FoodTypesComponent } from './food-types/food-types.component';
+import { OptionsComponent } from './options/options.component';
 
+
+import { RouterModule, Routes } from '@angular/router';
+import { ChallengeComponent } from './challenge/challenge.component';
+// import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app-routing.module';
+import { JourneysComponent } from './journeys/journeys.component';
+import { HeaderComponent } from './header/header.component';
+
+import { YelpService } from './services/yelp.service';
+
+import { AgmCoreModule} from '@agm/core';
+// import { AgmDirectionModule } from 'agm-direction';
+
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export const environment = {
@@ -37,7 +54,14 @@ export const environment = {
     FbauthComponent,
     PopoverComponent,
     HomeComponent,
+    OptionsComponent,
     ProgressComponent,
+    ChallengeComponent,
+    JourneysComponent,
+    HeaderComponent,
+    FoodTypesComponent,
+    RestaurantsComponent,
+    RestaurantInfoComponent,
     FoodTypesComponent
 
   ],
@@ -47,9 +71,15 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NgbModule.forRoot(),
-    PopoverModule
+    RouterModule.forRoot(routes),
+    PopoverModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfPvEs2RHVe0y_P9bbaBBL7oXfvbPRZs8'
+    }),
+    // AgmDirectionModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, YelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

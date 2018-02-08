@@ -172,8 +172,6 @@
     animation: loading-5 1.2s linear forwards 1.8s;
 }
 
-/////////////////////////////////////////////
-
 @keyframes loading-1{
     0%{
         -webkit-transform: rotate(0deg);
@@ -224,4 +222,3 @@
         transform: rotate(126deg);
     }
 }
-
