@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor(private _router: Router) { }
 
   foods(id): void {
-    this._router.navigate(['/journeys/'+id]);
+    this._router.navigate(['/journeys/' + id]);
     window.location.reload();
   }
 

@@ -5,9 +5,10 @@
 <!--  Marielle -->
   <app-progress></app-progress>
 <!-- Journey 1 -->
+<div class="panelInfo">
   <div class="container">
     <div class="panel-group" id="accordion">
-      <div *ngFor="let Category of Categories; let i=index;"> 
+      <div *ngFor="let Category of Categories; let i=index;">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
@@ -17,11 +18,13 @@
               </h4>
             </div>
             <div id="collapse{{i}}" class="panel-collapse collapse">
+              <hr>
               <app-restaurants [Path]="idJourney" [Op]="i"></app-restaurants>
             </div>
           </div>
       </div>
-    </div> 
+    </div>
   </div>
+</div>
 
 <!-- Journey api -->
