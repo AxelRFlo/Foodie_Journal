@@ -10,9 +10,10 @@
     Signup
   </button>
 
-  <button (click)="login()" [disabled]="!email || !password">
+  <button (click)="login()" [disabled]="!email || !password" >
     Login
   </button>
+
 </div>
 
 <button (click)="logout()" *ngIf="authService.user | async">

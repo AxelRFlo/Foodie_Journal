@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseAppConfigToken } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -47,15 +47,13 @@ export const environment = {
   }
 };
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     FbauthComponent,
     PopoverComponent,
-<<<<<<< HEAD
-    HomeComponent
-
-=======
     HomeComponent,
     OptionsComponent,
     ChallengeComponent,
@@ -65,19 +63,14 @@ export const environment = {
     RestaurantsComponent,
     RestaurantInfoComponent,
     ProgressComponent
->>>>>>> dev
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+
     AngularFireAuthModule,
     NgbModule.forRoot(),
-<<<<<<< HEAD
-    PopoverModule
-  ],
-  providers: [AuthService],
-=======
     RouterModule.forRoot(routes),
     PopoverModule,
     HttpClientModule,
@@ -87,7 +80,6 @@ export const environment = {
     // AgmDirectionModule,
   ],
   providers: [AuthService, YelpService],
->>>>>>> dev
   bootstrap: [AppComponent]
 })
 export class AppModule { }
