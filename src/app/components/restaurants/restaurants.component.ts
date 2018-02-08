@@ -17,7 +17,6 @@ export class RestaurantsComponent implements OnInit {
   sub: Subscription;
   location;
   restaurants = {};
-  hidden = true;
   constructor(private _YelpService: YelpService) { }
   
   ngOnInit() {

@@ -10,18 +10,20 @@ import { YelpService } from '../services/yelp.service';
   templateUrl: './journeys.component.html',
   styleUrls: ['./journeys.component.scss']
 })
-export class JourneysComponent implements OnInit{
+export class JourneysComponent implements OnInit {
   idJourney: string;
   sub: Subscription;
   Categories;
+
 
   constructor(private _router: Router, private route: ActivatedRoute, private _YelpService: YelpService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.idJourney = params['id']; // (+) converts string 'id' to a number
+      this.idJourney = params['id'];
       this.Categories = this._YelpService.Getcat(this.idJourney);
       console.log(this.Categories);
+      // Especificamos cual es mi journey actual en LS
       });
     this.sub.unsubscribe();
   }
@@ -35,5 +37,7 @@ export class JourneysComponent implements OnInit{
 
   closeNav() {
   }
+
+
 
 }

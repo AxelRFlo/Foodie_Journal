@@ -28,3 +28,24 @@ agm-map {
     padding-top:10px;
     border-bottom: 1px solid #bdbdbd;
 }
+
+.btnGS {
+    display: block;
+    height: 50px;
+    width: 150px;
+    //margin: 0 auto;
+    background-color: rgb(254, 82, 64);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 34px;
+  }
+  .btnGS:hover {
+    opacity: 0.6;
+    background: rgb(254, 82, 64);
+  }
+  .btnGS:active {
+    background-color: rgb(255, 89, 71);
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
