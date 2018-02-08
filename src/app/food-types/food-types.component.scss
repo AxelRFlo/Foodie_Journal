@@ -8,6 +8,14 @@ body {
   border-radius: 0 !important;
 }
 
+.panel-group {
+  margin-top: 10px;
+}
+
+.panel-default {
+  margin-bottom: 8px;
+}
+
 .step {
   background: #4a4a4a;
   border-radius: 0.8em;
@@ -19,7 +27,7 @@ body {
   line-height: 1.6em;
   margin-right: 5px;
   text-align: center;
-  width: 1.6em; 
+  width: 1.6em;
 }
 
 
