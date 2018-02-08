@@ -21,6 +21,7 @@ export class RestaurantInfoComponent implements OnInit {
   weekday;
   open;
   close;
+  hidden = true;
 
   constructor(private _YelpService: YelpService) { }
 
