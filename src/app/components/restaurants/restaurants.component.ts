@@ -14,31 +14,27 @@ export class RestaurantsComponent implements OnInit {
   @Input() Path;
   @Input() Op;
   errorMessage: any;
-  sub:Subscription;
+  sub: Subscription;
   location;
-  restaurants={};
-  hidden=true;
+  restaurants = {};
   constructor(private _YelpService: YelpService) { }
   
-  hide(){
-    this.hidden=!this.hidden;
-  }
   ngOnInit() {
-    if(navigator.geolocation){
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.location = position.coords;
         console.log(this.location);
-        this.sub=this._YelpService.GetYelpList(this.location.latitude,this.location.longitude,this.Path,this.Op).subscribe(data => {
-            this.restaurants=data.businesses;
+        this.sub = this._YelpService.GetYelpList(this.location.latitude, this.location.longitude, this.Path, this.Op).subscribe(data => {
+            this.restaurants = data.businesses;
           },
           error => this.errorMessage = <any>error,
           () => {
             this.sub.unsubscribe();
+            console.log(this.sub);
+            console.log("das");
           }
         );
-      },
-      error => this.errorMessage = <any>error,
-      );
+      });
     }
   }
 }

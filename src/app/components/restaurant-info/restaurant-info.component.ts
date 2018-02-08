@@ -27,6 +27,7 @@ export class RestaurantInfoComponent implements OnInit {
   ngOnInit() {
     this.weekday=this._YelpService.Getday();
     this.restaurantData=this._YelpService.GetYelpRestaurant(this.restaurant.id);
+    console.log(this.restaurantData);
     this.dir = {
       origin: { lat: this.restaurant.coordinates.latitude, lng: this.restaurant.coordinates.longitude },
       destination: { lat: 25.658365, lng: -120.369708}

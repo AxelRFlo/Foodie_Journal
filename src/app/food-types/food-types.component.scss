@@ -2,7 +2,10 @@ body {
   background-color: rgb(235, 235, 235);
 }
 
-
+agm-map{
+  height: 150px;
+  width: 150px;
+}
 .panel-heading {
   background-color: white !important;
   border-radius: 0 !important;

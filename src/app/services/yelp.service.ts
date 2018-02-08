@@ -90,22 +90,21 @@ export class YelpService {
   }
 
 
-  private LSGet(key: string): any {
+  LSGet(key: string): any {
     return JSON.parse(localStorage.getItem(key));
   }
 
-  private LSSet(key: string, value: any): void {
+  LSSet(key: string, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  Getday(){
+  Getday() {
     return this.weekday[new Date().getDay()];
   }
-  Getcat(id){
-    var array=[];
+  Getcat(id) {
+    const array = [];
     for (let i in this.categories[id]) {
-      console.log(i);
-      array.push(i=this.categories[id][i]["name"]);
+      array.push(i=this.categories[id][i]['name']);
    }
     return array;
   }
