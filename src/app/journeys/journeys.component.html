@@ -5,6 +5,23 @@
 <!--  Marielle -->
   <app-progress></app-progress>
 <!-- Journey 1 -->
-<app-food-types [idJourney]="idJourney"></app-food-types>
+  <div class="container">
+    <div class="panel-group" id="accordion">
+      <div *ngFor="let Category of Categories; let i=index;"> 
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
+                  <span class="step">{{i+1}}</span> <strong class="titleCat">{{Category}}</strong>
+                </a>
+              </h4>
+            </div>
+            <div id="collapse{{i}}" class="panel-collapse collapse">
+              <app-restaurants [Path]="idJourney" [Op]="i"></app-restaurants>
+            </div>
+          </div>
+      </div>
+    </div> 
+  </div>
 
 <!-- Journey api -->
