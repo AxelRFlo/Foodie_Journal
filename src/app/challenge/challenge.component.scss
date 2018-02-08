@@ -295,6 +295,13 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0px;
-    margin: 15px 5px 15px 5px;
-    padding: 10px 90px 10px 90px;
+    padding: 10px, 90px, 10px, 90px;
+}
+
+.start {
+display: grid;
+text-align: center;
+padding-left: 0;
+padding-right: 0;
+
 }
