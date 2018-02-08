@@ -75,25 +75,6 @@ div .header {
   height: 30px;
   color: white;
 }
-#btnLog {
-  margin-top: 15px;
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 0px;
-  z-index: 0;
-  display: inline;
-  font-size: 1.4em;
-  font-weight: 400;
-  text-decoration: none;
-  margin-right: 0px;
-  overflow: hidden;
-  cursor: pointer;
-}
-#btnLog:hover {
-  opacity: 0.4;
-  background-color: rgb(254, 82, 64);
-}
 
 #discover {
   color: #ffffff;
@@ -306,7 +287,7 @@ footer{
 .logo-accenture {
   padding: 10px;
   margin-right: -54px;
-  margin-left: 34px;
+  margin-left: 12px;
 }
 
 .fork-spoon {

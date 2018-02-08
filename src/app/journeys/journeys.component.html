@@ -1,32 +1,3 @@
-<!-- Header -->
-<div id="main">
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
-    <!-- <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a> -->
-  </div>
-  <div class="header2">
-    <div class="row">
-      <span class="btn-menu imgS" (click)='openNav()'>&#9776;</span>
-    <!-- <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS"> -->
-      <a class="title-logo" id="logo" (click)='foodieJo()' [routerLink]="['/home']">FoodieJournal</a>
-      <div class="col text-right">
-        <div ngbDropdown  placement="down-right" class="d-inline-block">
-          <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
-            <p class="user">Hi Josh!</p>
-            <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
-          </button>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-            <button class="dropdown-item">My Account</button>
-            <div class="dropdown-divider"></div>
-            <button class="dropdown-item">Log Out</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 <!-- Navbar -->
 <app-header [idJourney]="idJourney"></app-header>
@@ -53,4 +24,4 @@
     </div> 
   </div>
 
-</div>
+<!-- Journey api -->
