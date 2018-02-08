@@ -1,0 +1,90 @@
+<div id="main">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
+      <!-- <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a> -->
+    </div>
+    <div class="header2">
+      <div class="row">
+        <span class="btn-menu imgS" (click)='openNav()'>&#9776;</span>
+      <!-- <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS"> -->
+        <a class="title-logo" id="logo" (click)='foodieJ()' [routerLink]="['/home']">FoodieJournal</a>
+        <div class="col text-right">
+          <div ngbDropdown  placement="down-right" class="d-inline-block">
+            <button class="btn" id="dropdownBasic2" ngbDropdownToggle>
+              <p class="user">Hi Josh!</p>
+              <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button class="dropdown-item">My Account</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item">Log Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journeys">
+      <p>Journeys/American</p>
+    </div>
+
+    <div class="card">
+      <img src="../../assets/avatar_circle.png" class="number">
+        <h5 class="titlee">All-American Bacon Cheese Burger</h5>
+        <div class="card-body">
+          <!-- <div class="row"> -->
+            <!-- <div class="col-6 col-sm-4" href="#"> -->
+              <img src="../../assets/avatar.png" class="rounded float-left">
+            <!-- </div> -->
+            <!-- <div class="col-6 col-sm-4" href="#" > -->
+              <img src="../../assets/avatar.png" class="rounded float-right">
+            <!-- </div> -->
+          <!-- </div> -->
+          <br><br><br><br><br><br>
+          <div class="row">
+            <div class="col-sm-12">
+              <h5 class="card-title">Instructions:
+                <p>Go ahead and ask for the ultimate Caramel Apple Pie.</p>
+              </h5>
+              <p class="card-text">Vegan, Pitchfork banjo, cold-pressed post-ironic XOXO
+                church-key. Salvia single-origin coffee 3 wolf moon typewriter you probably
+                haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Bansky.
+                Pork belly meggings food truck keytar polaroid mustache, farm-to-table.
+              </p>
+            </div>
+            <div class="col-sm-12">
+              <div class="card infoo" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>Today</strong> 8:00 am - 9:00 pm <p id="colored">Open now</p></li>
+                  <li class="list-group-item">
+                    <img src="../../assets/phone.png" class="phoneImg">
+                    <p>(510) 653-3394</p>
+                    <img src="../../assets/link.png" class="emailImg">
+                    <p>applepiejoes.com</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="buttons-down">
+    <div class="row">
+      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
+        <button class="button btn-ch">B1</button>
+      </div>
+      <div class="col-xs-12 .col-md-12 col-lg-4" href="#" >
+        <button class="button btn-ch">Mark as Started</button>
+      </div>
+      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
+        <button class="button btn-ch">B3</button>
+      </div>
+    </div>
+  </div>
+
+

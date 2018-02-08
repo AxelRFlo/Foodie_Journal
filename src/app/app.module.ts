@@ -8,10 +8,32 @@ import { AuthService } from './auth.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
+
 import { HomeComponent } from './home/home.component';
+import { OptionsComponent } from './options/options.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { ChallengeComponent } from './challenge/challenge.component';
+// import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app-routing.module';
+import { JourneysComponent } from './journeys/journeys.component';
+import { HeaderComponent } from './header/header.component';
+
+import { YelpService } from './services/yelp.service';
+
+import { AgmCoreModule} from '@agm/core';
+// import { AgmDirectionModule } from 'agm-direction';
+
+import { FoodTypesComponent } from './food-types/food-types.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProgressComponent } from './progress/progress.component';
+
 
 export const environment = {
   production: false,
@@ -30,8 +52,20 @@ export const environment = {
     AppComponent,
     FbauthComponent,
     PopoverComponent,
+<<<<<<< HEAD
     HomeComponent
 
+=======
+    HomeComponent,
+    OptionsComponent,
+    ChallengeComponent,
+    JourneysComponent,
+    HeaderComponent,
+    FoodTypesComponent,
+    RestaurantsComponent,
+    RestaurantInfoComponent,
+    ProgressComponent
+>>>>>>> dev
   ],
   imports: [
     BrowserModule,
@@ -39,9 +73,21 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NgbModule.forRoot(),
+<<<<<<< HEAD
     PopoverModule
   ],
   providers: [AuthService],
+=======
+    RouterModule.forRoot(routes),
+    PopoverModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpHIbt_qDK9479Vba3tTvc-MMezfhQr7U'
+    })
+    // AgmDirectionModule,
+  ],
+  providers: [AuthService, YelpService],
+>>>>>>> dev
   bootstrap: [AppComponent]
 })
 export class AppModule { }
