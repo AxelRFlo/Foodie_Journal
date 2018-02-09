@@ -27,35 +27,13 @@ export class ProgressComponent implements OnInit {
       // Inicializamos el botón
       // Si estoy subscrito a la ruta actual, entonces el botón se inicializa en continue
       // Checo en que ruta estoy actualmente
-      this.currentJourney = this.journeyToString(this.Path);
-      // Checo si estoy subscrito, de ser así se inicializa en Continue.
+            // Checo si estoy subscrito, de ser así se inicializa en Continue.
       if (this._YelpService.LSGet('Following') === this.Path) {
         this.button = 'Continue';
       }
       });
     this.sub.unsubscribe();
   }
-
-  journeyToString(Path: number) {
-    switch (Path) {
-      case 0:
-      return 'American';
-      break;
-      case 1:
-      return 'korean';
-      break;
-      case 2:
-      return'italian';
-      break;
-      case 3:
-      return'mexican';
-      break;
-      case 4:
-      return'japanese';
-      break;
-      }
-      return;
-    }
 
     onClick() {
       // Si le hago click y está en follow, comienzo a seguir el path
