@@ -42,12 +42,15 @@ export class ProgressComponent implements OnInit {
         this._YelpService.LSSet('Following', this.Path);
         // Cambio el botón
         this.button = 'Continue';
+        // Refresco la página para que se muestre el botón
+        location.reload();
        }
 
       // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir 
       if (this.button === 'Continue') {
 
       }
+
     }
 
     getNextChallenge() {
