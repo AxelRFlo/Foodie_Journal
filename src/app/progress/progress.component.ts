@@ -17,6 +17,15 @@ export class ProgressComponent implements OnInit {
   Categories;
   currentJourney: string;
   button = 'Follow';
+  foodType: string;
+  completion: number;
+  foodDescription: string;
+  imgUrl: string;
+  americanUrl = '../../assets/american.png';
+  koreanUrl = '../../assets/korean.png';
+  italianUrl = '../../assets/italian.png';
+  japaneseUrl = '../../assets/japanese.png';
+  mexicanUrl = '../../assets/mexican.png';
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
@@ -33,6 +42,8 @@ export class ProgressComponent implements OnInit {
       }
       });
     this.sub.unsubscribe();
+    this.getFoodType();
+
   }
 
     onClick() {
@@ -65,6 +76,53 @@ export class ProgressComponent implements OnInit {
 
     challengeVerification() {
       // Reviso si estoy siguiendo algo
-    } 
+    }
+
+    getFoodType() {
+      switch (this.Path) {
+        case '0': {
+          this.foodType = 'American';
+          this.foodDescription = 'One characteristic of American cooking is the'
+          + ' fusion of multiple ethnic or regional approaches into completely new cooking styles.';
+          this.imgUrl = this.americanUrl;
+          break;
+        }
+        case '1': {
+          this.foodType = 'Korean';
+          this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)'+
+          ' that accompany steam-cooked short-grain rice.';
+          this.imgUrl = this.japaneseUrl;
+          break;
+        }
+        case '2': {
+          this.foodType = 'Italian';
+          this.foodDescription = 'Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation.' +
+          ' Pasta, vegetables, olive oil and fish are a major part of the Italian cuisine.';
+          this.imgUrl = this.italianUrl;
+          break;
+        }
+        case '3': {
+          this.foodType = 'Mexican';
+          this.foodDescription = 'Mexican cuisine is as complex as other ancient cuisines, It is created mostly with ingredients '
+          + 'native to Mexico.';
+          this.imgUrl = this.mexicanUrl;
+          break;
+        }
+        case '4': {
+          this.foodType = 'Japanese';
+          this.foodDescription = 'The traditional cuisine of Japan is based on rice with miso soup and other dishes. '
+         + 'there is an emphasis on seasonal ingredients.';
+          this.imgUrl = this.japaneseUrl;
+          break;
+        }
+        default: {
+          console.log('Default case');
+          break;
+        }
+      }
+
+      console.log("The current food type is: " + this.foodType);
+    }
+
 
   }

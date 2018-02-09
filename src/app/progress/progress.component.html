@@ -9,12 +9,15 @@
             <span class="progress-right">
               <span class="progress-bar"></span>
             </span>
-            <div class="progress-value"></div>
+            <div class="progress-value">
+              <img class="food" [src]='imgUrl'>
+            </div>
         </div>
       </div>
       <div class="col-xs-8 col-sm-6 col-lg-4">
-        <h2>Food Type </h2>
-        <p> Porcentaje </p>
+        <h1>{{ foodType }}</h1>
+            <span class="percentage">10{{ completion }}%</span>
+        <p class="food-description">{{ foodDescription }}</p>
       </div>
       <div class="col-xs-12 col-sm-12 col-lg-4">
           <div class="row"> 

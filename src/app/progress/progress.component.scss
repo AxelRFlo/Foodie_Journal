@@ -145,83 +145,48 @@
     //color: #fff;
     line-height: 135px;
     text-align: center;
+    color: white;
+
+}
+
+.radial-inner-bg {
+	border-radius: 50%;
+	width: 98px;
+	height: 98px; 
+	top: 8px;
+	left: 8px;
+	//background: rgb(71, 2, 2);
     position: absolute;
-    top: 0%;
-    left: 0%;
-}
-.progress.blue .progress-bar{
-    border-color: rgb(106, 52, 255);
-}
-.progress.blue .progress-left .progress-bar{
-    animation: loading-2 1.5s linear forwards 1.8s;
-}
-.progress.red .progress-bar{
-    border-color: #FF4F34;
-}
-.progress.red .progress-left .progress-bar{
-    animation: loading-3 1s linear forwards 1.8s;
-}
-.progress.pink .progress-bar{
-    border-color: #ed687c;
-}
-.progress.pink .progress-left .progress-bar{
-    animation: loading-4 0.4s linear forwards 1.8s;
 }
 
-.progress.green .progress-left .progress-bar{
-    animation: loading-5 1.2s linear forwards 1.8s;
+$step: 1; // step of % for created classes
+$loops: 100;
+$increment: (360 / $loops);
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .progress-#{$i*$step} {
+    @if $i < 50 {
+		$nextdeg: 90deg + ( $increment * $i );
+    background-image: linear-gradient(90deg, #cb3729 50%, transparent 50%, transparent), 
+    linear-gradient($nextdeg, #fe5140 50%, #cb3729 50%, #cb3729);
+    }
+    @else {
+		$nextdeg: -90deg + ( $increment * ( $i - $half ) );
+    background-image: linear-gradient($nextdeg, #fe5140 50%, transparent 50%, transparent), 
+    linear-gradient(270deg, #fe5140 50%, #cb3729 50%, #cb3729);
+    }
+}
 }
 
-/////////////////////////////////////////////
-
-@keyframes loading-1{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
-    }
-}
-@keyframes loading-2{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate(144deg);
-        transform: rotate(144deg);
-    }
-}
-@keyframes loading-3{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-}
-@keyframes loading-4{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate(36deg);
-        transform: rotate(36deg);
-    }
-}
-@keyframes loading-5{
-    0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100%{
-        -webkit-transform: rotate(126deg);
-        transform: rotate(126deg);
-    }
+h1 {
+    display: inline;
 }
 
+.percentage {
+    color: grey;
+}
+
+.food {
+    margin-bottom: 33px;
+    margin-left: 3px;
+}

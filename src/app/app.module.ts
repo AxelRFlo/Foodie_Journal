@@ -14,7 +14,10 @@ import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
+import { ProgressComponent } from './progress/progress.component';
+import { FoodTypesComponent } from './food-types/food-types.component';
 import { OptionsComponent } from './options/options.component';
+
 
 import { RouterModule, Routes } from '@angular/router';
 import { ChallengeComponent } from './challenge/challenge.component';
@@ -28,7 +31,6 @@ import { YelpService } from './services/yelp.service';
 import { AgmCoreModule} from '@agm/core';
 // import { AgmDirectionModule } from 'agm-direction';
 
-import { FoodTypesComponent } from './food-types/food-types.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -55,14 +57,20 @@ export const environment = {
     PopoverComponent,
     HomeComponent,
     OptionsComponent,
+    ProgressComponent,
     ChallengeComponent,
     JourneysComponent,
     HeaderComponent,
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
+<<<<<<< HEAD
     ProgressComponent,
     FeedbackComponent
+=======
+    FoodTypesComponent
+
+>>>>>>> 6d7242914f10b979cbc8d38eab9f13d859d0dc97
   ],
   imports: [
     BrowserModule,
