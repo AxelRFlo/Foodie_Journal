@@ -18,8 +18,10 @@
 
   <div class="col-md-3 col-sm-6 bushours">
     <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
+
     <div class="underline"></div>
     <i class="fas fa-phone"></i> {{restaurant.display_phone.length>0 ? restaurant.display_phone : 'Not available'}}
+    <br><button type="button" class="btnGS" [ngClass]="{'hidden': hidden == true}">Go to challenge</button>
   </div>
 
   <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">
@@ -36,5 +38,4 @@
         <agm-marker [latitude]="25.6706772" [longitude]="-100.37717409999999" ></agm-marker>
     </agm-map>
   </div>
-  
 </div>

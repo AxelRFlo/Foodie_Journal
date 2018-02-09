@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class RestaurantInfoComponent implements OnInit {
   @Input() restaurant;
+  @Input() Path;
   errorMessage: any;
   imgerror="https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png";
   restaurantData;
@@ -21,16 +22,25 @@ export class RestaurantInfoComponent implements OnInit {
   weekday;
   open;
   close;
+  hidden = true;
 
   constructor(private _YelpService: YelpService) { }
 
   ngOnInit() {
     this.weekday=this._YelpService.Getday();
     this.restaurantData=this._YelpService.GetYelpRestaurant(this.restaurant.id);
-    console.log(this.restaurantData);
     this.dir = {
       origin: { lat: this.restaurant.coordinates.latitude, lng: this.restaurant.coordinates.longitude },
       destination: { lat: 25.658365, lng: -120.369708}
+    }
+    this.showButton();
+  }
+
+  showButton() {
+    // si mi current journey es el que tengo activo
+    if(this._YelpService.LSGet('Following') == this.Path) {
+      // muestro el botón
+      this.hidden = false;
     }
   }
 }

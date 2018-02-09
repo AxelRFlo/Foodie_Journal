@@ -17,22 +17,18 @@ export class RestaurantsComponent implements OnInit {
   sub: Subscription;
   location;
   restaurants = {};
-  hidden = true;
   constructor(private _YelpService: YelpService) { }
   
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         this.location = position.coords;
-        console.log(this.location);
         this.sub = this._YelpService.GetYelpList(this.location.latitude, this.location.longitude, this.Path, this.Op).subscribe(data => {
             this.restaurants = data.businesses;
           },
           error => this.errorMessage = <any>error,
           () => {
             this.sub.unsubscribe();
-            console.log(this.sub);
-            console.log("das");
           }
         );
       });
