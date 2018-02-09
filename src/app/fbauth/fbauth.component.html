@@ -1,3 +1,4 @@
+
 <h2 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h2>
 <h1 *ngIf="!authService.user | async">Welcome. Please Input your credentials.</h1>
 
