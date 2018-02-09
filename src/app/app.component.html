@@ -4,8 +4,8 @@
 <!-- <app-options></app-options> -->
 
 <!-- <app-challenge></app-challenge> -->
-<div class="menuu">
-<div id="mySidenav" class="sidenav">
+<div class="menuu" >
+<div *ngIf="" id="mySidenav" class="sidenav" >
     <a href="" class="closebtn" (click)='closeNav()'>&times;</a>
     <!-- <a href="#">About</a>
     <a href="#">Services</a>
@@ -18,16 +18,16 @@
     <!-- <img src="http://servotech.in/wp-content/uploads/2016/10/user-icon-placeholder.png" alt="logo" class="btn-menu imgS"> -->
       <a class="title-logo" id="logo" (click)='foodie()' [routerLink]="['/home']">FoodieJournal</a>
       <div class="col text-right">
-        <app-popover> </app-popover>
-        <div ngbDropdown placement="down-right" class="d-inline-block" >
-          <button  class="btn" id="dropdownBasic2" ngbDropdownToggle >
-            <p class="user">Hi Josh!</p>
+        <app-popover *ngIf="!authService.isLoggedIn()" > </app-popover>
+        <div ngbDropdown placement="down-right" class="d-inline-block"  >
+          <button  class="btn" id="dropdownBasic2" ngbDropdownToggle *ngIf="authService.isLoggedIn()"  >
+            <p class="user">Hi, {{(authService.user | async)?.email}}</p>
             <img src="../../assets/avatar_circle.png" alt="user" class="userImg imgS">
           </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
             <button class="dropdown-item">My Account</button>
             <div class="dropdown-divider"></div>
-            <button class="dropdown-item">Log Out</button>
+            <button class="dropdown-item" (click)="logout()" >Log Out</button>
           </div>
         </div>
       </div>

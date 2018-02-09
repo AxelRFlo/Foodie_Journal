@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,13 @@ isLoggedIn(): any {
 
 }
 
+loggedIn() {
+  if ( this.authService.isLoggedIn() ) {
+      return true;
+  }
+  this._router.navigate(['']);
+  return false;
+}
 
 
   homee(): void {

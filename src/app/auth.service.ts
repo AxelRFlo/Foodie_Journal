@@ -11,7 +11,9 @@ import { OAuthProvider } from '@firebase/auth-types';
 @Injectable()
 export class AuthService {
   userDetails: any;
-  private user: Observable<firebase.User>;  
+  private user: Observable<firebase.User>; 
+  private currentUser: Observable<firebase.User>;  
+ 
   loggedIn = false;
 
 
@@ -31,14 +33,19 @@ export class AuthService {
 
   }
 
-  signup(displayName: string, email: string, password: string) {
+  signup(displayName: string, email: string, password: string, photoUrl: string) {
     this._firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Success!', value);
-        this._router.navigate(['/options']);
-        this.loggedIn = true;
+      .then(function () {
+        this.user = firebase.auth().currentUser;
+        this.user.sendEmailVerification();
+    })
+      .then(function () {
+        this.user.updateProfile({
+            displayName: "Example User",
+            photoURL: "https://example.com/jane-q-user/profile.jpg"
+        });
       })
       .catch(err => {
         console.log('Something went wrong:', err.message);

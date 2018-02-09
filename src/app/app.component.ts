@@ -16,7 +16,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 export class AppComponent implements OnInit {
 
   title = 'app';
-  loggedIn = false;
 
 
   constructor(public authService: AuthService, private _router: Router, public af: AngularFireAuth) { }
@@ -33,5 +32,20 @@ export class AppComponent implements OnInit {
 
   closeNav() {
   }
+
+  logout() {
+    this.authService.logout();
+    this._router.navigate(['/home']);
+  }
+
+  isLoggedIn () {
+    if ( this.authService.isLoggedIn() ) {
+      return true;
+  }
+  return false;
+}
+
+  }
+
 
 }

@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
+import { auth } from 'firebase/app';
+
 
 
 @Component({
@@ -16,6 +18,8 @@ export class FbauthComponent implements OnInit {
   displayName: string;
   email: string;
   password: string;
+  photoUrl: string;
+ 
 
   constructor(public authService: AuthService, private _router: Router, public af: AngularFireAuth) { }
  
@@ -24,7 +28,7 @@ export class FbauthComponent implements OnInit {
   }
   /* Click events (Template) */
   signup() {
-    this.authService.signup(this.displayName, this.email, this.password);
+    this.authService.signup(this.displayName, this.email, this.password, this.photoUrl);
     this.displayName = this.email = this.password = '';
   }
 
@@ -34,14 +38,9 @@ export class FbauthComponent implements OnInit {
 
   }
 
-
-
   logout() {
     this.authService.logout();
     this._router.navigate(['/home']);
-
-  
-
   }
 
   signInWithGoogle(){
