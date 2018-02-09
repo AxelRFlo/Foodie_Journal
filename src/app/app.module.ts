@@ -34,6 +34,7 @@ import { AgmCoreModule} from '@agm/core';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChallengeCommentsComponent } from './challenge-comments/challenge-comments.component';
 
 
 export const environment = {
@@ -62,7 +63,8 @@ export const environment = {
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-    FoodTypesComponent
+    FoodTypesComponent,
+    ChallengeCommentsComponent
 
   ],
   imports: [
