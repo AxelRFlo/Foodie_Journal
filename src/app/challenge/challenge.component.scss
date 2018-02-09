@@ -57,7 +57,13 @@
 
 
 /* Card */
-.card {
+.card-principal {
+  height: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.card-secondary{
   height: 100%;
   margin-left: 15px;
   margin-right: 15px;
@@ -105,8 +111,26 @@
   height: 30px;
 }
 
+.btn-gray {
+  background: #fafafa;
+  border: 1px solid #fafafa;
+  color: #73ccff;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  //padding: 10px, 90px, 10px, 90px;
+  float: left;
+}
 
-
+.btn-gray:hover {
+  opacity: 0.6;
+  background: #eeeded;
+}
+.btn-gray:active {
+  background-color: #eeeded;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
 
 .btn-ch {
     background: #f44336;
@@ -124,4 +148,8 @@ text-align: center;
 padding-left: 0;
 padding-right: 0;
 
+}
+
+.subtitle{
+  padding-bottom: 25px;
 }
