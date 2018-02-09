@@ -5,16 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard/auth-guard.component';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseAppConfigToken } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
-import { ProgressComponent } from './progress/progress.component';
+
 import { FoodTypesComponent } from './food-types/food-types.component';
 import { OptionsComponent } from './options/options.component';
 
@@ -50,6 +52,8 @@ export const environment = {
   }
 };
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,18 +68,13 @@ export const environment = {
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-<<<<<<< HEAD
-    ProgressComponent,
     FeedbackComponent
-=======
-    FoodTypesComponent
-
->>>>>>> 6d7242914f10b979cbc8d38eab9f13d859d0dc97
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
@@ -86,7 +85,7 @@ export const environment = {
     })
     // AgmDirectionModule,
   ],
-  providers: [AuthService, YelpService],
+  providers: [AuthService, YelpService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

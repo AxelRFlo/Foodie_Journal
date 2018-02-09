@@ -130,9 +130,9 @@
   }
 
   .user {
-    float: right;
-    width: 84px;
-    margin-right: 46px;
+    float: left;
+    max-width: 200px;
+    margin-right: 40px;
     margin-top: 15px;
     margin-bottom: 7px;
     font-size: 18px;
@@ -141,9 +141,9 @@
   .userImg {
     width: 30px;
     height: 30px;
-    float: right;
+    float: left;
     margin-top: -38px;
-    margin-right: 14px;
+    margin-right: -20px;
     margin-bottom: 11px;
   }
 
