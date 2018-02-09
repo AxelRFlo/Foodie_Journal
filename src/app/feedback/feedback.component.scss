@@ -1,0 +1,52 @@
+textarea{
+  width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+  color:#f44336;
+  width:100%;
+  resize: none;
+}
+
+.btn-lg{
+  background-color:#f44336
+}
+
+.btn-info:hover{
+  background-color: #f56359 !important;
+}
+
+.btn-info:active{
+    background-color: #f56359 !important;
+}
+
+.btn-lg{
+  background-color:#f44336 !important;
+}
+
+#submit{
+  background-color:#f44336 !important;
+  color:white;
+  width: 30%;
+}
+
+.modal-footer{
+  text-align:center;
+}
+
+#later{
+  width: 30%;
+}
+
+.modal-header, .modal-body{
+  text-align:center;
+}
+
+.modal {
+  margin-top: 100px;
+}
+
+.modal-title {
+  // margin-left: 156px;
+}

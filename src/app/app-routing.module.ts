@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { OptionsComponent } from './options/options.component';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { JourneysComponent } from './journeys/journeys.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 export const routes: Route[] = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -12,7 +13,8 @@ export const routes: Route[] = [
   {path: 'popover', component: PopoverComponent},
   {path: 'options', component: OptionsComponent},
   {path: 'challenge', component: ChallengeComponent},
-  {path: 'journeys/:id', component: JourneysComponent}
+  {path: 'journeys/:id', component: JourneysComponent},
+  {path: 'feedback', component: FeedbackComponent}
 ];
 
 // @NgModule({
