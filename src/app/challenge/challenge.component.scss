@@ -49,6 +49,22 @@
 .journeys {
   margin-left: 42px;
   margin-top: 20px;
+  z-index: 200;
+  display: flex;
+}
+
+.goBack {
+  position: absolute;
+}
+
+.goB {
+  width: 100px;
+  margin-left: 98px;
+  margin-top: -24px;
+}
+
+.types {
+  color: rgb(254, 82, 64);
 }
 
 /* Card */
@@ -56,6 +72,7 @@
   height: 100%;
   margin-left: 15px;
   margin-right: 15px;
+  margin-top: 65px;
 }
 
 .infoo {

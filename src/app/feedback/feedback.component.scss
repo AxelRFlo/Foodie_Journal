@@ -1,28 +1,40 @@
+.stylish {
+  margin-top: 10px;
+}
 textarea{
   width: 600px;
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-  color:#f44336;
   width:100%;
   resize: none;
 }
 
-.btn-lg{
-  background-color:#f44336
+.btn-info {
+  color: #fff;
+  border-color: #adadad;
 }
 
 .btn-info:hover{
-  background-color: #f56359 !important;
+  background-color: rgba(243, 240, 240, 0.2) !important;
 }
 
 .btn-info:active{
-    background-color: #f56359 !important;
+    background-color: rgba(243, 240, 240, 0.2) !important;
+}
+
+.btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+  color: #fff;
+  border-color: #adadad !important;
 }
 
 .btn-lg{
-  background-color:#f44336 !important;
+  background-color: white !important;
+  color: black;
+  font-size: 1.5rem;
+  height: 42px;
+  width: 20%;
 }
 
 #submit{
@@ -32,7 +44,15 @@ textarea{
 }
 
 .modal-footer{
-  text-align:center;
+  justify-content: center;
+}
+
+.btn1, .btn2 {
+  font-size: 1.5rem;
+}
+
+.btn1 {
+  border-color: #adadad;
 }
 
 #later{
@@ -45,8 +65,4 @@ textarea{
 
 .modal {
   margin-top: 100px;
-}
-
-.modal-title {
-  // margin-left: 156px;
 }
