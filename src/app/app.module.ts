@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard/auth-guard.component';
 
 import { AngularFireModule, FirebaseAppConfigToken } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
@@ -62,13 +64,13 @@ export const environment = {
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-    ProgressComponent
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
@@ -79,7 +81,7 @@ export const environment = {
     })
     // AgmDirectionModule,
   ],
-  providers: [AuthService, YelpService],
+  providers: [AuthService, YelpService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

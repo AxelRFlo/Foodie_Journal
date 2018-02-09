@@ -10,17 +10,29 @@ import { OAuthProvider } from '@firebase/auth-types';
 
 @Injectable()
 export class AuthService {
-  user: Observable<firebase.User>;  
+  userDetails: any;
+  private user: Observable<firebase.User>;  
   loggedIn = false;
 
 
-  constructor(private firebaseAuth: AngularFireAuth, public af: AngularFireAuth, private _router: Router ) {
-    this.user = firebaseAuth.authState;
+  constructor(private _firebaseAuth: AngularFireAuth, public af: AngularFireAuth, private _router: Router ) {
+    this.user = _firebaseAuth.authState;
+    this.user.subscribe(
+      (user) => {
+        if (user) {
+          this.userDetails = user;
+          console.log(this.userDetails);
+        }
+        else {
+          this.userDetails = null;
+        }
+      }
+    );
 
   }
 
   signup(displayName: string, email: string, password: string) {
-    this.firebaseAuth
+    this._firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
@@ -34,7 +46,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.firebaseAuth
+    this._firebaseAuth
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
@@ -46,17 +58,26 @@ export class AuthService {
         console.log('Something went wrong:', err.message);
       });
   }
+  
   signInWithGoogle() {
-    this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    )
   }
 
+  isLoggedIn() {
+    if (this.userDetails == null ) {
+        return false;
+      } else {
+        return true;
+      }
+    }
   
 
   logout() {
-    this.firebaseAuth
-      .auth
-      .signOut();
-      this._router.navigate(['/home']);
+    this._firebaseAuth.auth.signOut()
+    .then((res) => this._router.navigate(['/home']));
+  
   }
 
 

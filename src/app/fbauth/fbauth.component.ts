@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
 
 
 @Component({

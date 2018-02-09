@@ -5,12 +5,14 @@ import { HomeComponent } from './home/home.component';
 import { OptionsComponent } from './options/options.component';
 import { ChallengeComponent } from './challenge/challenge.component';
 import { JourneysComponent } from './journeys/journeys.component';
+import { AuthGuard } from './auth-guard/auth-guard.component'
 
 export const routes: Route[] = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   {path: 'home', component: HomeComponent},
   {path: 'popover', component: PopoverComponent},
-  {path: 'options', component: OptionsComponent},
+  {path: 'options', component: OptionsComponent, canActivate: [AuthGuard]},
+  
   {path: 'challenge', component: ChallengeComponent},
   {path: 'journeys/:id', component: JourneysComponent}
 ];

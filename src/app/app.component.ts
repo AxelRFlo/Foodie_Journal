@@ -4,6 +4,9 @@ import { AuthService } from './auth.service';
 import { auth } from 'firebase/app';
 import { FirebaseAuth } from '@firebase/auth-types';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-root',
