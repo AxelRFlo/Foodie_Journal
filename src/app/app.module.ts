@@ -33,6 +33,7 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressComponent } from './progress/progress.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 export const environment = {
@@ -60,7 +61,8 @@ export const environment = {
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-    ProgressComponent
+    ProgressComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
