@@ -40,9 +40,9 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(function () {
         this.user = firebase.auth().currentUser;
-        this.user.sendEmailVerification();
     })
       .then(function () {
+        // aún no funciona esto: 
         this.user.updateProfile({
             displayName: "Example User",
             photoURL: "https://example.com/jane-q-user/profile.jpg"
@@ -67,6 +67,7 @@ export class AuthService {
       });
   }
   
+  // para iniciar sesión a través de google, con popup
   signInWithGoogle() {
     this.af.auth.signInWithPopup (
       new firebase.auth.GoogleAuthProvider()

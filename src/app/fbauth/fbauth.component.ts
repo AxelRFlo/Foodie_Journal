@@ -29,7 +29,8 @@ export class FbauthComponent implements OnInit {
 
   ngOnInit() {
   }
-  /* Click events (Template) */
+
+  // sign up de firebase sin poder guardar el nombre de usuario
   signup() {
     this.authService.signup(this.displayName, this.email, this.password, this.photoUrl);
     this.displayName = this.email = this.password = '';
@@ -41,6 +42,7 @@ export class FbauthComponent implements OnInit {
 
   }
 
+  // Logout te manda al home page
   logout() {
     this.authService.logout();
     this._router.navigate(['/home']);
