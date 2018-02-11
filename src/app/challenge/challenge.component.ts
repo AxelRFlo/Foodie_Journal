@@ -12,7 +12,7 @@ export class ChallengeComponent implements OnInit {
       this.disableBtn = !this.disableBtn;
   }
   
-  private challengeState: number = 0;
+  private challengeState: number = 2;
   buttonText = { 0:"Mark as Started", 1:"Mark as Completed", 2:"Way to go! Take the next challenge" };
 
   constructor(private _router: Router) { }

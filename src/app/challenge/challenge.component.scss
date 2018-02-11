@@ -63,6 +63,10 @@
     display: none;
   }
   
+  .check{
+    margin-left: 233px;
+  }
+  
 }
 
 @media only screen and (min-width: 425px){
@@ -72,7 +76,7 @@
 
   .next{
       display:block;
-      margin-top: -170px;
+      margin-top: -158px;
 
   }
   .previous{
@@ -193,10 +197,6 @@
   
 }
 
-.start{
- 
-}
-
 .btn-pv {
   background: #3f3f3f;
   border: 1px solid #3f3f3f;
@@ -234,3 +234,63 @@
   opacity: 80%;
 }
 
+.check{
+  margin-top: -40px;
+  margin-left: 4px;
+  height: 28px;
+}
+
+@media only screen and (max-width: 425px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 60px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 37px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 9px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 233px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2559px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    //margin-left: 255px;
+    margin-left: 72px;
+  }
+}
+
+@media only screen and (min-width: 2560px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 255px;
+  }
+}
