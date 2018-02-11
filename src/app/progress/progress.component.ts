@@ -26,6 +26,7 @@ export class ProgressComponent implements OnInit {
   italianUrl = '../../assets/italian.png';
   japaneseUrl = '../../assets/japanese.png';
   mexicanUrl = '../../assets/mexican.png';
+  
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
@@ -57,7 +58,7 @@ export class ProgressComponent implements OnInit {
         location.reload();
        }
 
-      // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir 
+      // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir
       if (this.button === 'Continue') {
 
       }
@@ -79,17 +80,23 @@ export class ProgressComponent implements OnInit {
     }
 
     getFoodType() {
+      console.log('Entre a la funcion');
+      console.log(this.Path);
       switch (this.Path) {
         case '0': {
+          console.log('Case 0');
           this.foodType = 'American';
           this.foodDescription = 'One characteristic of American cooking is the'
           + ' fusion of multiple ethnic or regional approaches into completely new cooking styles.';
           this.imgUrl = this.americanUrl;
+          console.log('Food type: ' + this.foodType);
+          console.log('Food description: ' + this.foodDescription);
+          console.log('Image url: ' + this.imgUrl);
           break;
         }
         case '1': {
           this.foodType = 'Korean';
-          this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)'+
+          this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)' +
           ' that accompany steam-cooked short-grain rice.';
           this.imgUrl = this.japaneseUrl;
           break;
@@ -121,7 +128,7 @@ export class ProgressComponent implements OnInit {
         }
       }
 
-      console.log("The current food type is: " + this.foodType);
+      console.log('The current food type is: ' + this.foodType);
     }
 
 

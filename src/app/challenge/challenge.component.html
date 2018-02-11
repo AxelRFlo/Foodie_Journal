@@ -24,8 +24,9 @@
       <!-- </div> -->
     <!-- </div> -->
       <br><br><br><br><br><br>
+      <!-- Text about restaurant -->
       <div class="row">
-        <div class="col-9">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
           <h5 class="card-title">Instructions: <p>Go ahead and ask for the ultimate Caramel Apple Pie.</p>
           </h5>
           <p class="card-text">Vegan, Pitchfork banjo, cold-pressed post-ironic XOXO
@@ -33,17 +34,17 @@
             haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Bansky.
             Pork belly meggings food truck keytar polaroid mustache, farm-to-table.
           </p>
-
+          <!-- Resend text notification button -->
           <div class="resendN">
-              <div class="card resend">
-                <a>
-                  <p class="notif">Resend text notification</p>
-                </a>
-              </div>
+            <div class="card resend">
+              <a class="notif">
+                <p>Resend text notification</p>
+              </a>
             </div>
-
+          </div>
         </div>
-        <div class="col-3">
+        <!-- Information about restaurant -->
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 smSide">
           <div class="card infoo">
             <ul class="list-group list-group-flush">
               <li class="list-group-item hours">
@@ -66,20 +67,18 @@
     </div>
   </div>
 
-
-
-
+  
   <div class="buttons-down">
     <div class="row">
-      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
-        <button class="button btn-ch">B1</button>
+      <div class="col-xs-12 .col-md-12 col-lg-4 previous" href="#">
+        <button class="button btn-pv">Previous</button>
       </div>
       <div class="col-xs-12 .col-md-12 col-lg-4 start" href="#" >
-        <button class="button btn-ch">Mark as Started</button>
+          <button class="button btn-ch" [ngClass]="{'btn-ch': challengeState == '0','btn-st': challengeState == '1','btn-wt': challengeState == '2'}"> {{ buttonText[challengeState] }}</button>
       </div>
-      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
-        <button class="button btn-ch">B3</button>
-      </div>
+     <div class="col-xs-12 .col-md-12 col-lg-4 next" href="#">
+        <button class="btn-nx" type="button" [disabled]="disableBtn" name="button" (click)="next()">Next</button>
+      </div> 
     </div>
   </div> 
 

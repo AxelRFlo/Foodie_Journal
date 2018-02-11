@@ -6,6 +6,8 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { Router } from "@angular/router";
 import { OAuthProvider } from '@firebase/auth-types';
+import { YelpService } from './services/yelp.service';
+
 
 
 @Injectable()
@@ -16,8 +18,10 @@ export class AuthService {
  
   loggedIn = false;
 
+  following: any;
 
-  constructor(private _firebaseAuth: AngularFireAuth, public af: AngularFireAuth, private _router: Router ) {
+  constructor(private _firebaseAuth: AngularFireAuth, public af: AngularFireAuth, private _router: Router,
+    private _YelpService: YelpService ) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
@@ -58,7 +62,15 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
+        // Si existe la variable
+        if (this._YelpService.LSGet('Following')) {
+          // Hacemos redirect a la página que esta siguiendo
+          this.following = this._YelpService.LSGet('Following');
+          console.log("I'm following: " + this.following);
+          this._router.navigate(['/journeys/'+this.following]);
+        } else {
         this._router.navigate(['/options']);
+      }
         this.loggedIn = true;
       })
       .catch(err => {
