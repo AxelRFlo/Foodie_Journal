@@ -33,7 +33,7 @@ export class ProgressComponent implements OnInit {
   maxItalian = 1;
   completedChallenges: number;
   lsRoute: string;
-  
+
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
@@ -89,7 +89,7 @@ export class ProgressComponent implements OnInit {
     calculateProgress(){
       //Jalo la variable de completed challenges
       this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
-      
+
       //Divido completed entre max
 
       //Convierto a porcentage
