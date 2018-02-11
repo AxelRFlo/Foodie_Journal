@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth, AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
+
 import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs/Observable';
 import { Router } from "@angular/router";
 import { OAuthProvider } from '@firebase/auth-types';
+import { _getAngularFireDatabase } from 'angularfire2/database';
 
 
 @Injectable()
@@ -13,7 +15,6 @@ export class AuthService {
   userDetails: any;
   private user: Observable<firebase.User>; 
   private currentUser: Observable<firebase.User>;  
- 
   loggedIn = false;
 
 
@@ -67,9 +68,9 @@ export class AuthService {
   }
   
   signInWithGoogle() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    this.af.auth.signInWithPopup (
       new firebase.auth.GoogleAuthProvider()
-    )
+  );
   }
 
   isLoggedIn() {

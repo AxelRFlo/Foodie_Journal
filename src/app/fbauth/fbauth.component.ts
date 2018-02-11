@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { auth } from 'firebase/app';
+import { AuthTokenProvider } from '@firebase/database/dist/esm/src/core/AuthTokenProvider';
+import * as firebase from 'firebase/app';
 
 
 
@@ -13,6 +15,7 @@ import { auth } from 'firebase/app';
   styleUrls: ['./fbauth.component.scss']
 })
 export class FbauthComponent implements OnInit {
+  _firebaseAuth: any;
 
   /* Variables for the credentials (Signup /login form)*/
   displayName: string;
@@ -43,9 +46,8 @@ export class FbauthComponent implements OnInit {
     this._router.navigate(['/home']);
   }
 
-  signInWithGoogle(){
 
-  }
+
   
   
   
