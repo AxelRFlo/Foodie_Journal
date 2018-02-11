@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
@@ -74,6 +75,7 @@ export const environment = {
     RouterModule.forRoot(routes),
     PopoverModule,
     HttpClientModule,
+    CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCpHIbt_qDK9479Vba3tTvc-MMezfhQr7U'
     }),
