@@ -9,7 +9,7 @@ button {
     border: 1px;
     cursor: pointer;
     max-width: 60%;
-    
+
 }
 
 button:hover {
@@ -29,12 +29,18 @@ button:hover {
     margin-right: 10px;
     overflow: hidden;
     cursor: pointer;
+    height: 46px;
+    margin-top: 10px;
   }
   #btnLog:hover {
-    
+
     opacity: 0.4;
     background-color: rgb(254, 82, 64);
   }
+  .btn-outline-primary:hover {
+    color: #fff;
+    border-color: rgb(254, 82, 64);
+}
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -62,12 +68,12 @@ button:hover {
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
-    
+
 @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
 

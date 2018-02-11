@@ -7,6 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./challenge.component.scss']
 })
 export class ChallengeComponent implements OnInit {
+  disableBtn: boolean;
+  challengeState = 0;
+  buttonText = { 0: 'Mark as Started', 1: 'Mark as Completed', 2: 'Way to go! Take the next challenge' };
+
+  next() {
+      this.disableBtn = !this.disableBtn;
+  }
 
   constructor(private _router: Router) { }
 
