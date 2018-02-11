@@ -15,7 +15,7 @@ export const routes: Route[] = [
   {path: 'feedback', component: FeedbackComponent},
   {path: 'options', component: OptionsComponent, canActivate: [AuthGuard]},
   {path: 'challenge', component: ChallengeComponent, canActivate: [AuthGuard]},
-  {path: 'journeys/:id', component: JourneysComponent, canActivate: [AuthGuard]},
+  {path: 'journeys/:id', component: JourneysComponent},
 ];
 
 // @NgModule({
