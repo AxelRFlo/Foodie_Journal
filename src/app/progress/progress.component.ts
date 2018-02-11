@@ -18,7 +18,7 @@ export class ProgressComponent implements OnInit {
   currentJourney: string;
   button = 'Follow';
   foodType: string;
-  completion: number;
+
   foodDescription: string;
   imgUrl: string;
   americanUrl = '../../assets/american.png';
@@ -26,7 +26,13 @@ export class ProgressComponent implements OnInit {
   italianUrl = '../../assets/italian.png';
   japaneseUrl = '../../assets/japanese.png';
   mexicanUrl = '../../assets/mexican.png';
-  
+
+  // Progress variables
+  completion: number;
+  maxChallenges = 6;
+  maxItalian = 1;
+  completedChallenges: number;
+  lsRoute: string;
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
@@ -44,6 +50,8 @@ export class ProgressComponent implements OnInit {
       });
     this.sub.unsubscribe();
     this.getFoodType();
+    this.calculateProgress();
+    //this.completion = 72;
 
   }
 
@@ -79,6 +87,22 @@ export class ProgressComponent implements OnInit {
       // Reviso si estoy siguiendo algo
     }
 
+    calculateProgress(){
+      // Jalo la variable de completed challenges
+      console.log("Me tiene que dar false o null: " + this._YelpService.LSGet(this.lsRoute));
+      if(this._YelpService.LSGet(this.lsRoute)){
+      this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
+      // Divido completed entre max
+      this.completion = this.completedChallenges / this.maxChallenges;
+      this.completion = this.completion * 100;
+      console.log("Completion percentage: " + this.completion)
+      } else {
+        console.log("Setting the completion to 0%");
+        this.completion = 0;
+
+      }
+    }
+
     getFoodType() {
       console.log('Entre a la funcion');
       console.log(this.Path);
@@ -89,6 +113,7 @@ export class ProgressComponent implements OnInit {
           this.foodDescription = 'One characteristic of American cooking is the'
           + ' fusion of multiple ethnic or regional approaches into completely new cooking styles.';
           this.imgUrl = this.americanUrl;
+          this.lsRoute = 'completedAmerican';
           console.log('Food type: ' + this.foodType);
           console.log('Food description: ' + this.foodDescription);
           console.log('Image url: ' + this.imgUrl);
@@ -98,7 +123,8 @@ export class ProgressComponent implements OnInit {
           this.foodType = 'Korean';
           this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)' +
           ' that accompany steam-cooked short-grain rice.';
-          this.imgUrl = this.japaneseUrl;
+          this.imgUrl = this.koreanUrl;
+          this.lsRoute = 'completedKorean';
           break;
         }
         case '2': {
@@ -106,6 +132,7 @@ export class ProgressComponent implements OnInit {
           this.foodDescription = 'Italian cooks rely chiefly on the quality of the ingredients rather than on elaborate preparation.' +
           ' Pasta, vegetables, olive oil and fish are a major part of the Italian cuisine.';
           this.imgUrl = this.italianUrl;
+          this.lsRoute = 'completedItalian';
           break;
         }
         case '3': {
@@ -113,6 +140,7 @@ export class ProgressComponent implements OnInit {
           this.foodDescription = 'Mexican cuisine is as complex as other ancient cuisines, It is created mostly with ingredients '
           + 'native to Mexico.';
           this.imgUrl = this.mexicanUrl;
+          this.lsRoute = 'completedMexican';
           break;
         }
         case '4': {
@@ -120,10 +148,11 @@ export class ProgressComponent implements OnInit {
           this.foodDescription = 'The traditional cuisine of Japan is based on rice with miso soup and other dishes. '
          + 'there is an emphasis on seasonal ingredients.';
           this.imgUrl = this.japaneseUrl;
+          this.lsRoute = 'completedJapense';
           break;
         }
         default: {
-          console.log('Default case');
+          console.log('Path checking error.');
           break;
         }
       }

@@ -7,6 +7,7 @@
     color: rgb(15, 10, 10);
     border: none;
     cursor: pointer;
+    float: right;
   }
   .btnDuration:hover {
     opacity: 0.6;
@@ -28,6 +29,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    float: right;
   }
   .btnGS:hover {
     opacity: 0.6;
@@ -76,10 +78,6 @@
       width: 100%;
   }
 
-  .bodyNavPro {
-    margin-top: -10px !important;
-  }
-
   .smallSide {
     margin-left: 200px;
     margin-top: -80px;
@@ -87,17 +85,18 @@
 
   .smalSide {
     margin-left: 128px;
-    margin-top: -130px;
+    margin-top: -178px;
     width: 60%;
   }
 
   .btnGS {
-    width: 115%;
+    width: 116%;
     margin-left: -24px;
   }
 
   .btnDuration {
     width: 50%;
+    float: left;
   }
 }
 
@@ -155,6 +154,6 @@ h1 {
 .food {
   position: relative;
   display: inline-block;
-  margin-left: 41px;
-  margin-top: 39px;
+  margin-left: 30px;
+  margin-top: 32px;
 }
