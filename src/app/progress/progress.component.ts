@@ -57,7 +57,7 @@ export class ProgressComponent implements OnInit {
         location.reload();
        }
 
-      // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir 
+      // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir
       if (this.button === 'Continue') {
 
       }
@@ -89,7 +89,7 @@ export class ProgressComponent implements OnInit {
         }
         case '1': {
           this.foodType = 'Korean';
-          this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)'+
+          this.foodDescription = 'Traditional Korean meals are noted for the number of side dishes (banchan)' +
           ' that accompany steam-cooked short-grain rice.';
           this.imgUrl = this.japaneseUrl;
           break;
@@ -121,7 +121,7 @@ export class ProgressComponent implements OnInit {
         }
       }
 
-      console.log("The current food type is: " + this.foodType);
+      console.log('The current food type is: ' + this.foodType);
     }
 
 
