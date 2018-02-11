@@ -40,19 +40,14 @@ export class ProgressComponent implements OnInit {
     switch (Path) {
       case 0:
       return 'American';
-      break;
       case 1:
       return 'korean';
-      break;
       case 2:
       return'italian';
-      break;
       case 3:
       return'mexican';
-      break;
       case 4:
       return'japanese';
-      break;
       }
       return;
     }

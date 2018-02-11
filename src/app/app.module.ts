@@ -34,6 +34,9 @@ import { RestaurantInfoComponent } from './components/restaurant-info/restaurant
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressComponent } from './progress/progress.component';
 
+import {ModalGalleryModule} from 'angular-modal-gallery';
+import 'hammerjs';
+import 'mousetrap';
 
 export const environment = {
   production: false,
@@ -73,8 +76,9 @@ export const environment = {
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCpHIbt_qDK9479Vba3tTvc-MMezfhQr7U'
-    })
+    }),
     // AgmDirectionModule,
+    ModalGalleryModule.forRoot()
   ],
   providers: [AuthService, YelpService],
   bootstrap: [AppComponent]
