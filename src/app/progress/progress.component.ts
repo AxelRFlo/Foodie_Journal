@@ -33,7 +33,6 @@ export class ProgressComponent implements OnInit {
   maxItalian = 1;
   completedChallenges: number;
   lsRoute: string;
-  
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
@@ -51,6 +50,8 @@ export class ProgressComponent implements OnInit {
       });
     this.sub.unsubscribe();
     this.getFoodType();
+    this.calculateProgress();
+    //this.completion = 72;
 
   }
 
@@ -88,13 +89,18 @@ export class ProgressComponent implements OnInit {
 
     calculateProgress(){
       //Jalo la variable de completed challenges
+      console.log("Me tiene que dar false o null: " + this._YelpService.LSGet(this.lsRoute));
+      if(this._YelpService.LSGet(this.lsRoute)){
       this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
-      
       //Divido completed entre max
+      this.completion = this.completedChallenges / this.maxChallenges;
+      this.completion = this.completion * 100;
+      console.log("Completion percentage: " + this.completion)
+      } else {
+        console.log("Setting the completion to 0%");
+        this.completion = 0;
 
-      //Convierto a porcentage
-
-      //Igualo con completion
+      }
     }
 
     getFoodType() {
