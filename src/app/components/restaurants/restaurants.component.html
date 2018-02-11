@@ -1,6 +1,6 @@
 <div *ngIf="restaurants.length>0 else notfound">
   <div *ngFor="let restaurant of restaurants; let i=index">
-    <app-restaurant-info [restaurant]="restaurant"></app-restaurant-info>
+    <app-restaurant-info [restaurant]="restaurant"  [Path]="Path"></app-restaurant-info>
   </div>
 </div>
 <ng-template #notfound>

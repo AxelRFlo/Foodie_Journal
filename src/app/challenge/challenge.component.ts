@@ -13,4 +13,7 @@ export class ChallengeComponent implements OnInit {
   ngOnInit() {
   }
 
+  jour(id): void {
+    this._router.navigate(['/journeys/' + id]);
+  }
 }

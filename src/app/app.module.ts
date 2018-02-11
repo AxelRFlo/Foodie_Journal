@@ -5,16 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard/auth-guard.component';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseAppConfigToken } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
-import { ProgressComponent } from './progress/progress.component';
+
 import { FoodTypesComponent } from './food-types/food-types.component';
 import { OptionsComponent } from './options/options.component';
 
@@ -34,7 +36,8 @@ import { AgmCoreModule} from '@agm/core';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ChallengeCommentsComponent } from './challenge-comments/challenge-comments.component';
+import { ProgressComponent } from './progress/progress.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 export const environment = {
@@ -48,6 +51,8 @@ export const environment = {
     messagingSenderId: '169349660577'
   }
 };
+
+
 
 @NgModule({
   declarations: [
@@ -63,14 +68,13 @@ export const environment = {
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-    FoodTypesComponent,
-    ChallengeCommentsComponent
-
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
@@ -81,7 +85,7 @@ export const environment = {
     })
     // AgmDirectionModule,
   ],
-  providers: [AuthService, YelpService],
+  providers: [AuthService, YelpService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
