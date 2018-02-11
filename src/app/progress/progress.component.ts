@@ -26,7 +26,7 @@ export class ProgressComponent implements OnInit {
   italianUrl = '../../assets/italian.png';
   japaneseUrl = '../../assets/japanese.png';
   mexicanUrl = '../../assets/mexican.png';
-  
+
 
   constructor(private route: ActivatedRoute, private _YelpService: YelpService) {
 
