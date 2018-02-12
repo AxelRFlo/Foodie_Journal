@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ChallengeComponent implements OnInit {
   disableBtn: boolean;
-  challengeState = 0;
+  challengeState = 2;
   buttonText = { 0: 'Mark as Started', 1: 'Mark as Completed', 2: 'Way to go! Take the next challenge' };
 
   next() {
