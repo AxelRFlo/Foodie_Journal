@@ -61,13 +61,16 @@ export class YelpService {
       return this.LSGet("restaurant:"+id)
     }
     else{
+      var rest:any;
       this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        return data;
+        const rest= data;
       },
       error => <any>error,
       () => {
         console.log(this.subRes);
         this.subRes.unsubscribe();
+        console.log("case"+this.subRes);
+        return rest;
       });
     }
   }
@@ -90,23 +93,34 @@ export class YelpService {
   }
 
 
-  private LSGet(key: string): any {
+  LSGet(key: string): any {
     return JSON.parse(localStorage.getItem(key));
   }
 
-  private LSSet(key: string, value: any): void {
+  LSSet(key: string, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  Getday(){
+  Getday() {
     return this.weekday[new Date().getDay()];
   }
-  Getcat(id){
-    var array=[];
+  Getcat(id) {
+    const array = [];
     for (let i in this.categories[id]) {
-      console.log(i);
-      array.push(i=this.categories[id][i]["name"]);
+      array.push(i=this.categories[id][i]['name']);
    }
     return array;
+  }
+  ValidChallengeURL(id,path,challenge){
+    var categoryList= this.categories[path][challenge]["cat"].split(',');
+    for (let j in categoryList) {
+      console.log(categoryList[j]);
+      for (let i in id) {
+        if (id[i]['alias'] == categoryList[j]){
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

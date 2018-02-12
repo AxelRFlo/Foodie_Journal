@@ -1,17 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div class="header">
-  <img id="logo" alt="Foodie Journal" src="../assets/logo.png">
-  <a (click)='homee()' [routerLink]="['/home']" id="logo">FoodieJournal</a>
-  <a href="" id="btnLog">Login</a>
-  <a (click)='popover()' [routerLink]="['/challenge']" id="btnLog" >Login</a>
-</div> -->
 
 <div class="section">
   <div class="row">
     <div class="col-12 menu">
       <h1 id="title">Challenge Yourself</h1> <br>
-      <p id="subtitle">Foodie Journal makes it easy for you to embark on a journy to discover new cousines.</p><br>
-      <button id="btnGS" class="block" (click)='options()' [routerLink]="['/options']">Get Started</button>
+      <p id="subtitle">Foodie Journal makes it easy for you to embark <br>
+        on a journey to discover new cuisines.</p><br>
+      <button id="btnGS"  class="block" (click)='options()' [routerLink]="['/options']">Get Started</button>
     </div>
   </div>
   <div id="discover"><a class="dm" href="#2">
@@ -43,18 +37,20 @@
 </div>
 
 <footer>
-  <div class="container">
-    <div class="row justify-content-center">
-      <p class="p">Developed by: </p>
-    </div>
-    <div class="flex-container">
-      <div>
-        <a href="https://www.accenture.com">
-          <img src="../../assets/Acc_Logo.png" class="logo-acc" alt="Acc Logo">
-        </a>
+  <div class="backColor">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="p">Developed by: </p>
       </div>
-      <div>
-        <img class="logo-team" (click)='about()' [routerLink]="['/about']" src="../../assets/logo_scrumble.png" alt="Team Logo">
+      <div class="flex-container">
+        <div>
+          <a href="https://www.accenture.com">
+            <img src="../../assets/Acc_Logo.png" class="logo-acc" alt="Acc Logo">
+          </a>
+        </div>
+        <div>
+          <img src="../../assets/logo_scrumble.png" (click)='about()' [routerLink]="['/about']" class="logo-accenture" alt="Team Logo">
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,93 @@
+.stylish {
+  margin-top: 10px;
+}
+textarea{
+  width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+  width:100%;
+  resize: none;
+}
+
+.btn-info {
+  color: #fff;
+  border-color: #adadad;
+}
+
+.btn-info:hover{
+  background-color: rgba(243, 240, 240, 0.2) !important;
+}
+
+.btn-info:active{
+    background-color: rgba(243, 240, 240, 0.2) !important;
+}
+
+.btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+  color: #fff;
+  border-color: #adadad !important;
+}
+
+.btn-lg{
+  background-color: white !important;
+  color: black;
+  font-size: 1.5rem;
+  height: 42px;
+  width: 96%;
+}
+
+#submit{
+  background-color:#f44336 !important;
+  color:white;
+  width: 30%;
+}
+
+.modal-footer{
+  justify-content: center;
+}
+
+.btn1, .btn2 {
+  font-size: 1.5rem;
+}
+
+.btn1 {
+  border-color: #adadad;
+}
+
+#later{
+  width: 30%;
+}
+
+.modal-header, .modal-body{
+  text-align:center;
+}
+
+.modal {
+  margin-top: 100px;
+}
+
+.container {
+  float: right;
+  margin-top: -52px;
+  width: 170px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 170px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 170px;
+  }
+}
+
+@media (min-width: 767px) {
+  .container {
+    width: 170px !important;
+    margin-top: -52px;
+  }
+}

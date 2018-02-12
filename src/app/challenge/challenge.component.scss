@@ -24,84 +24,26 @@
   padding: 15px;
 }
 
-/* For desktop: */
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-
-    .start {
-      //display: grid;
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: 0px !important;
-      margin-right:0px !important;
-      box-sizing: border-box;
-      position: relative;
-      width: 100%;   
-  }
-
-  .previous{
-    display: none;
-  }
-
-  .next{
-    display: none;
-  }
-  
-  .check{
-    margin-left: 233px;
-  }
-}
-
-@media only screen and (min-width: 425px){
-  [class*="col-"] {
-      width: 100%;
-  }
-
-  .next{
-      display:block;
-      margin-top: -158px;
-
-  }
-  .previous{
-    display:block;
-  }
-}
-
-@media only screen and (min-width: 1024px){
-  [class*="col-"] {
-      width: 100%;
-  }
-
-  .next{
-      display:block;
-      margin-top: 0;
-  }
-
-  .previous{
-    display:block;
-  }
-}
-
 /* Body */
 .journeys {
   margin-left: 42px;
   margin-top: 20px;
+  z-index: 200;
+  display: flex;
+}
+
+.goBack {
+  position: absolute;
+}
+
+.goB {
+  width: 100px;
+  margin-left: 98px;
+  margin-top: -24px;
+}
+
+.types {
+  color: rgb(254, 82, 64);
 }
 
 /* Card */
@@ -109,17 +51,38 @@
   height: 100%;
   margin-left: 15px;
   margin-right: 15px;
+  margin-top: 65px;
+}
+
+.card-title {
+  font-size: 2rem;
 }
 
 .infoo {
+  margin-left: 82px;
+  margin-top: 0;
+  width: 22rem !important;
   margin-left: 0;
-  width: 16rem !important;
+  height: 190px;
 }
 
 .titlee {
   // text-align: center;
   margin-top: -25px;
   margin-left: 68px;
+  font-size: 2.5rem;
+}
+
+.sideText {
+  width: 138px;
+  margin-top: -24px;
+  margin-left: 27px;
+}
+
+.sideText1{
+  width: 138px;
+  margin-top: -24px;
+  margin-left: 27px;
 }
 
 .imgFood {
@@ -138,24 +101,56 @@
   margin-left: 20px;
 }
 
-.check-top {
-  
+#colored {
+  color: rgb(228, 47, 47);
+  margin-bottom: 0px;
 }
 
-#colored {
+#colorgreen {
   color: rgb(47, 228, 47);
   margin-bottom: 0px;
 }
 
-.phoneImg {
-  width: 30px;
-  height: 30px;
+agm-map{
+  height: 200px;
+}
+.phoneImg, .emailImg {
+  width: 24px;
+  height: 20px;
 }
 
-.emailImg {
-  width: 30px;
-  height: 30px;
+.list-group-item {
+  background-color: #ebebeb;
 }
+
+.resend {
+  margin-top: 0px;
+  width: 22rem !important;
+  background-color: #ebebeb;
+  text-align: center;
+  height: 70px;
+  padding-top: 13px;
+  margin-left: 0px;
+}
+
+.resendN {
+  margin-top: 4px
+}
+
+.notif {
+  margin-top: 9px;
+}
+
+.hours {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.information {
+  padding-top: 20px;
+  padding-bottom: 11px;
+}
+
 
 .btn-ch {
     background: #f44336;
@@ -197,8 +192,9 @@
   padding-left: 5px;
   padding-right:5px;
   width: 100%;
-  
+
 }
+
 
 .btn-pv {
   background: #3f3f3f;
@@ -228,17 +224,139 @@
   width: 45%;
   margin-right: 5%;
   float:right;
+  margin-top: 0px;
+}
+
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 767px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .titlee {
+    width: 142px;
+    font-size: 1.6rem;
+  }
+
+  .smSide {
+    margin-top: -173px;
+  }
+
+  .infoo {
+    margin-right: 0px;
+    height: 143px !important;
+    width: 18rem !important;
+  }
+
+  .hours, .information {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .resend {
+    margin-left: 192px !important;
+    width: 16rem !important;
+    margin-right: 0px;
+    height: 143px !important;
+  }
+
+  .notif {
+    margin-top: 33px !important;
+  }
+
+  .start {
+    //display: grid;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0px !important;
+    margin-right:0px !important;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+  }
+
+  .previous{
+    display: none;
+  }
+
+  .next{
+    display: none;
+  }
+
+  .check{
+    margin-left: 233px;
+  }
+
+  .check-1 {
+    margin-left: 22px !important;
+    margin-top: -40px;
+  }
+
+}
+
+@media only screen and (min-width: 425px){
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .next{
+    display:block;
+    margin-top: -170px;
+
+  }
+  .previous{
+    display:block;
+  }
+
+  .check-1 {
+    margin-left: 56px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .next{
+    display:block;
+    margin-top: 0;
+  }
+
+  .previous{
+    display:block;
+  }
+
+  .check-1 {
+    margin-left: 3px;
+    margin-top: -40px;
+  }
 }
 
 .btn-nx:disabled {
   background-color: #eee;
-  color: rgb(202, 202, 202); 
+  color: rgb(202, 202, 202);
   border: 1px solid rgb(202, 202, 202);
   opacity: 80%;
 }
 
 .check{
-  margin-top: -40px;
+  margin-top: 10px;
   margin-left: 4px;
   height: 28px;
 }
@@ -248,7 +366,7 @@
       width: 100%;
   }
   .check{
-    margin-left: 60px;
+    margin-left: 8px;
   }
 }
 
@@ -257,7 +375,10 @@
       width: 100%;
   }
   .check{
-    margin-left: 37px;
+    margin-left: 10px;
+  }
+  .check-1 {
+    margin-left: 30px;
   }
 }
 
@@ -270,13 +391,29 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px){
+@media only screen and (min-width: 767px) and (max-width: 1023px){
   [class*="col-"] {
       width: 100%;
   }
   .check{
-    margin-left: 233px;
+    margin-left: 16px;
   }
+
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+  .btn-nx {
+    margin-top: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 2559px){
@@ -285,7 +422,10 @@
   }
   .check{
     //margin-left: 255px;
-    margin-left: 72px;
+    margin-left: 15px;
+  }
+  .check-1 {
+    margin-left: 66px;
   }
 }
 
@@ -294,6 +434,9 @@
       width: 100%;
   }
   .check{
-    margin-left: 255px;
+    margin-left: 16px;
+  }
+  .check-1 {
+    margin-left: 246px;
   }
 }

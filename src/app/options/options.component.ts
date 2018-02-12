@@ -11,6 +11,7 @@ export class OptionsComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit() {
+    
   }
 
   foods(id): void {

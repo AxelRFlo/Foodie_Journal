@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+import { auth } from 'firebase/app';
+import { FirebaseAuth } from '@firebase/auth-types';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +17,8 @@ export class AppComponent implements OnInit {
 
   title = 'app';
 
-  constructor(private _router: Router) { }
+
+  constructor(public authService: AuthService, private _router: Router, public af: AngularFireAuth) { }
 
   ngOnInit() {
   }
@@ -25,4 +33,16 @@ export class AppComponent implements OnInit {
   closeNav() {
   }
 
+  logout() {
+    this.authService.logout();
+    this._router.navigate(['/home']);
+  }
+
+  isLoggedIn () {
+    if ( this.authService.isLoggedIn() ) {
+      return true;
+  }
+  return false;
 }
+
+  }

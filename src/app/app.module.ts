@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard/auth-guard.component';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule, FirebaseAppConfigToken } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopoverComponent } from './popover/popover.component';
 import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
+
+import { FoodTypesComponent } from './food-types/food-types.component';
 import { OptionsComponent } from './options/options.component';
+
 
 import { RouterModule, Routes } from '@angular/router';
 import { ChallengeComponent } from './challenge/challenge.component';
@@ -28,13 +34,18 @@ import { YelpService } from './services/yelp.service';
 import { AgmCoreModule} from '@agm/core';
 // import { AgmDirectionModule } from 'agm-direction';
 
-import { FoodTypesComponent } from './food-types/food-types.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressComponent } from './progress/progress.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { AboutComponent } from './about/about.component';
+import { OAuthProvider, GoogleAuthProvider_Instance, GoogleAuthProvider } from '@firebase/auth-types';
+import { AuthTokenProvider } from '@firebase/database/dist/esm/src/core/AuthTokenProvider';
 
+import {ModalGalleryModule} from 'angular-modal-gallery';
+import 'hammerjs';
+import 'mousetrap';
 
 export const environment = {
   production: false,
@@ -48,6 +59,8 @@ export const environment = {
   }
 };
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,30 +68,34 @@ export const environment = {
     PopoverComponent,
     HomeComponent,
     OptionsComponent,
+    ProgressComponent,
     ChallengeComponent,
     JourneysComponent,
     HeaderComponent,
     FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
-    ProgressComponent,
+    FeedbackComponent,
     AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
     PopoverModule,
     HttpClientModule,
+    CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCpHIbt_qDK9479Vba3tTvc-MMezfhQr7U'
-    })
+    }),
     // AgmDirectionModule,
+    ModalGalleryModule.forRoot()
   ],
-  providers: [AuthService, YelpService],
+  providers: [AuthService, YelpService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
