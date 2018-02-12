@@ -13,14 +13,16 @@
   <!-- Body of Card -->
   <div class="card">
     <img src="../../assets/avatar_circle.png" class="number">
-    <h5 class="titlee">All-American Bacon Cheese Burger</h5>
+    <h5 class="titlee">{{InfoRest.name}}</h5>
     <div class="card-body">
       <!-- <div class="row"> -->
         <!-- <div class="col-6 col-sm-4" href="#"> -->
           <img src="../../assets/avatar.png" class="rounded float-left">
         <!-- </div> -->
       <!-- <div class="col-6 col-sm-4" href="#" > -->
-        <img src="../../assets/avatar.png" class="rounded float-right">
+          <agm-map [latitude]="InfoRest.coordinates.latitude" [longitude]="InfoRest.coordinates.longitude" [zoom]=15>
+              <agm-marker [latitude]="InfoRest.coordinates.latitude" [longitude]="InfoRest.coordinates.longitude"></agm-marker>
+          </agm-map>
       <!-- </div> -->
     <!-- </div> -->
       <br><br><br><br><br><br>
@@ -48,12 +50,14 @@
           <div class="card infoo">
             <ul class="list-group list-group-flush">
               <li class="list-group-item hours">
-                <strong>Today</strong> 8:00 am - 9:00 pm <p id="colored">Open now</p>
+                <strong>Today</strong> 8:00 am - 9:00 pm
+                <p id="{{InfoRest.is_closed ? 'colored' : 'colorgreen'}}">{{InfoRest.is_closed ? 'Closed' : 'Open now'}}</p>
+
               </li>
               <li class="list-group-item information">
                 <img src="../../assets/phone.png" class="phoneImg">
                 <a>
-                  <p class="sideText">(510) 653-3394</p>
+                  <p class="sideText">{{InfoRest.display_phone}}</p>
                 </a>
                 <img src="../../assets/link.png" class="emailImg">
                 <a>

@@ -25,7 +25,6 @@ export class JourneysComponent implements OnInit {
       console.log(this.Categories);
       // Especificamos cual es mi journey actual en LS
       });
-    this.sub.unsubscribe();
   }
 
   foodieJo(): void {

@@ -61,13 +61,16 @@ export class YelpService {
       return this.LSGet("restaurant:"+id)
     }
     else{
+      var rest:any;
       this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        return data;
+        const rest= data;
       },
       error => <any>error,
       () => {
         console.log(this.subRes);
         this.subRes.unsubscribe();
+        console.log("case"+this.subRes);
+        return rest;
       });
     }
   }

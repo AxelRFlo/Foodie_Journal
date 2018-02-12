@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { YelpService } from '../../services/yelp.service';
@@ -6,13 +6,14 @@ import { Subscription } from 'rxjs/Subscription';
 import { NgModel } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 
 @Component({
   selector: 'app-restaurant-info',
   templateUrl: './restaurant-info.component.html',
   styleUrls: ['./restaurant-info.component.scss']
 })
-export class RestaurantInfoComponent implements OnInit {
+export class RestaurantInfoComponent implements OnInit{
   @Input() restaurant;
   @Input() Path;
   errorMessage: any;
@@ -23,6 +24,19 @@ export class RestaurantInfoComponent implements OnInit {
   open;
   close;
   hidden = true;
+  modal=false;
+  imagesArray: Array<Image> = [
+    new Image(
+      'http://qnimate.com/wp-content/uploads/2014/03/images2.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    ),new Image(
+      'http://qnimate.com/wp-content/uploads/2014/03/images2.jpg',
+      null, // no thumb
+      null, // no description
+      'http://www.google.com'
+    )]
 
   constructor(private _YelpService: YelpService) { }
 
@@ -42,5 +56,9 @@ export class RestaurantInfoComponent implements OnInit {
       // muestro el botón
       this.hidden = false;
     }
+  }
+  myFunc(){
+    console.log(this.restaurant);
+    this.restaurant.id="this";
   }
 }

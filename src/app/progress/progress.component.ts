@@ -50,8 +50,8 @@ export class ProgressComponent implements OnInit {
       });
     this.sub.unsubscribe();
     this.getFoodType();
-    this.calculateProgress();
-    //this.completion = 72;
+    //this.calculateProgress();
+    this.completion = 72;
 
   }
 

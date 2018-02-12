@@ -25,7 +25,10 @@
   </div>
 
   <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">
-    <img class="respic" [src]="restaurant.image_url">
+    <img class="respic" [src]="restaurant.image_url" (click)="myFunc()" >
+    <div *ngIf="modal">
+     <modal-gallery [modalImages]="imagesArray" [imagePointer]="0"></modal-gallery>
+    </div>
   </div>
   <ng-template #nopictemplate>
     <div class="col-md-3 hidden-sm-down">
@@ -34,8 +37,8 @@
   </ng-template>
   
   <div class="col-md-3 hidden-sm-down">
-    <agm-map [latitude]="25.6706772" [longitude]="-100.37717409999999" [zoom]=15>
-        <agm-marker [latitude]="25.6706772" [longitude]="-100.37717409999999" ></agm-marker>
+    <agm-map [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" [zoom]=15>
+        <agm-marker [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.latitude" ></agm-marker>
     </agm-map>
   </div>
 </div>
