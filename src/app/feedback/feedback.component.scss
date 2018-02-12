@@ -70,10 +70,24 @@ textarea{
 .container {
   float: right;
   margin-top: -52px;
+  width: 170px;
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 170px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 170px;
+  }
+}
+
+@media (min-width: 767px) {
+  .container {
+    width: 170px !important;
+    margin-top: -52px;
   }
 }
