@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { YelpService } from '../services/yelp.service';
@@ -42,7 +43,7 @@ export class ChallengeComponent implements OnInit {
       });
   }
 
-  jour(id): void {
-    this._router.navigate(['/journeys/' + id]);
+  jour(): void {
+    this._router.navigate(['/journeys/' + this.path]);
   }
 }
