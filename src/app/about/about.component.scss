@@ -10,7 +10,7 @@ html, body, div {
 @media only screen and (min-width: 320px) and (max-width: 374px) {
     .credits-mobile{
         display: block;
-        //width: 423px;
+        width: 320px;
     }
     .credits-tablet{
         display:none;
@@ -80,5 +80,6 @@ html, body, div {
     }
     .credits-laptop{
         display:block;
+        width: 1440px;
     }
 }
