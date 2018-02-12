@@ -78,6 +78,9 @@
       </div>
       <div class="col-xs-12 .col-md-12 col-lg-4 start" href="#" >
           <button class="button btn-ch" [ngClass]="{'btn-ch': challengeState == '0','btn-st': challengeState == '1','btn-wt': challengeState == '2'}"> {{ buttonText[challengeState] }}</button>
+          <div class="check" *ngIf="challengeState == '2'">
+            <img src="../../assets/check_blue.png" class="check-blue" alt="Check Blue">
+          </div>
       </div>
      <div class="col-xs-12 .col-md-12 col-lg-4 next" href="#">
         <button class="btn-nx" type="button" [disabled]="disableBtn" name="button" (click)="next()">Next</button>
