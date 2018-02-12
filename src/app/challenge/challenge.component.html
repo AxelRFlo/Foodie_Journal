@@ -2,8 +2,15 @@
       <p>Journeys/American</p>
     </div>
 
+    <!-- IF de que si esta el challenge completa se ponga la paloma (check) -->
     <div class="card">
-      <img src="../../assets/avatar_circle.png" class="number">
+      <div class="check" *ngIf="challengeState == '2'; else numberTop">
+            <img src="../../assets/check_blue_top.png" class="check-top" alt="Check Top">
+      </div>
+      <ng-template #numberTop>
+          <img src="../../assets/avatar_circle.png" class="number"> 
+      </ng-template>
+
         <h5 class="titlee">All-American Bacon Cheese Burger</h5>
         <div class="card-body">
           <!-- <div class="row"> -->
