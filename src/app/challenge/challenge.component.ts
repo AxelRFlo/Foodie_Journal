@@ -11,13 +11,18 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ChallengeComponent implements OnInit {
   disableBtn: boolean;
-  challengeState = 2;
+  challengeState = 0;
   buttonText = { 0: 'Mark as Started', 1: 'Mark as Completed', 2: 'Way to go! Take the next challenge' };
   sub:Subscription;
+  // id restaurante
   idRest:string;
+  // Informacion del restaurante
   InfoRest:object;
-  path;
-  challenge;
+  // foodtype
+  path: any;
+  // challenge
+  challenge: any;
+
   next() {
       this.disableBtn = !this.disableBtn;
   }
@@ -34,7 +39,7 @@ export class ChallengeComponent implements OnInit {
 
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
 
-      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
+      if (!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)) {
         this._router.navigate(['/home']);
       }
 
@@ -45,5 +50,32 @@ export class ChallengeComponent implements OnInit {
 
   jour(): void {
     this._router.navigate(['/journeys/' + this.path]);
+  }
+
+  completeChallenge() {
+    // Checo si este challenge ya se grabó
+    // si no, pongo que ya se hizo etc.
+    // Si existe la variable, saco el valor, lo paso a number 
+    console.log('Tipo de comida...: ' + this.path);
+    console.log('Id del challenge es... ' + this.challenge);
+    let savePath = this.path + '/' + this.challenge;
+    console.log('Mi save path: ' + savePath);
+    if (this._YelpService.LSGet(this.path)) {
+      let completion = this._YelpService.LSGet(this.path);
+      console.log('completion: ' + completion);
+      let completion2 = parseInt(completion);
+      console.log('Completion parseada: ' + completion2);
+      completion2 = completion2 + 1;
+      console.log('Resultado de la suma' + completion2);
+      this._YelpService.LSSet(this.path, completion2);
+
+    } else {
+      // Si no existe la variable escribo un 1
+      this._YelpService.LSSet(this.path, 1);
+      console.log("Wrote this " + this._YelpService.LSGet(this.path))
+    }
+    console.log("Finished function.");
+
+    // Le agrego uno, y lo guardo en this.path en local storage
   }
 }

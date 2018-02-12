@@ -95,15 +95,43 @@ export class ProgressComponent implements OnInit {
 
     calculateProgress() {
       // Jalo la variable de completed challenges
-      if(this._YelpService.LSGet(this.lsRoute)){
-      this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
-      //Divido completed entre max
-      this.completion = this.completedChallenges / this.maxChallenges;
-      this.completion = this.completion * 100;
-      } else {
-        this.completion = 0;
+      console.log('Im trying to access this variable :'  + this.Path);
+      console.log('My current completion on this module: ' + this._YelpService.LSGet(this.Path));
+      if(this._YelpService.LSGet(this.Path)) {
+        console.log('Existe algo.');
+        this.completion = parseInt(this._YelpService.LSGet(this.Path));
+        console.log('Tipo de completion: ' + typeof(this.completion));
+        // Not italian, which has only 1 challenge.
+        if(this.Path != 2){
+          console.log('Mis challenges completados: ' + this.completion);
+          this.completion = this.completion / this.maxChallenges;
+          console.log('Resultado de completados / 6: ' + this.completion);
+          this.completion = this.completion * 100;
+          this.completion = Math.floor(this.completion);
 
+        } else {
+          // Italian has only one challenge, thus making this a 100% completion rate
+          this.completion = 100;
+        }
+        
+
+      } else {
+        console.log('No hay nada.');
+        this.completion = 0;
       }
+      // if(this._YelpService.LSGet(this.lsRoute)){
+      //   console.log('I found some progress...');
+      // this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
+      // //Divido completed entre max
+      // this.completion = this.completedChallenges / this.maxChallenges;
+      // console.log('Resutlado de la division: ' + this.completion);
+      // this.completion = this.completion * 100;
+      // console.log('Resultado de la mult. por 100' + this.completion);
+      // } else {
+      //   console.log('No progress found on the variable : ' + this.Path);
+      //   this.completion = 0;
+
+      // }
     }
 
     getFoodType() {
