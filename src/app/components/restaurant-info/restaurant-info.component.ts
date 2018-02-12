@@ -16,6 +16,7 @@ import { Image, Action, ImageModalEvent, Description } from 'angular-modal-galle
 export class RestaurantInfoComponent implements OnInit{
   @Input() restaurant;
   @Input() Path;
+  @Input() op;
   errorMessage: any;
   imgerror="https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png";
   restaurantData;

@@ -50,6 +50,8 @@ export class ProgressComponent implements OnInit {
       if (this._YelpService.LSGet('Following') === this.Path) {
         console.log('This path: ' + this.Path + ' Following: ' + this._YelpService.LSGet('Following'));
         this.button = 'Continue';
+      }else{
+        this.button = 'Follow';
       }
       this.getFoodType();
       this.calculateProgress();
