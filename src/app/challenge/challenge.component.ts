@@ -40,6 +40,9 @@ export class ChallengeComponent implements OnInit {
       }
 
       console.log(this.InfoRest);
+      
+
+      console.log(this.InfoRest.hours[0]["open"]);
       // Especificamos cual es mi journey actual en LS
       });
   }

@@ -17,6 +17,7 @@
   </div>
 
   <div class="col-md-3 col-sm-6 bushours">
+    {{today.length>0 ? today  : ''}}
     <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
 
     <div class="underline"></div>
