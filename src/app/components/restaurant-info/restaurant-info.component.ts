@@ -7,6 +7,7 @@ import { NgModel } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-info',
@@ -15,6 +16,7 @@ import { Image, Action, ImageModalEvent, Description } from 'angular-modal-galle
 })
 export class RestaurantInfoComponent implements OnInit{
   @Input() restaurant;
+  @Input() Op;
   @Input() Path;
   @Input() op;
   errorMessage: any;
@@ -39,7 +41,7 @@ export class RestaurantInfoComponent implements OnInit{
       'http://www.google.com'
     )]
 
-  constructor(private _YelpService: YelpService) { }
+  constructor(private _router: Router, private _YelpService: YelpService) { }
 
   ngOnInit() {
     this.weekday=this._YelpService.Getday();
@@ -58,8 +60,9 @@ export class RestaurantInfoComponent implements OnInit{
       this.hidden = false;
     }
   }
-  myFunc(){
-    console.log(this.restaurant);
-    this.restaurant.id="this";
+  Gochallenge(): void {
+      // alert('cambio de pantalla');
+      this._router.navigate(['/challenge/'+this.Path+'/'+this.Op+'/'+this.restaurant.id]);
+    }
+    
   }
-}

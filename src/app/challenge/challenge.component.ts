@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { YelpService } from '../services/yelp.service';
@@ -15,6 +16,10 @@ export class ChallengeComponent implements OnInit {
   sub:Subscription;
   idRest:string;
   InfoRest:object;
+  // Food type
+  a;
+  // Challenge number
+  b;
   next() {
       this.disableBtn = !this.disableBtn;
   }
@@ -24,6 +29,9 @@ export class ChallengeComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.idRest = params['id'];
+      this.a = params['path'];
+      this.b = params['challenge'];
+
       console.log(this.idRest);
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
       console.log(this.InfoRest);
@@ -32,6 +40,6 @@ export class ChallengeComponent implements OnInit {
   }
 
   jour(id): void {
-    this._router.navigate(['/journeys/' + id]);
+    this._router.navigate(['/Journeys/' + this.a]);
   }
 }

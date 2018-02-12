@@ -14,8 +14,8 @@ export const routes: Route[] = [
   {path: 'popover', component: PopoverComponent},
   {path: 'feedback', component: FeedbackComponent},
   {path: 'options', component: OptionsComponent, canActivate: [AuthGuard]},
-  {path: 'challenge/:id', component: ChallengeComponent, canActivate: [AuthGuard]},
-  {path: 'journeys/:id', component: JourneysComponent, canActivateChild: [AuthGuard]},
+  {path: 'challenge/:path/:challenge/:id', component: ChallengeComponent, canActivate: [AuthGuard]},
+  {path: 'journeys/:id', component: JourneysComponent, canActivateChild: [AuthGuard]}
 ];
 
 
