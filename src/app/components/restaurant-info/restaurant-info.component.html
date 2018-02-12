@@ -21,11 +21,11 @@
 
     <div class="underline"></div>
     <i class="fas fa-phone"></i> {{restaurant.display_phone.length>0 ? restaurant.display_phone : 'Not available'}}
-    <br><button type="button" class="btnGS" [ngClass]="{'hidden': hidden == true}">Go to challenge</button>
+    <br><button type="button"  (click)="Gochallenge()" class="btnGS" [ngClass]="{'hidden': hidden == true}">Go to challenge</button>
   </div>
 
   <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">
-    <img class="respic" [src]="restaurant.image_url" (click)="myFunc()" >
+    <img class="respic" [src]="restaurant.image_url" >
     <div *ngIf="modal">
      <modal-gallery [modalImages]="imagesArray" [imagePointer]="0"></modal-gallery>
     </div>
