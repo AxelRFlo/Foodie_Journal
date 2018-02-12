@@ -28,8 +28,7 @@ export class AuthService {
         if (user) {
           this.userDetails = user;
           console.log(this.userDetails);
-        }
-        else {
+        } else {
           this.userDetails = null;
         }
       }
@@ -45,7 +44,7 @@ export class AuthService {
         this.user = firebase.auth().currentUser;
     })
       .then(function () {
-        // aún no funciona esto: 
+        // aún no funciona esto:
         this.user.updateProfile({
             displayName: 'Example User',
             photoURL: 'https://example.com/jane-q-user/profile.jpg'
@@ -66,8 +65,8 @@ export class AuthService {
         if (this._YelpService.LSGet('Following')) {
           // Hacemos redirect a la página que esta siguiendo
           this.following = this._YelpService.LSGet('Following');
-          console.log('I'm following: '' + this.following);
-          this._router.navigate(['/journeys/'+this.following]);
+          console.log('I\'m following: ' ' + this.following');
+          this._router.navigate(['/journeys/' + this.following]);
         } else {
         this._router.navigate(['/options']);
       }
@@ -77,7 +76,7 @@ export class AuthService {
         console.log('Something went wrong:', err.message);
       });
   }
-  
+
   // para iniciar sesión a través de google, con popup
   signInWithGoogle() {
     this.af.auth.signInWithPopup (
