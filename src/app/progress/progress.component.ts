@@ -44,14 +44,16 @@ export class ProgressComponent implements OnInit {
       // Si estoy subscrito a la ruta actual, entonces el botón se inicializa en continue
       // Checo en que ruta estoy actualmente
             // Checo si estoy subscrito, de ser así se inicializa en Continue.
+      console.log('Im currently following: ' + this._YelpService.LSGet('Following'));
       if (this._YelpService.LSGet('Following') === this.Path) {
+        console.log('This path: ' + this.Path + ' Following: ' + this._YelpService.LSGet('Following'));
         this.button = 'Continue';
       }
       });
     this.sub.unsubscribe();
     this.getFoodType();
-    //this.calculateProgress();
-    this.completion = 72;
+    this.calculateProgress();
+    //this.completion = 72;
 
   }
 
