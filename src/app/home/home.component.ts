@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     if (this._YelpService.LSGet('Following')) {
       // Si estoy siguiendo un path
       console.log('I NEED TO ROUTER NAVIGATE TO : ' + '/Journeys/' + this._YelpService.LSGet('Following'));
-      this._router.navigate(['/Journeys/' + this._YelpService.LSGet('Following')]);
+      this._router.navigate(['/journeys/' + this._YelpService.LSGet('Following')]);
     } else {
       this._router.navigate(['/options']);
     }
