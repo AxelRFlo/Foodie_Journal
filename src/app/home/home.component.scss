@@ -302,7 +302,7 @@ footer{
 
 .check{
  width: 30px;
- height: auto; 
+ height: auto;
 }
 
 
@@ -312,11 +312,14 @@ a.dm
     text-decoration: none;
 }
 
+.backColor {
+  background-color: white;
+}
 /*
 @font-face {
   font-family: "Proxima Nova";
   src: url("css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.eot");
-  src: 
+  src:
   url("/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.woff") format("woff"),
   url("/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.ttf") format("truetype"),
   url("/css/fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.svg#filename") format("svg");

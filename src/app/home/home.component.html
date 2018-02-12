@@ -3,46 +3,53 @@
   <div class="row">
     <div class="col-12 menu">
       <h1 id="title">Challenge Yourself</h1> <br>
-      <p id="subtitle">Foodie Journal makes it easy for you to embark on a journy to discover new cousines.</p><br>
-      <button id="btnGS" class="block" (click)='options()' [routerLink]="['/options']">Get Started</button>
+      <p id="subtitle">Foodie Journal makes it easy for you to embark on a journey to discover new cuisines.</p><br>
+      <button id="btnGS"  class="block" (click)='options()' [routerLink]="['/options']">Get Started</button>
     </div>
   </div>
   <div id="discover"><a class="dm" href="#2">
-    Discover More <img src="\assets\arrow_discovermore.png" class="discover-more" alt="discover more"></a></div>
+    Discover More <img src="\assets\arrow_discovermore.png" class="discover-more" alt="discover more"></a>
+  </div>
 </div>
 
 <div id= "2" class="section2">
   <div class="row">
     <div class="col-xs-12 col-md-4  align btnSpace" href="#">
-      <button class="button btn-xl center-block"><img src="\assets\fork_spoon.png" class="fork-spoon" alt="fork spoon">
+      <button class="button btn-xl center-block" (click)='challenge()' [routerLink]="['/challenge']">
+        <img src="\assets\fork_spoon.png" class="fork-spoon" alt="fork spoon">
       </button>
       <p class="textButton">Explore the top 5 international cuisines and follow cuisine journeys</p>
-
     </div>
     <div class="col-xs-12 col-md-4 align btnSpace" href="#" >
-      <button class="button btn-xl center-block"><img src="\assets\arrow.png" class="directions" alt="directions"></button>
+      <button class="button btn-xl center-block">
+        <img src="\assets\arrow.png" class="directions" alt="directions">
+      </button>
       <p class="textButton">Receive restaurant recommendations based on your preferences and location</p>
     </div>
     <div class="col-xs-12 col-md-4 align btnSpace right" href="#">
-      <button class="button btn-xl center-block"><img src="\assets\check.png" class="check" alt="check"></button>
+      <button class="button btn-xl center-block">
+        <img src="\assets\check.png" class="check" alt="check">
+      </button>
       <p class="textButton">Compile challenges and track your progress against your selected cuisine journey</p>
     </div>
   </div>
 </div>
 
 <footer>
-  <div class="container">
-    <div class="row justify-content-center">
-      <p class="p">Developed by: </p>
-    </div>
-    <div class="flex-container">
-      <div>
-        <a href="https://www.accenture.com">
-          <img src="../../assets/Acc_Logo.png" class="logo-acc" alt="Acc Logo">
-        </a>
+  <div class="backColor">
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="p">Developed by: </p>
       </div>
-      <div>
-        <img src="../../assets/logo_scrumble.png" class="logo-accenture" alt="Accenture Logo">
+      <div class="flex-container">
+        <div>
+          <a href="https://www.accenture.com">
+            <img src="../../assets/Acc_Logo.png" class="logo-acc" alt="Acc Logo">
+          </a>
+        </div>
+        <div>
+          <img src="../../assets/logo_scrumble.png" class="logo-accenture" alt="Accenture Logo">
+        </div>
       </div>
     </div>
   </div>
