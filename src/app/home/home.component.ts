@@ -43,6 +43,10 @@ loggedIn() {
   challenge(): void {
     this._router.navigate(['/challenge']);
   }
+
+  about(): void {
+    this._router.navigate(['/about']);
+  }
   // popover(): void {
   //   this._router.navigate(['/challenge']);
   // }

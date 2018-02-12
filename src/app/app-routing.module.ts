@@ -7,6 +7,8 @@ import { ChallengeComponent } from './challenge/challenge.component';
 import { JourneysComponent } from './journeys/journeys.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AuthGuard } from './auth-guard/auth-guard.component';
+import { AboutComponent } from './about/about.component';
+
 
 export const routes: Route[] = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -15,7 +17,8 @@ export const routes: Route[] = [
   {path: 'feedback', component: FeedbackComponent},
   {path: 'options', component: OptionsComponent, canActivate: [AuthGuard]},
   {path: 'challenge', component: ChallengeComponent, canActivate: [AuthGuard]},
-  {path: 'journeys/:id', component: JourneysComponent}
+  {path: 'journeys/:id', component: JourneysComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 // @NgModule({
