@@ -15,8 +15,8 @@ export class ChallengeComponent implements OnInit {
   sub:Subscription;
   idRest:string;
   InfoRest:object;
-  a;
-  b;
+  path;
+  challenge;
   next() {
       this.disableBtn = !this.disableBtn;
   }
@@ -26,11 +26,17 @@ export class ChallengeComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.idRest = params['id'];
-      this.a = params['path'];
-      this.b = params['challenge'];
+      this.path = params['path'];
+      this.challenge = params['challenge'];
 
       console.log(this.idRest);
+
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
+
+      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
+        this._router.navigate(['/home']);
+      }
+
       console.log(this.InfoRest);
       // Especificamos cual es mi journey actual en LS
       });

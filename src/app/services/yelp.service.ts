@@ -111,4 +111,12 @@ export class YelpService {
    }
     return array;
   }
+  ValidChallengeURL(id,path,challenge){
+    for (let i in id) {
+      if (id[i]['alias'] == this.categories[path][challenge]["cat"]){
+        return true;
+      }
+    }
+    return false;
+  }
 }
