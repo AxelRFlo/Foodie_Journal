@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth, AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
+
 import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs/Observable';
-import { Router } from "@angular/router";
-import { OAuthProvider } from '@firebase/auth-types';
+import { Router } from '@angular/router';
 import { YelpService } from './services/yelp.service';
-
+import { OAuthProvider, FacebookAuthProvider } from '@firebase/auth-types';
+import { _getAngularFireDatabase } from 'angularfire2/database';
 
 
 @Injectable()
 export class AuthService {
   userDetails: any;
-  private user: Observable<firebase.User>; 
-  private currentUser: Observable<firebase.User>;  
- 
+  private user: Observable<firebase.User>;
+  private currentUser: Observable<firebase.User>;
   loggedIn = false;
 
   following: any;
@@ -43,12 +43,12 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(function () {
         this.user = firebase.auth().currentUser;
-        this.user.sendEmailVerification();
     })
       .then(function () {
+        // aún no funciona esto: 
         this.user.updateProfile({
-            displayName: "Example User",
-            photoURL: "https://example.com/jane-q-user/profile.jpg"
+            displayName: 'Example User',
+            photoURL: 'https://example.com/jane-q-user/profile.jpg'
         });
       })
       .catch(err => {
@@ -66,7 +66,7 @@ export class AuthService {
         if (this._YelpService.LSGet('Following')) {
           // Hacemos redirect a la página que esta siguiendo
           this.following = this._YelpService.LSGet('Following');
-          console.log("I'm following: " + this.following);
+          console.log('I'm following: '' + this.following);
           this._router.navigate(['/journeys/'+this.following]);
         } else {
         this._router.navigate(['/options']);
@@ -78,11 +78,21 @@ export class AuthService {
       });
   }
   
+  // para iniciar sesión a través de google, con popup
   signInWithGoogle() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    this.af.auth.signInWithPopup (
       new firebase.auth.GoogleAuthProvider()
-    )
+  );
   }
+
+  signInWithFacebook() {
+    this.af.auth.signInWithPopup (
+      new firebase.auth.FacebookAuthProvider()
+  );
+  }
+
+
+
 
   isLoggedIn() {
     if (this.userDetails == null ) {
@@ -91,14 +101,13 @@ export class AuthService {
         return true;
       }
     }
-  
+
 
   logout() {
     this._firebaseAuth.auth.signOut()
     .then((res) => this._router.navigate(['/home']));
-  
+
   }
 
 
-  
 }

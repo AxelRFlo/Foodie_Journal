@@ -15,8 +15,10 @@ export const routes: Route[] = [
   {path: 'feedback', component: FeedbackComponent},
   {path: 'options', component: OptionsComponent, canActivate: [AuthGuard]},
   {path: 'challenge', component: ChallengeComponent, canActivate: [AuthGuard]},
-  {path: 'journeys/:id', component: JourneysComponent}
+  {path: 'journeys/:id', component: JourneysComponent, canActivateChild: [AuthGuard]},
+
 ];
+
 
 // @NgModule({
 //   imports: [RouterModule.forRoot(routes)],
