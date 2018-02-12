@@ -6,7 +6,7 @@ import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs/Observable';
 import { Router } from "@angular/router";
-import { OAuthProvider } from '@firebase/auth-types';
+import { OAuthProvider, FacebookAuthProvider } from '@firebase/auth-types';
 import { _getAngularFireDatabase } from 'angularfire2/database';
 
 
@@ -73,6 +73,15 @@ export class AuthService {
       new firebase.auth.GoogleAuthProvider()
   );
   }
+
+  signInWithFacebook() {
+    this.af.auth.signInWithPopup (
+      new firebase.auth.FacebookAuthProvider()
+  );
+  }
+
+
+
 
   isLoggedIn() {
     if (this.userDetails == null ) {

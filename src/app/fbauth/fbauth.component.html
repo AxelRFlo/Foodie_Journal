@@ -21,6 +21,11 @@
      Login with Google
 </button>
 
+<button type="button" class="btn btn-block" (click)="authService.signInWithFacebook()">
+  <i class="fa fa-facebook" aria-hidden="true"></i>
+     Login with Facebook  
+</button>
+
 <button (click)="logout()" *ngIf="authService.user | async">
   Logout
 </button>
