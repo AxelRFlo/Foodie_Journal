@@ -34,7 +34,7 @@ textarea{
   color: black;
   font-size: 1.5rem;
   height: 42px;
-  width: 20%;
+  width: 96%;
 }
 
 #submit{
@@ -65,4 +65,15 @@ textarea{
 
 .modal {
   margin-top: 100px;
+}
+
+.container {
+  float: right;
+  margin-top: -52px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 170px;
+  }
 }
