@@ -69,7 +69,7 @@ textarea{
 
 .container {
   float: right;
-  margin-top: -52px;
+  margin-top: -123px;
   width: 170px;
 }
 
@@ -85,9 +85,9 @@ textarea{
   }
 }
 
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   .container {
     width: 170px !important;
-    margin-top: -52px;
+    margin-top: -108px !important;
   }
 }
