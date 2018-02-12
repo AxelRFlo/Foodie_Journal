@@ -34,9 +34,9 @@ export class ChallengeComponent implements OnInit {
 
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
 
-      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
-        this._router.navigate(['/home']);
-      }
+      //if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
+        //this._router.navigate(['/home']);
+      //}
 
       console.log(this.InfoRest);
       // Especificamos cual es mi journey actual en LS
