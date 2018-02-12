@@ -1,5 +1,5 @@
 
-<h2 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h2>
+<h2 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email}}!</h2>
 <h1 *ngIf="!authService.user | async">Welcome. Please Input your credentials.</h1>
 
 <div *ngIf="!(authService.user | async)">
@@ -16,12 +16,12 @@
   </button>
 
 </div>
-<button type="button" class="btn btn-block" (click)="authService.signInWithGoogle()">
-  <i class="fa fa-google" aria-hidden="true"></i>
+<button class="loginBtn loginBtn--google" (click)="authService.signInWithGoogle()">
+  <i class="fa fa-google" aria-hidden="false"></i>
      Login with Google
 </button>
 
-<button type="button" class="btn btn-block" (click)="authService.signInWithFacebook()">
+<button class="loginBtn loginBtn--facebook" (click)="authService.signInWithFacebook()">
   <i class="fa fa-facebook" aria-hidden="true"></i>
      Login with Facebook  
 </button>

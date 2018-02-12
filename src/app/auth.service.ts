@@ -77,7 +77,8 @@ export class AuthService {
   signInWithFacebook() {
     this.af.auth.signInWithPopup (
       new firebase.auth.FacebookAuthProvider()
-  );
+  )
+  .then()
   }
 
 
@@ -98,6 +99,4 @@ export class AuthService {
   
   }
 
-
-  
 }

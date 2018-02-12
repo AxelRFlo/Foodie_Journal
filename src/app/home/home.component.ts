@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
+import { PopoverComponent } from '../popover/popover.component'
+import { NgbPopover } from '@ng-bootstrap/ng-bootstrap/popover/popover';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,7 @@ import { Router, CanActivate } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public popover: PopoverComponent;
 
   // constructor() {}
   constructor(private _router: Router, public authService: AuthService) { }
@@ -19,7 +22,11 @@ export class HomeComponent implements OnInit {
 
   options(): void {
     // alert('cambio de pantalla');
-    this._router.navigate(['/options']);
+    if (this.authService.isLoggedIn()){
+      this._router.navigate(['/options']);
+    }
+    alert('Please Login to continue!')
+    
   }
 
 isLoggedIn(): any {

@@ -6,6 +6,7 @@ import { AngularFireModule } from 'angularfire2';
 import { auth } from 'firebase/app';
 import { AuthTokenProvider } from '@firebase/database/dist/esm/src/core/AuthTokenProvider';
 import * as firebase from 'firebase/app';
+import { User } from '@firebase/auth-types';
 
 
 
