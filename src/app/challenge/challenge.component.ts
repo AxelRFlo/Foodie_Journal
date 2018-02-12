@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { YelpService } from '../services/yelp.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Restaurant } from "../interface/restaurant";
 
 @Component({
   selector: 'app-challenge',
@@ -15,7 +16,7 @@ export class ChallengeComponent implements OnInit {
   buttonText = { 0: 'Mark as Started', 1: 'Mark as Completed', 2: 'Way to go! Take the next challenge' };
   sub:Subscription;
   idRest:string;
-  InfoRest:object;
+  InfoRest:Restaurant;
   path;
   challenge;
   next() {
@@ -33,7 +34,7 @@ export class ChallengeComponent implements OnInit {
       console.log(this.idRest);
 
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
-
+      //
       if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
         this._router.navigate(['/home']);
       }
