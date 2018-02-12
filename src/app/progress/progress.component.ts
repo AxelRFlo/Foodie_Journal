@@ -39,18 +39,20 @@ export class ProgressComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       // Inicializamos el botón
       // Si estoy subscrito a la ruta actual, entonces el botón se inicializa en continue
       // Checo en que ruta estoy actualmente
-            // Checo si estoy subscrito, de ser así se inicializa en Continue.
+      // Checo si estoy subscrito, de ser así se inicializa en Continue.
+
+      this.Path = params['id'];
       if (this._YelpService.LSGet('Following') === this.Path) {
         this.button = 'Continue';
       }
+      this.getFoodType();
+      this.calculateProgress();
+      //Agrega aqui las funciones nuevas
       });
-    this.sub.unsubscribe();
-    this.getFoodType();
-    this.calculateProgress();
     //this.completion = 72;
 
   }
