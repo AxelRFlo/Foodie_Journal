@@ -102,10 +102,18 @@
 }
 
 #colored {
+  color: rgb(228, 47, 47);
+  margin-bottom: 0px;
+}
+
+#colorgreen {
   color: rgb(47, 228, 47);
   margin-bottom: 0px;
 }
 
+agm-map{
+  height: 200px;
+}
 .phoneImg, .emailImg {
   width: 24px;
   height: 20px;

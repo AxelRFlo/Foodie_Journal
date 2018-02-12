@@ -61,13 +61,16 @@ export class YelpService {
       return this.LSGet("restaurant:"+id)
     }
     else{
+      var rest:any;
       this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        return data;
+        const rest= data;
       },
       error => <any>error,
       () => {
         console.log(this.subRes);
         this.subRes.unsubscribe();
+        console.log("case"+this.subRes);
+        return rest;
       });
     }
   }
@@ -107,5 +110,13 @@ export class YelpService {
       array.push(i=this.categories[id][i]['name']);
    }
     return array;
+  }
+  ValidChallengeURL(id,path,challenge){
+    for (let i in id) {
+      if (id[i]['alias'] == this.categories[path][challenge]["cat"]){
+        return true;
+      }
+    }
+    return false;
   }
 }

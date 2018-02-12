@@ -18,7 +18,7 @@ export class RestaurantsComponent implements OnInit {
   location;
   restaurants = {};
   constructor(private _YelpService: YelpService) { }
-  
+
   ngOnInit() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {

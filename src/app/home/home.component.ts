@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
+import { YelpService } from '../services/yelp.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,22 @@ import { Router, CanActivate } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   // constructor() {}
-  constructor(private _router: Router, public authService: AuthService) { }
+  constructor(private _router: Router, public authService: AuthService, private _YelpService: YelpService) { }
 
   ngOnInit() {
   }
 
+  // Arreglar router navigate
   options(): void {
     // alert('cambio de pantalla');
-    this._router.navigate(['/options']);
+    console.log('Im following : ' + this._YelpService.LSGet('Following'));
+    if (this._YelpService.LSGet('Following')) {
+      // Si estoy siguiendo un path
+      console.log('I NEED TO ROUTER NAVIGATE TO : ' + '/journeys/' + this._YelpService.LSGet('Following'));
+      this._router.navigate(['/journeys/' + this._YelpService.LSGet('Following')]);
+    } else {
+      this._router.navigate(['/options']);
+    }
   }
 
 isLoggedIn(): any {

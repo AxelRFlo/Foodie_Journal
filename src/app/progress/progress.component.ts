@@ -39,18 +39,24 @@ export class ProgressComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
+    this.route.params.subscribe(params => {
       // Inicializamos el botón
       // Si estoy subscrito a la ruta actual, entonces el botón se inicializa en continue
       // Checo en que ruta estoy actualmente
-            // Checo si estoy subscrito, de ser así se inicializa en Continue.
+
+      // Checo si estoy subscrito, de ser así se inicializa en Continue.
+
+      this.Path = params['id'];
       if (this._YelpService.LSGet('Following') === this.Path) {
+        console.log('This path: ' + this.Path + ' Following: ' + this._YelpService.LSGet('Following'));
         this.button = 'Continue';
+      }else{
+        this.button = 'Follow';
       }
+      this.getFoodType();
+      this.calculateProgress();
+      //Agrega aqui las funciones nuevas
       });
-    this.sub.unsubscribe();
-    this.getFoodType();
-    this.calculateProgress();
     //this.completion = 72;
 
   }
@@ -87,36 +93,27 @@ export class ProgressComponent implements OnInit {
       // Reviso si estoy siguiendo algo
     }
 
-    calculateProgress(){
+    calculateProgress() {
       // Jalo la variable de completed challenges
-      console.log("Me tiene que dar false o null: " + this._YelpService.LSGet(this.lsRoute));
       if(this._YelpService.LSGet(this.lsRoute)){
       this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
-      // Divido completed entre max
+      //Divido completed entre max
       this.completion = this.completedChallenges / this.maxChallenges;
       this.completion = this.completion * 100;
-      console.log("Completion percentage: " + this.completion)
       } else {
-        console.log("Setting the completion to 0%");
         this.completion = 0;
 
       }
     }
 
     getFoodType() {
-      console.log('Entre a la funcion');
-      console.log(this.Path);
       switch (this.Path) {
         case '0': {
-          console.log('Case 0');
           this.foodType = 'American';
           this.foodDescription = 'One characteristic of American cooking is the'
           + ' fusion of multiple ethnic or regional approaches into completely new cooking styles.';
           this.imgUrl = this.americanUrl;
           this.lsRoute = 'completedAmerican';
-          console.log('Food type: ' + this.foodType);
-          console.log('Food description: ' + this.foodDescription);
-          console.log('Image url: ' + this.imgUrl);
           break;
         }
         case '1': {
@@ -152,12 +149,9 @@ export class ProgressComponent implements OnInit {
           break;
         }
         default: {
-          console.log('Path checking error.');
           break;
         }
       }
-
-      console.log('The current food type is: ' + this.foodType);
     }
 
 
