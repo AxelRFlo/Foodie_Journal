@@ -58,20 +58,31 @@ export class YelpService {
   
   GetYelpRestaurant(id){
     if(this.LSGet("restaurant:"+id)){
-      return this.LSGet("restaurant:"+id)
+      return new Promise(resolve=>{
+        setTimeout(()=>{
+          resolve(this.LSGet("restaurant:"+id));
+        },100);
+      });
     }
     else{
       var rest:any;
       this.subRes=this.SearchRestaurant(id).subscribe(data => {
         const rest= data;
       },
-      error => <any>error,
+      error => {
+        return new Promise(resolve=>{
+          setTimeout(()=>{
+            resolve('');
+          },800);
+        });
+      },
       () => {
-        console.log(this.subRes);
-        this.subRes.unsubscribe();
-        console.log("case"+this.subRes);
-        return rest;
-      });
+        return new Promise(resolve=>{
+          setTimeout(()=>{
+            resolve(rest);
+          },800);
+        });
+      })
     }
   }
   

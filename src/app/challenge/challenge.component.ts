@@ -17,8 +17,9 @@ export class ChallengeComponent implements OnInit {
   buttonText = { 0: 'Mark as Started', 1: 'Mark as Completed', 2: 'Way to go! Take the next challenge' };
   sub: Subscription;
   // id restaurante
+
   idRest: string;
-  InfoRest: Restaurant;
+  InfoRest;
   path: any;
   challenge: any;
   savePath: string;
@@ -49,8 +50,14 @@ export class ChallengeComponent implements OnInit {
       this.challengeState = this._YelpService.LSGet(this.lsChallengeState);
 
       console.log(this.idRest);
-
-      this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
+      const promise=this._YelpService.GetYelpRestaurant(this.idRest);
+      promise.then(result =>{
+        this.InfoRest=result;
+      });
+      //
+      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
+        this._router.navigate(['/home']);
+      }
 
       console.log(this.InfoRest);
       // Especificamos cual es mi journey actual en LS

@@ -22,9 +22,8 @@ export class RestaurantInfoComponent implements OnInit{
   @Input() IsFollowed;
   errorMessage: any;
   imgerror="https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png";
-  restaurantData: Restaurant;
-  dir;
-  today;
+  restaurantData;
+  today="";
   hidden = true;
   modal=false;
   imagesArray: Array<Image> = [
@@ -43,17 +42,18 @@ export class RestaurantInfoComponent implements OnInit{
   constructor(private _router: Router, private _YelpService: YelpService) { }
 
   ngOnInit() {
-    this.restaurantData=this._YelpService.GetYelpRestaurant(this.restaurant.id);
-    if(this.restaurantData.hours){
-      this.today=this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
-    }
-    else{
-      this.today='';
-    }
-    this.dir = {
-      origin: { lat: this.restaurant.coordinates.latitude, lng: this.restaurant.coordinates.longitude },
-      destination: { lat: 25.658365, lng: -120.369708}
-    }
+
+    const promise=this._YelpService.GetYelpRestaurant(this.restaurant.id);
+    promise.then(result =>{
+      this.restaurantData=result;
+      if(this.restaurantData.hours){
+        this.today=this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
+      }
+      else{
+        this.today='';
+      }
+    });
+   
     this.showButton();
   }
 
