@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { YelpService } from '../services/yelp.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,10 +13,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProgressComponent implements OnInit {
   @Input() Path;
+  @Input() IsFollowed;
+  @Output() IsFollowedUpdated = new EventEmitter();
   sub: Subscription;
   Categories;
   currentJourney: string;
-  button = 'Follow';
   foodType: string;
 
   foodDescription: string;
@@ -45,14 +46,7 @@ export class ProgressComponent implements OnInit {
       // Checo en que ruta estoy actualmente
 
       // Checo si estoy subscrito, de ser así se inicializa en Continue.
-
       this.Path = params['id'];
-      if (this._YelpService.LSGet('Following') === this.Path) {
-        console.log('This path: ' + this.Path + ' Following: ' + this._YelpService.LSGet('Following'));
-        this.button = 'Continue';
-      }else{
-        this.button = 'Follow';
-      }
       this.getFoodType();
       this.calculateProgress();
       //Agrega aqui las funciones nuevas
@@ -63,20 +57,16 @@ export class ProgressComponent implements OnInit {
 
     onClick() {
       // Si le hago click y está en follow, comienzo a seguir el path
-      if (this.button === 'Follow') {
-        // Subscribo en localstorag
-        this._YelpService.LSSet('Following', this.Path);
-        // Cambio el botón
-        this.button = 'Continue';
-        // Refresco la página para que se muestre el botón
-        location.reload();
-       }
-
-      // Si está en continue, entonces lo mando a la vista del siguiente challenge sin cumplir
-      if (this.button === 'Continue') {
+      if (this.IsFollowed) {
 
       }
-
+      else{
+        // Subscribo en localstorag
+        this._YelpService.LSSet('Following', this.Path);
+        this.IsFollowed=!this.IsFollowed;
+        this.IsFollowedUpdated.emit(this.IsFollowed);
+        // Refresco la página para que se muestre el botón
+      }
     }
 
     getNextChallenge() {
@@ -95,15 +85,43 @@ export class ProgressComponent implements OnInit {
 
     calculateProgress() {
       // Jalo la variable de completed challenges
-      if(this._YelpService.LSGet(this.lsRoute)){
-      this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
-      //Divido completed entre max
-      this.completion = this.completedChallenges / this.maxChallenges;
-      this.completion = this.completion * 100;
-      } else {
-        this.completion = 0;
+      console.log('Im trying to access this variable :'  + this.Path);
+      console.log('My current completion on this module: ' + this._YelpService.LSGet(this.Path));
+      if(this._YelpService.LSGet(this.Path)) {
+        console.log('Existe algo.');
+        this.completion = parseInt(this._YelpService.LSGet(this.Path));
+        console.log('Tipo de completion: ' + typeof(this.completion));
+        // Not italian, which has only 1 challenge.
+        if(this.Path != 2){
+          console.log('Mis challenges completados: ' + this.completion);
+          this.completion = this.completion / this.maxChallenges;
+          console.log('Resultado de completados / 6: ' + this.completion);
+          this.completion = this.completion * 100;
+          this.completion = Math.floor(this.completion);
 
+        } else {
+          // Italian has only one challenge, thus making this a 100% completion rate
+          this.completion = 100;
+        }
+        
+
+      } else {
+        console.log('No hay nada.');
+        this.completion = 0;
       }
+      // if(this._YelpService.LSGet(this.lsRoute)){
+      //   console.log('I found some progress...');
+      // this.completedChallenges = this._YelpService.LSGet(this.lsRoute);
+      // //Divido completed entre max
+      // this.completion = this.completedChallenges / this.maxChallenges;
+      // console.log('Resutlado de la division: ' + this.completion);
+      // this.completion = this.completion * 100;
+      // console.log('Resultado de la mult. por 100' + this.completion);
+      // } else {
+      //   console.log('No progress found on the variable : ' + this.Path);
+      //   this.completion = 0;
+
+      // }
     }
 
     getFoodType() {

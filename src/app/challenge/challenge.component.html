@@ -13,7 +13,7 @@
   <!-- Body of Card -->
   <div class="card">
     <!-- IF de que si esta el challenge completa se ponga la paloma (check) -->
-    <div class="check" *ngIf="challengeState == '2'; else numberTop">
+    <div class="check" *ngIf='challengeState == '2'; else numberTop'>
       <img src="../../assets/check_blue_top.png" class="check-top" alt="Check Top">
     </div>
     <ng-template #numberTop>
@@ -66,7 +66,7 @@
               <li class="list-group-item information">
                 <img src="../../assets/phone.png" class="phoneImg">
                 <a>
-                  <p class="sideText">{{InfoRest.display_phone}}</p>
+                  <p class="sideText">{{InfoRest.display_phone.length>0 ? InfoRest.display_phone : 'Not available'}}</p>
                 </a>
                 <img src="../../assets/link.png" class="emailImg">
                 <a>
@@ -87,7 +87,7 @@
         <button class="button btn-pv">Previous</button>
       </div>
       <div class="col-xs-12 .col-md-12 col-lg-4 start" href="#" >
-          <button class="button btn-ch" [ngClass]="{'btn-ch': challengeState == '0','btn-st': challengeState == '1','btn-wt': challengeState == '2'}"> {{ buttonText[challengeState] }}</button>
+          <button class="button btn-ch" (click)="completeChallenge()" [ngClass]="{'btn-ch': challengeState == '0','btn-st': challengeState == '1','btn-wt': challengeState == '2'}"> {{ buttonText[challengeState] }}</button>
           <div class="check-1" *ngIf="challengeState == '2'">
             <img src="../../assets/check_blue.png" class="check-blue" alt="Check Blue">
           </div>

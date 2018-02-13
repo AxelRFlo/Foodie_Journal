@@ -1,20 +1,20 @@
 <nav class="nav-paths-list">
-  <button type="button" class="btn" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '0'}">American</button>
-  <button type="button" class="btn" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '1'}">Korean</button>
-  <button type="button" class="btn" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '2'}">Italian</button>
-  <button type="button" class="btn" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '3'}">Mexican</button>
-  <button type="button" class="btn" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'active': idJourney == '4'}">Japanese</button>
+  <button type="button" class="btn" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'active': Path == '0'}">American</button>
+  <button type="button" class="btn" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'active': Path == '1'}">Korean</button>
+  <button type="button" class="btn" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'active': Path == '2'}">Italian</button>
+  <button type="button" class="btn" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'active': Path == '3'}">Mexican</button>
+  <button type="button" class="btn" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'active': Path == '4'}">Japanese</button>
 </nav>  
 
 <div class="dropdown">
   <button class="btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {{ nombre[idJourney] }}
+    {{ nombre[Path] }}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '0'}">American</a>
-    <a class="dropdown-item" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '1'}">Korean</a>
-    <a class="dropdown-item" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '2'}">Italian</a>
-    <a class="dropdown-item" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '3'}">Mexican</a>
-    <a class="dropdown-item" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'orange': idJourney == '4'}">Japanese</a>
+    <a class="dropdown-item" (click)='foods(0)' [routerLink]="['/journeys']" [ngClass]="{'orange': Path == '0'}">American</a>
+    <a class="dropdown-item" (click)='foods(1)' [routerLink]="['/journeys']" [ngClass]="{'orange': Path == '1'}">Korean</a>
+    <a class="dropdown-item" (click)='foods(2)' [routerLink]="['/journeys']" [ngClass]="{'orange': Path == '2'}">Italian</a>
+    <a class="dropdown-item" (click)='foods(3)' [routerLink]="['/journeys']" [ngClass]="{'orange': Path == '3'}">Mexican</a>
+    <a class="dropdown-item" (click)='foods(4)' [routerLink]="['/journeys']" [ngClass]="{'orange': Path == '4'}">Japanese</a>
   </div>
 </div>

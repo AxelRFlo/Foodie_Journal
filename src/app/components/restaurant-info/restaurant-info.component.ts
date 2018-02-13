@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 import { Router } from '@angular/router';
+import { Restaurant } from '../../interface/restaurant';
 
 @Component({
   selector: 'app-restaurant-info',
@@ -18,14 +19,12 @@ export class RestaurantInfoComponent implements OnInit{
   @Input() restaurant;
   @Input() Op;
   @Input() Path;
-  @Input() op;
+  @Input() IsFollowed;
   errorMessage: any;
   imgerror="https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/fe8c0c8725d3/assets/img/default_avatars/business_90_square.png";
-  restaurantData;
+  restaurantData: Restaurant;
   dir;
-  weekday;
-  open;
-  close;
+  today;
   hidden = true;
   modal=false;
   imagesArray: Array<Image> = [
@@ -44,8 +43,13 @@ export class RestaurantInfoComponent implements OnInit{
   constructor(private _router: Router, private _YelpService: YelpService) { }
 
   ngOnInit() {
-    this.weekday=this._YelpService.Getday();
     this.restaurantData=this._YelpService.GetYelpRestaurant(this.restaurant.id);
+    if(this.restaurantData.hours){
+      this.today=this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
+    }
+    else{
+      this.today='';
+    }
     this.dir = {
       origin: { lat: this.restaurant.coordinates.latitude, lng: this.restaurant.coordinates.longitude },
       destination: { lat: 25.658365, lng: -120.369708}
@@ -61,8 +65,33 @@ export class RestaurantInfoComponent implements OnInit{
     }
   }
   Gochallenge(): void {
-      // alert('cambio de pantalla');
-      this._router.navigate(['/challenge/'+this.Path+'/'+this.Op+'/'+this.restaurant.id]);
+    // alert('cambio de pantalla');
+    this._router.navigate(['/challenge/'+this.Path+'/'+this.Op+'/'+this.restaurant.id]);
+  }
+  GetTime(Time){
+    var hours = Time.slice(0, 2);
+    var minutes = Time.slice(2, 4);
+    console.log("Time "+Time);
+    console.log("hours "+hours);
+    console.log("minutes "+minutes);
+    var timeValue;
+
+    if (hours > 0 && hours <= 12)
+    {
+      timeValue= "" + (hours - 0);
+    }
+    else if (hours > 12)
+    {
+      timeValue= "" + (hours - 12);
+    }
+    else if (hours == 0)
+    {
+      timeValue= "12";
     }
     
+    timeValue += ":" + minutes;
+    timeValue += (hours >= 12) ? " P.M." : " A.M.";
+
+    return timeValue;
   }
+}

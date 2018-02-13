@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class RestaurantsComponent implements OnInit {
   @Input() Path;
   @Input() Op;
+  @Input() IsFollowed;
   errorMessage: any;
   sub: Subscription;
   location;
