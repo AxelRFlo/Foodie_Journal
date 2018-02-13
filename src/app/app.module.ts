@@ -85,6 +85,7 @@ export const environment = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
+    RouterModule,
     RouterModule.forRoot(routes),
     PopoverModule,
     HttpClientModule,
@@ -96,6 +97,7 @@ export const environment = {
     ModalGalleryModule.forRoot()
   ],
   providers: [AuthService, YelpService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }
