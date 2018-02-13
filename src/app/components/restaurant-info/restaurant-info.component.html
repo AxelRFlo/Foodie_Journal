@@ -17,11 +17,12 @@
   </div>
 
   <div class="col-md-3 col-sm-6 bushours">
+    {{today.length>0 ? today  : ''}}
     <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
 
     <div class="underline"></div>
     <i class="fas fa-phone"></i> {{restaurant.display_phone.length>0 ? restaurant.display_phone : 'Not available'}}
-    <br><button type="button"  (click)="Gochallenge()" class="btnGS" [ngClass]="{'hidden': hidden == true}">Go to challenge</button>
+    <br><button type="button"  (click)="Gochallenge()" class="btnGS" [ngClass]="{'hidden': !IsFollowed}">Go to challenge</button>
   </div>
 {{op}}
   <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">

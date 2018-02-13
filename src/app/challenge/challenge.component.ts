@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { YelpService } from '../services/yelp.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Restaurant } from "../interface/restaurant";
 
 @Component({
   selector: 'app-challenge',
@@ -16,13 +17,9 @@ export class ChallengeComponent implements OnInit {
   sub:Subscription;
   // id restaurante
   idRest:string;
-  // Informacion del restaurante
-  InfoRest:object;
-  // foodtype
-  path: any;
-  // challenge
-  challenge: any;
-
+  InfoRest:Restaurant;
+  path;
+  challenge;
   next() {
       this.disableBtn = !this.disableBtn;
   }
@@ -38,12 +35,15 @@ export class ChallengeComponent implements OnInit {
       console.log(this.idRest);
 
       this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
-
-      if (!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)) {
+      //
+      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
         this._router.navigate(['/home']);
       }
 
       console.log(this.InfoRest);
+      
+
+      console.log(this.InfoRest.hours[0]["open"]);
       // Especificamos cual es mi journey actual en LS
       });
   }
