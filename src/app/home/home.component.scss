@@ -256,10 +256,15 @@ div .header {
 .col-12 {width: 100%;}
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
+  /* For mobile phones: */
+  [class*="col-"] {
+      width: 100%;
+  }
+
+  #subtitle {
+    font-size: 17px;
+  }
+
 }
 
 footer{
@@ -267,7 +272,6 @@ footer{
 	background-color:rgb(255, 255, 255);
   padding: 20px 0px;
   height: 30px;
-  margin-bottom: 100px;
 }
 
 .flex-container {
@@ -284,7 +288,7 @@ footer{
   margin-top: -29px;
 }
 
-.logo-accenture {
+.logo-team {
   padding: 10px;
   margin-right: -54px;
   margin-left: 12px;

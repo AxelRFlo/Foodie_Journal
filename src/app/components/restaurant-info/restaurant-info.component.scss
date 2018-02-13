@@ -39,6 +39,8 @@ agm-map {
     border: none;
     cursor: pointer;
     margin-top: 34px;
+    margin-top: 10px;
+    margin-bottom: 12px;
   }
   .btnGS:hover {
     opacity: 0.6;
@@ -48,4 +50,9 @@ agm-map {
     background-color: rgb(255, 89, 71);
     box-shadow: 0 3px #666;
     transform: translateY(4px);
+  }
+
+  modal-gallery{
+    height: 100%;
+      
   }

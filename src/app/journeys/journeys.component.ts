@@ -14,7 +14,7 @@ export class JourneysComponent implements OnInit {
   idJourney: string;
   sub: Subscription;
   Categories;
-
+  IsFollowed=false;
 
   constructor(private _router: Router, private route: ActivatedRoute, private _YelpService: YelpService) { }
 
@@ -22,10 +22,15 @@ export class JourneysComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       this.idJourney = params['id'];
       this.Categories = this._YelpService.Getcat(this.idJourney);
-      console.log(this.Categories);
+      if(this._YelpService.LSGet('Following') == this.idJourney) {
+        // muestro el botón
+        this.IsFollowed = true;
       // Especificamos cual es mi journey actual en LS
-      });
-    this.sub.unsubscribe();
+      }
+      else{
+        this.IsFollowed = false;
+      }
+    });
   }
 
   foodieJo(): void {
@@ -38,6 +43,9 @@ export class JourneysComponent implements OnInit {
   closeNav() {
   }
 
-
-
+  handleIsFollowedUpdated(NewFollow){
+    this.IsFollowed=!this.IsFollowed;
+    console.log("this.IsFollowed");
+    console.log(this.IsFollowed);
+  }
 }

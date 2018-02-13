@@ -1,83 +1,99 @@
 <div class="journeys">
-    <div class="row goBack">
-      <div class="col-12">
-        <a class="types" (click)='jour()' [routerLink]="['/journeys']">
-          <img src="../../assets/back_arrow.png" alt="Go back">
-          Journeys
-        </a>
-        <p class="goB"> / American</p>
-      </div>
+  <div class="row goBack">
+    <div class="col-12">
+      <a class="types" (click)='jour()'>
+        <img src="../../assets/back_arrow.png" alt="Go back">
+        Journeys
+      </a>
+      <p class="goB"> / American</p>
     </div>
   </div>
+</div>
 
-  <!-- Body of Card -->
-  <div class="card">
+<!-- Body of Card -->
+<div class="card">
+  <!-- IF de que si esta el challenge completa se ponga la paloma (check) -->
+  <div class="check" *ngIf="challengeState == '2'; else numberTop">
+    <img src="../../assets/check_blue_top.png" class="check-top" alt="Check Top">
+  </div>
+  <ng-template #numberTop>
     <img src="../../assets/avatar_circle.png" class="number">
-    <h5 class="titlee">All-American Bacon Cheese Burger</h5>
-    <div class="card-body">
-      <!-- <div class="row"> -->
-        <!-- <div class="col-6 col-sm-4" href="#"> -->
-          <img src="../../assets/avatar.png" class="rounded float-left">
-        <!-- </div> -->
-      <!-- <div class="col-6 col-sm-4" href="#" > -->
-        <img src="../../assets/avatar.png" class="rounded float-right">
+  </ng-template>
+  <h5 class="titlee">{{InfoRest.name}}</h5>
+  <div class="feedback">
+    <app-feedback></app-feedback>
+  </div>
+  <div class="card-body">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-6 col-sm-4" href="#"> -->
+        <img src="../../assets/avatar.png" class="rounded float-left">
       <!-- </div> -->
+    <!-- <div class="col-6 col-sm-4" href="#" > -->
+        <agm-map [latitude]="InfoRest.coordinates.latitude" [longitude]="InfoRest.coordinates.longitude" [zoom]=15>
+            <agm-marker [latitude]="InfoRest.coordinates.latitude" [longitude]="InfoRest.coordinates.longitude"></agm-marker>
+        </agm-map>
     <!-- </div> -->
-      <br><br><br><br><br><br>
-      <div class="row">
-        <div class="col-9">
-          <h5 class="card-title">Instructions: <p>Go ahead and ask for the ultimate Caramel Apple Pie.</p>
-          </h5>
-          <p class="card-text">Vegan, Pitchfork banjo, cold-pressed post-ironic XOXO
-            church-key. Salvia single-origin coffee 3 wolf moon typewriter you probably
-            haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Bansky.
-            Pork belly meggings food truck keytar polaroid mustache, farm-to-table.
-          </p>
-
-          <div class="resendN">
-              <div class="card resend">
-                <a>
-                  <p class="notif">Resend text notification</p>
-                </a>
-              </div>
-            </div>
-
-        </div>
-        <div class="col-3">
-          <div class="card infoo">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item hours">
-                <strong>Today</strong> 8:00 am - 9:00 pm <p id="colored">Open now</p>
-              </li>
-              <li class="list-group-item information">
-                <img src="../../assets/phone.png" class="phoneImg">
-                <a>
-                  <p class="sideText">(510) 653-3394</p>
-                </a>
-                <img src="../../assets/link.png" class="emailImg">
-                <a>
-                  <p class="sideText1">applepiejoes.com</p>
-                </a>
-              </li>
-            </ul>
+  <!-- </div> -->
+    <br><br><br><br><br><br>
+    <!-- Text about restaurant -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
+        <h5 class="card-title">Instructions: <p>Go ahead and ask for the ultimate Caramel Apple Pie.</p>
+        </h5>
+        <p class="card-text">Vegan, Pitchfork banjo, cold-pressed post-ironic XOXO
+          church-key. Salvia single-origin coffee 3 wolf moon typewriter you probably
+          haven't heard of them freegan. Pitchfork cardigan 8-bit four loko banh mi Bansky.
+          Pork belly meggings food truck keytar polaroid mustache, farm-to-table.
+        </p>
+        <!-- Resend text notification button -->
+        <div class="resendN">
+          <div class="card resend">
+            <a class="notif">
+              <p>Resend text notification</p>
+            </a>
           </div>
         </div>
       </div>
+      <!-- Information about restaurant -->
+      <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 smSide">
+        <div class="card infoo">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item hours">
+              <strong>Today</strong> 8:00 am - 9:00 pm
+              <p id="{{InfoRest.is_closed ? 'colored' : 'colorgreen'}}">{{InfoRest.is_closed ? 'Closed' : 'Open now'}}</p>
+
+            </li>
+            <li class="list-group-item information">
+              <img src="../../assets/phone.png" class="phoneImg">
+              <a>
+                <p class="sideText">{{InfoRest.display_phone.length>0 ? InfoRest.display_phone : 'Not available'}}</p>
+              </a>
+              <img src="../../assets/link.png" class="emailImg">
+              <a>
+                <p class="sideText1">applepiejoes.com</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="buttons-down">
-    <div class="row">
-      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
-        <button class="button btn-ch">B1</button>
-      </div>
-      <div class="col-xs-12 .col-md-12 col-lg-4 start" href="#" >
-        <button class="button btn-ch">Mark as Started</button>
-      </div>
-      <div class="col-xs-12 .col-md-12 col-lg-4" href="#">
-        <button class="button btn-ch">B3</button>
-      </div>
+
+<div class="buttons-down">
+  <div class="row">
+    <div class="col-xs-12 .col-md-12 col-lg-4 previous" href="#">
+      <button class="button btn-pv">Previous</button>
+    </div>
+    <div class="col-xs-12 .col-md-12 col-lg-4 start" href="#" >
+        <button class="button btn-ch" (click)="completeChallenge()" [ngClass]="{'btn-ch': challengeState == '0','btn-st': challengeState == '1','btn-wt': challengeState == '2'}"> {{ buttonText[challengeState] }}</button>
+        <div class="check-1" *ngIf="challengeState == '0'">
+          <img src="../../assets/check_blue.png" class="check-blue" alt="Check Blue">
+        </div>
+    </div>
+   <div class="col-xs-12 .col-md-12 col-lg-4 next" href="#">
+      <button class="btn-nx" type="button" [disabled]="disableBtn" name="button" (click)="next()">Next</button>
     </div>
   </div>
-
-
+</div>

@@ -24,27 +24,6 @@
   padding: 15px;
 }
 
-/* For desktop: */
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-
 /* Body */
 .journeys {
   margin-left: 42px;
@@ -65,6 +44,7 @@
 
 .types {
   color: rgb(254, 82, 64);
+  cursor: pointer;
 }
 
 /* Card */
@@ -83,6 +63,8 @@
   margin-left: 82px;
   margin-top: 0;
   width: 22rem !important;
+  margin-left: 0;
+  height: 190px;
 }
 
 .titlee {
@@ -121,10 +103,18 @@
 }
 
 #colored {
+  color: rgb(228, 47, 47);
+  margin-bottom: 0px;
+}
+
+#colorgreen {
   color: rgb(47, 228, 47);
   margin-bottom: 0px;
 }
 
+agm-map{
+  height: 200px;
+}
 .phoneImg, .emailImg {
   width: 24px;
   height: 20px;
@@ -139,8 +129,17 @@
   width: 22rem !important;
   background-color: #ebebeb;
   text-align: center;
-  height: 50px;
+  height: 70px;
   padding-top: 13px;
+  margin-left: 0px;
+}
+
+.resendN {
+  margin-top: 4px
+}
+
+.notif {
+  margin-top: 9px;
 }
 
 .hours {
@@ -156,18 +155,303 @@
 
 .btn-ch {
     background: #f44336;
-    border: 1px solid #f44336;
+    border: none;
     color: white;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0px;
-    padding: 10px, 90px, 10px, 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right:5px;
+    width: 100%;
 }
 
-.start {
-display: grid;
-text-align: center;
-padding-left: 0;
-padding-right: 0;
+.btn-st {
+  background: #2db2ff;
+  border: none;
+  color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right:5px;
+  width: 100%;
+}
 
+.btn-wt {
+  background: #a1a1a1;
+  border: none;
+  color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  padding-right:5px;
+  width: 100%;
+
+}
+
+
+.btn-pv {
+  background: #3f3f3f;
+  border: 1px solid #3f3f3f;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+ // padding-left: 30px;
+ // padding-right:30px;
+  padding-left: 5px;
+  padding-right:5px;
+  width: 45%;
+  margin-left: 5%;
+}
+
+
+.btn-nx {
+  background: #2db2ff;
+  border: 1px solid #2db2ff;
+  color: rgb(255, 255, 255);
+  padding-top: 15px;
+  padding-bottom: 15px;
+ // padding-left: 30px;
+ // padding-right:30px;
+  padding-left: 5px;
+  padding-right:5px;
+  width: 45%;
+  margin-right: 5%;
+  float:right;
+  margin-top: 0px;
+}
+
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 767px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .titlee {
+    width: 142px;
+    font-size: 1.6rem;
+  }
+
+  .smSide {
+    margin-top: -173px;
+  }
+
+  .infoo {
+    margin-right: 0px;
+    height: 143px !important;
+    width: 18rem !important;
+  }
+
+  .hours, .information {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .resend {
+    margin-left: 192px !important;
+    width: 16rem !important;
+    margin-right: 0px;
+    height: 143px !important;
+  }
+
+  .notif {
+    margin-top: 33px !important;
+  }
+
+  .start {
+    //display: grid;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0px !important;
+    margin-right:0px !important;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+  }
+
+  .previous{
+    display: none;
+  }
+
+  .next{
+    display: none;
+  }
+
+  .check{
+    margin-left: 233px;
+  }
+
+  .check-1 {
+    margin-left: 22px !important;
+    margin-top: -40px;
+  }
+
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide {
+    margin-top: -173px !important;
+  }
+}
+
+@media only screen and (min-width: 425px){
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .next{
+    display:block;
+    margin-top: -170px;
+
+  }
+  .previous{
+    display:block;
+  }
+
+  .check-1 {
+    margin-left: 56px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .next{
+    display:block;
+    margin-top: 0;
+  }
+
+  .previous{
+    display:block;
+  }
+
+  .check-1 {
+    margin-left: 3px;
+    margin-top: -40px;
+  }
+}
+
+.btn-nx:disabled {
+  background-color: #eee;
+  color: rgb(202, 202, 202);
+  border: 1px solid rgb(202, 202, 202);
+  opacity: 80%;
+}
+
+.check{
+  margin-top: 10px;
+  margin-left: 4px;
+  height: 28px;
+}
+
+@media only screen and (max-width: 425px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 8px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 10px;
+  }
+  .check-1 {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 9px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1023px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 16px;
+  }
+
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+  .btn-nx {
+    margin-top: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide{
+    margin-top: -148px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2559px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    //margin-left: 255px;
+    margin-left: 15px;
+  }
+  .check-1 {
+    margin-left: 66px;
+  }
+}
+
+@media only screen and (min-width: 2560px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 16px;
+  }
+  .check-1 {
+    margin-left: 246px;
+  }
 }

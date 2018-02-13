@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() idJourney;
+  @Input() Path;
   nombre = { 0:"American", 1:"Korean", 2:"Italian", 3:"Mexican", 4:"Japanese" };
-  constructor(private _router: Router) { }
+  constructor(private _router: Router,  private route: ActivatedRoute) { }
 
   foods(id): void {
     this._router.navigate(['/journeys/' + id]);
-    window.location.reload();
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.Path = params['id'];
+      // Especificamos cual es mi journey actual en LS
+      });
   }
 
 }

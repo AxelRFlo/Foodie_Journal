@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth, AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
+import { YelpService } from './services/yelp.service';
 import { OAuthProvider, FacebookAuthProvider } from '@firebase/auth-types';
 import { _getAngularFireDatabase } from 'angularfire2/database';
 
@@ -14,8 +15,11 @@ export class AuthService {
   userDetails: any;
   private user: Observable<firebase.User>;
   private currentUser: Observable<firebase.User>;
+  loggedIn = false;
 
-  constructor(private af: AngularFireAuth, private _router: Router) {
+  following: any;
+
+  constructor(private af: AngularFireAuth, private _router: Router, private _YelpService: YelpService ) {
     this.user = af.authState;
     this.user.subscribe(
       (user) => {
@@ -58,6 +62,16 @@ export class AuthService {
       .then(value => {
         console.log('Nice, it worked!');
         this._router.navigate(['/options']);
+        // Si existe la variable
+        // if (this._YelpService.LSGet('Following')) {
+        //   // Hacemos redirect a la página que esta siguiendo
+        //   this.following = this._YelpService.LSGet('Following');
+        //   console.log("I'm following: '" + this.following);
+        //   this._router.navigate(['/journeys/' + this.following]);
+        // } else {
+        //this._router.navigate(['/options']);
+      //}
+        this.loggedIn = true;
       })
       .catch(err => {
         console.log('Something went wrong:', err.message);
@@ -77,8 +91,6 @@ export class AuthService {
     )
       .then()
   }
-
-
 
 
   isLoggedIn() {

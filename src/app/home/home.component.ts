@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { PopoverComponent } from '../popover/popover.component'
 import { NgbPopover } from '@ng-bootstrap/ng-bootstrap/popover/popover';
+import { YelpService } from '../services/yelp.service';
 
 @Component({
   selector: 'app-home',
@@ -15,18 +16,27 @@ export class HomeComponent implements OnInit {
   public popover: PopoverComponent;
 
   // constructor() {}
-  constructor(private _router: Router, public authService: AuthService) { }
+  constructor(private _router: Router, public authService: AuthService, private _YelpService: YelpService) { }
 
   ngOnInit() {
   }
 
+  // Arreglar router navigate
   options(): void {
     // alert('cambio de pantalla');
     if (this.authService.isLoggedIn()){
       this._router.navigate(['/options']);
     }
-    alert('Please Login to continue!')
+
     
+    console.log('Im following : ' + this._YelpService.LSGet('Following'));
+    if (this._YelpService.LSGet('Following')) {
+      // Si estoy siguiendo un path
+      console.log('I NEED TO ROUTER NAVIGATE TO : ' + '/journeys/' + this._YelpService.LSGet('Following'));
+      this._router.navigate(['/journeys/' + this._YelpService.LSGet('Following')]);
+    } else {
+      this._router.navigate(['/options']);
+    }
   }
 
 
@@ -46,6 +56,10 @@ loggedIn() {
 
   challenge(): void {
     this._router.navigate(['/challenge']);
+  }
+
+  about(): void {
+    this._router.navigate(['/about']);
   }
   // popover(): void {
   //   this._router.navigate(['/challenge']);
