@@ -17,7 +17,7 @@ export class ChallengeComponent implements OnInit {
   sub:Subscription;
   // id restaurante
   idRest:string;
-  InfoRest:Restaurant;
+  InfoRest;
   path;
   challenge;
   next() {
@@ -33,8 +33,10 @@ export class ChallengeComponent implements OnInit {
       this.challenge = params['challenge'];
 
       console.log(this.idRest);
-
-      this.InfoRest = this._YelpService.GetYelpRestaurant(this.idRest);
+      const promise=this._YelpService.GetYelpRestaurant(this.idRest);
+      promise.then(result =>{
+        this.InfoRest=result;
+      });
       //
       if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
         this._router.navigate(['/home']);
