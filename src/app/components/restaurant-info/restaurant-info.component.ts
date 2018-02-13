@@ -45,10 +45,7 @@ export class RestaurantInfoComponent implements OnInit{
   ngOnInit() {
     this.restaurantData=this._YelpService.GetYelpRestaurant(this.restaurant.id);
     if(this.restaurantData.hours){
-      this.today=
-        this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])
-        +" - "+ 
-        this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
+      this.today=this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
     }
     else{
       this.today='';
