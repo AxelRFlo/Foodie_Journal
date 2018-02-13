@@ -16,25 +16,25 @@ import { User } from '@firebase/auth-types';
   styleUrls: ['./fbauth.component.scss']
 })
 export class FbauthComponent implements OnInit {
-  _firebaseAuth: any;
+
 
   /* Variables for the credentials (Signup /login form)*/
-  displayName: string;
+
   email: string;
   password: string;
-  photoUrl: string;
- 
 
-  constructor(public authService: AuthService, private _router: Router, public af: AngularFireAuth) { }
- 
+
+
+  constructor(public authService: AuthService, private _router: Router) { }
+
 
   ngOnInit() {
   }
 
   // sign up de firebase sin poder guardar el nombre de usuario
   signup() {
-    this.authService.signup(this.displayName, this.email, this.password, this.photoUrl);
-    this.displayName = this.email = this.password = '';
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
   }
 
   login() {
@@ -51,9 +51,9 @@ export class FbauthComponent implements OnInit {
 
 
 
-  
-  
-  
+
+
+
 }
-  
+
 

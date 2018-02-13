@@ -29,10 +29,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-isLoggedIn(): any {
-  this.authService.loggedIn = !this.authService.loggedIn;
 
-}
 
 loggedIn() {
   if ( this.authService.isLoggedIn() ) {

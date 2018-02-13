@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth, AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
-
 import * as firebase from 'firebase/app';
-
 import { Observable } from 'rxjs/Observable';
 import { Router } from "@angular/router";
 import { OAuthProvider, FacebookAuthProvider } from '@firebase/auth-types';
@@ -11,15 +9,14 @@ import { _getAngularFireDatabase } from 'angularfire2/database';
 
 
 @Injectable()
+
 export class AuthService {
   userDetails: any;
-  private user: Observable<firebase.User>; 
-  private currentUser: Observable<firebase.User>;  
-  loggedIn = false;
+  private user: Observable<firebase.User>;
+  private currentUser: Observable<firebase.User>;
 
-
-  constructor(private _firebaseAuth: AngularFireAuth, public af: AngularFireAuth, private _router: Router ) {
-    this.user = _firebaseAuth.authState;
+  constructor(private af: AngularFireAuth, private _router: Router) {
+    this.user = af.authState;
     this.user.subscribe(
       (user) => {
         if (user) {
@@ -34,18 +31,19 @@ export class AuthService {
 
   }
 
-  signup(displayName: string, email: string, password: string, photoUrl: string) {
-    this._firebaseAuth
+
+  signup(email: string, password: string) {
+    this.af
       .auth
       .createUserWithEmailAndPassword(email, password)
       .then(function () {
         this.user = firebase.auth().currentUser;
-    })
+      })
       .then(function () {
         // aún no funciona esto: 
         this.user.updateProfile({
-            displayName: "Example User",
-            photoURL: "https://example.com/jane-q-user/profile.jpg"
+          displayName: "Example User",
+          photoURL: "https://example.com/jane-q-user/profile.jpg"
         });
       })
       .catch(err => {
@@ -54,49 +52,48 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this._firebaseAuth
+    this.af
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Nice, it worked!');
         this._router.navigate(['/options']);
-        this.loggedIn = true;
       })
       .catch(err => {
         console.log('Something went wrong:', err.message);
       });
   }
-  
+
   // para iniciar sesión a través de google, con popup
   signInWithGoogle() {
-    this.af.auth.signInWithPopup (
+    this.af.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
-  );
+    );
   }
 
   signInWithFacebook() {
-    this.af.auth.signInWithPopup (
+    this.af.auth.signInWithPopup(
       new firebase.auth.FacebookAuthProvider()
-  )
-  .then()
+    )
+      .then()
   }
 
 
 
 
   isLoggedIn() {
-    if (this.userDetails == null ) {
-        return false;
-      } else {
-        return true;
-      }
+    if (this.userDetails == null) {
+      return false;
+    } else {
+      return true;
     }
-  
+  }
+
 
   logout() {
-    this._firebaseAuth.auth.signOut()
-    .then((res) => this._router.navigate(['/home']));
-  
+    this.af.auth.signOut()
+      .then((res) => this._router.navigate(['/home']));
+
   }
 
 }
