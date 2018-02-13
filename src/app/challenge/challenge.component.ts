@@ -105,7 +105,7 @@ completeChallenge() {
         this._YelpService.LSSet(this.path, 1);
         console.log('Wrote this' + this._YelpService.LSGet(this.path));
         // We mark this challenge as completed
-        this._YelpService.LSSet(savePath, 'completed');
+        this._YelpService.LSSet(this.savePath, 'completed');
       }
     }
 
