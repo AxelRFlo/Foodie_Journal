@@ -44,6 +44,7 @@
 
 .types {
   color: rgb(254, 82, 64);
+  cursor: pointer;
 }
 
 /* Card */
@@ -105,10 +106,18 @@
 }
 
 #colored {
+  color: rgb(228, 47, 47);
+  margin-bottom: 0px;
+}
+
+#colorgreen {
   color: rgb(47, 228, 47);
   margin-bottom: 0px;
 }
 
+agm-map{
+  height: 200px;
+}
 .phoneImg, .emailImg {
   width: 24px;
   height: 20px;
@@ -190,9 +199,6 @@
 
 }
 
-.start{
-
-}
 
 .btn-pv {
   background: #3f3f3f;
@@ -222,6 +228,7 @@
   width: 45%;
   margin-right: 5%;
   float:right;
+  margin-top: 0px;
 }
 
 
@@ -243,6 +250,11 @@
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+  }
+
+  .titlee {
+    width: 142px;
+    font-size: 1.6rem;
   }
 
   .smSide {
@@ -290,6 +302,22 @@
     display: none;
   }
 
+  .check{
+    margin-left: 233px;
+  }
+
+  .check-1 {
+    margin-left: 22px !important;
+    margin-top: -40px;
+  }
+
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide {
+    margin-top: -173px !important;
+  }
 }
 
 @media only screen and (min-width: 425px){
@@ -305,6 +333,10 @@
   .previous{
     display:block;
   }
+
+  .check-1 {
+    margin-left: 56px;
+  }
 }
 
 @media only screen and (min-width: 1024px){
@@ -319,6 +351,11 @@
 
   .previous{
     display:block;
+  }
+
+  .check-1 {
+    margin-left: 3px;
+    margin-top: -40px;
   }
 }
 
@@ -359,4 +396,96 @@
 
 .col-7.p-format{
   padding-right: 70px;
+}
+.check{
+  margin-top: 10px;
+  margin-left: 4px;
+  height: 28px;
+}
+
+@media only screen and (max-width: 425px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 8px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 10px;
+  }
+  .check-1 {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 9px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1023px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 16px;
+  }
+
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+  .btn-nx {
+    margin-top: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .check-1 {
+    margin-left: 204px;
+    margin-top: -40px
+  }
+
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide{
+    margin-top: -148px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2559px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    //margin-left: 255px;
+    margin-left: 15px;
+  }
+  .check-1 {
+    margin-left: 66px;
+  }
+}
+
+@media only screen and (min-width: 2560px){
+  [class*="col-"] {
+      width: 100%;
+  }
+  .check{
+    margin-left: 16px;
+  }
+  .check-1 {
+    margin-left: 246px;
+  }
 }

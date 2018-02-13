@@ -1,11 +1,10 @@
 <div class="bodyNavPro">
   <!-- Navbar -->
-  <app-header [idJourney]="idJourney"></app-header>
+  <app-header [Path]="idJourney"></app-header>
   <hr>
   <!--  Marielle -->
-  <app-progress [Path]="idJourney"></app-progress>
+  <app-progress [Path]="idJourney" [IsFollowed]="IsFollowed" (IsFollowedUpdated)="handleIsFollowedUpdated($event)" ></app-progress>
 </div>
-
 <!-- Journey 1 -->
 <div class="panelInfo">
   <div class="container">
@@ -15,12 +14,13 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
-                  <span class="step">{{i+1}}</span> <strong class="titleCat">{{Category}}</strong>
+                  <img src="../../assets/{{i+1}}.png" class="step-{{i+1}}" alt="step-{{i+1}}">
+                  <strong class="titleCat">{{Category}}</strong>
                 </a>
               </h4>
             </div>
             <div id="collapse{{i}}" class="panel-collapse collapse">
-              <app-restaurants [Path]="idJourney" [Op]="i"></app-restaurants>
+              <app-restaurants [Path]="idJourney" [Op]="i" [IsFollowed]="IsFollowed"></app-restaurants>
             </div>
           </div>
       </div>

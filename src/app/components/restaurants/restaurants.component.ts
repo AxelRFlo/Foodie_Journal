@@ -13,10 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 export class RestaurantsComponent implements OnInit {
   @Input() Path;
   @Input() Op;
+  @Input() IsFollowed;
   errorMessage: any;
   sub: Subscription;
   location;
   restaurants = {};
+  challengeState: string;
+  completed: boolean;
+
+  // Consulta
   constructor(private _YelpService: YelpService) { }
 
   ngOnInit() {
@@ -33,5 +38,18 @@ export class RestaurantsComponent implements OnInit {
         );
       });
     }
+    this.challengeState = this.Path + '/' + this.Op;
+    this.checkCompletion();
+  }
+
+  checkCompletion() {
+    if (this._YelpService.LSGet(this.challengeState) == 'completed'){
+      // Se completo
+      this.completed = true;
+      // no esta completo
+    } else {
+      this.completed = false;
+    }
+
   }
 }

@@ -62,14 +62,14 @@ export class AuthService {
       .then(value => {
         console.log('Nice, it worked!');
         // Si existe la variable
-        if (this._YelpService.LSGet('Following')) {
-          // Hacemos redirect a la página que esta siguiendo
-          this.following = this._YelpService.LSGet('Following');
-          console.log('I\'m following: ' ' + this.following');
-          this._router.navigate(['/journeys/' + this.following]);
-        } else {
-        this._router.navigate(['/options']);
-      }
+        // if (this._YelpService.LSGet('Following')) {
+        //   // Hacemos redirect a la página que esta siguiendo
+        //   this.following = this._YelpService.LSGet('Following');
+        //   console.log("I'm following: '" + this.following);
+        //   this._router.navigate(['/journeys/' + this.following]);
+        // } else {
+        //this._router.navigate(['/options']);
+      //}
         this.loggedIn = true;
       })
       .catch(err => {

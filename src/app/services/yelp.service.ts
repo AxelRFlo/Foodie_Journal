@@ -58,17 +58,31 @@ export class YelpService {
   
   GetYelpRestaurant(id){
     if(this.LSGet("restaurant:"+id)){
-      return this.LSGet("restaurant:"+id)
+      return new Promise(resolve=>{
+        setTimeout(()=>{
+          resolve(this.LSGet("restaurant:"+id));
+        },100);
+      });
     }
     else{
+      var rest:any;
       this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        return data;
+        const rest= data;
       },
-      error => <any>error,
+      error => {
+        return new Promise(resolve=>{
+          setTimeout(()=>{
+            resolve('');
+          },800);
+        });
+      },
       () => {
-        console.log(this.subRes);
-        this.subRes.unsubscribe();
-      });
+        return new Promise(resolve=>{
+          setTimeout(()=>{
+            resolve(rest);
+          },800);
+        });
+      })
     }
   }
   
@@ -107,5 +121,17 @@ export class YelpService {
       array.push(i=this.categories[id][i]['name']);
    }
     return array;
+  }
+  ValidChallengeURL(id,path,challenge){
+    var categoryList= this.categories[path][challenge]["cat"].split(',');
+    for (let j in categoryList) {
+      console.log(categoryList[j]);
+      for (let i in id) {
+        if (id[i]['alias'] == categoryList[j]){
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }
