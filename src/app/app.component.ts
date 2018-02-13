@@ -7,6 +7,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap/dropdown/dropdown';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   openNav() {
+    
   }
 
   closeNav() {
