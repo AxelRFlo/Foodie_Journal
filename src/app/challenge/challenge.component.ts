@@ -53,13 +53,13 @@ export class ChallengeComponent implements OnInit {
       const promise=this._YelpService.GetYelpRestaurant(this.idRest);
       promise.then(result =>{
         this.InfoRest=result;
+        if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
+          this._router.navigate(['/home']);
+        }
+  
+        console.log(this.InfoRest);
       });
       //
-      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
-        this._router.navigate(['/home']);
-      }
-
-      console.log(this.InfoRest);
       // Especificamos cual es mi journey actual en LS
       });
   }
