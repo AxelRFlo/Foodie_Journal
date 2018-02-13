@@ -8,7 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { Image, Action, ImageModalEvent, Description } from 'angular-modal-gallery';
 import { Router } from '@angular/router';
-import { Restaurant } from "../../interface/restaurant";
+import { Restaurant } from '../../interface/restaurant';
 
 @Component({
   selector: 'app-restaurant-info',
@@ -47,7 +47,7 @@ export class RestaurantInfoComponent implements OnInit{
     if(this.restaurantData.hours){
       this.today=
         this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])
-        +" - "+
+        +" - "+ 
         this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
     }
     else{
