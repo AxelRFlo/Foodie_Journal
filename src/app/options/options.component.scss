@@ -204,3 +204,34 @@ h2 {
   text-align: center;
 }
 
+.progress{
+  height: 162px;
+  margin-top: -109px;
+  width: auto;
+  background-color: #fe5140;
+}
+
+.progress-bar{
+  height: 162px;
+  background-color: #cb3729;
+}
+
+#pbAm{
+  width: 10%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbKo{
+  width: 30%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbIt{
+  width: 60%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbMx{
+  width: 90%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbJp{
+  width: 100%; //PORCENTAJE DE PROGRESS AMERICAN
+}

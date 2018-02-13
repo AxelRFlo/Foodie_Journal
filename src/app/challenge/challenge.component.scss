@@ -44,6 +44,7 @@
 
 .types {
   color: rgb(254, 82, 64);
+  cursor: pointer;
 }
 
 /* Card */
@@ -307,6 +308,13 @@ agm-map{
     margin-top: -40px;
   }
 
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide {
+    margin-top: -173px !important;
+  }
 }
 
 @media only screen and (min-width: 425px){
@@ -414,6 +422,13 @@ agm-map{
     margin-top: -40px
   }
 
+  .mTop {
+    margin-top: -150px;
+  }
+
+  .smSide{
+    margin-top: -148px;
+  }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 2559px){

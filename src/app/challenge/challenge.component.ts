@@ -35,7 +35,7 @@ export class ChallengeComponent implements OnInit {
       this.path = params['path'];
       this.challenge = params['challenge'];
       this.savePath = this.path + '/' + this.challenge;
-      this.lsChallengeState = this.savePath + '/state';      
+      this.lsChallengeState = this.savePath + '/state';
       console.log('Savepath: ' + this.savePath);
       console.log('Challengestate: ' + this.lsChallengeState);
       if (this._YelpService.LSGet(this.lsChallengeState)) {
@@ -85,7 +85,7 @@ completeChallenge() {
 
       // logica de challenges
       if (this._YelpService.LSGet(this.savePath)) {
-        console.log('Este challenge ya se ha completado.'); 
+        console.log('Este challenge ya se ha completado.');
       } else {
          console.log('Este challenge no se ha completado aun.');
         // Verifico si tengo progreso en este foodtype
