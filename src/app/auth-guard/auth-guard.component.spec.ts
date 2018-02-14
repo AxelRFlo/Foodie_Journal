@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthGuard } from './auth-guard.component';
 
-describe('AuthGuardComponent', () => {
+describe('AuthGuard', () => {
   let component: AuthGuard;
   let fixture: ComponentFixture<AuthGuard>;
 

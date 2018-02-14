@@ -1,25 +1,33 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {Location} from "@angular/common";
+import {TestBed, fakeAsync, tick} from '@angular/core/testing';
+import {RouterTestingModule} from "@angular/router/testing";
+import {Router} from "@angular/router";
 
-import { HomeComponent } from './home.component';
+import {PopoverComponent} from "../popover/popover.component"
+import { HomeComponent } from "./home.component";
+import { routes } from "../app-routing.module";
+let location: Location;
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+let router: Router;
+let fixture;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
-  }));
-
+describe('Router: App', () => {
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule.withRoutes(routes)],
+      declarations: [ HomeComponent, routes]
+      
+    });
+    router = TestBed.get(Router); 
+    location = TestBed.get(Location); 
+
+    fixture = TestBed.createComponent(HomeComponent); 
+    router.initialNavigation();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('navigate to "" redirects you to /home', fakeAsync(() => { 
+    router.navigate(['']); 
+    tick(); 
+    expect(location.path()).toBe('/home'); 
+  }));
 });
