@@ -18,7 +18,7 @@ import { PopoverModule } from 'ng2-popover';
 
 import { HomeComponent } from './home/home.component';
 
-import { FoodTypesComponent } from './food-types/food-types.component';
+
 import { OptionsComponent } from './options/options.component';
 
 
@@ -72,7 +72,6 @@ export const environment = {
     ChallengeComponent,
     JourneysComponent,
     HeaderComponent,
-    FoodTypesComponent,
     RestaurantsComponent,
     RestaurantInfoComponent,
     FeedbackComponent,
