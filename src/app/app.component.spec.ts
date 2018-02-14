@@ -14,8 +14,8 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
-    MockAuthservice = {};
-    MockAngularfireauth = {};
+    // MockAuthservice = {};
+    // MockAngularfireauth = {};
     routers = {};
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
@@ -23,9 +23,9 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        {provide: AuthService, useValue: MockAuthService},
-        {provide: RouterModule, useValue: routers},
-        {provide: AngularFireAuth, useValue: MockAngularfireauth}
+        // {provide: AuthService, useValue: MockAuthService},
+        {provide: RouterModule, useValue: routers}
+        // {provide: AngularFireAuth, useValue: MockAngularfireauth}
       ],
     }).compileComponents();
   }));
