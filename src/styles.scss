@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~assets/fonts/fonts.css';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // font-size:16px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  html, body{
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  /* For laptops: */
+  html, body{
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 2712px) {
+  /* For L screens: */
+  html, body{
+    height: 100%;
+  }
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Proxima Nova';
+  background-color: #ebebeb;
+}

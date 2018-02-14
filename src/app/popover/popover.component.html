@@ -1,0 +1,9 @@
+<div class="">
+  <ng-template #popContent>
+    <app-fbauth></app-fbauth>
+  </ng-template>
+  <button type="" id="btnLog" class="btn btn-outline-primary" [ngbPopover]="popContent" closeOnClickOutside="true" popoverTitle="Welcome!"
+    placement="bottom-right" container="body" #p="ngbPopover">
+    Login
+  </button>
+</div>

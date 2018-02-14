@@ -1,0 +1,237 @@
+
+
+.section {
+  height: 24%;
+  width: 100%;
+  position: relative;
+}
+
+.section2 {
+  width: 100%;
+  position: absolute;
+  // margin-top: 200px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+
+.user-info {
+  float: right;
+  height: 53px;
+  width: 180px;
+  margin-right: -50px;
+  // background-color: darkkhaki;
+}
+
+
+
+.row{
+  // margin-bottom: 50px;
+  // margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.select {
+  background-color: crimson;
+  height: 80px;
+  width: 20px;
+}
+
+#title {
+  float: right;
+  margin-right: 24px;
+}
+
+#info {
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+#duration {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.imgLink {
+  height: 100%;
+  width: 100%;
+}
+
+.textType{
+  float: right;
+  position: absolute;
+  display: inline-block;
+  margin-right: 98px;
+  margin-top: 54px;
+  font-size: 34px;
+  color: white;
+  right: 0px;
+}
+
+.textType1{
+  float: right;
+  position: absolute;
+  display: inline-block;
+  margin-right: 96px;
+  margin-top: 38px;
+  margin-bottom: 0px;
+  margin-right: 39px;
+  font-size: 34px;
+  color: white;
+  right: 0px;
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+.positions {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.card-img-top {
+  // width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.portafolio-item {
+  height: 380px
+}
+
+.img-overlay-wrap {
+  height: 160px;
+}
+
+.card-img-top {
+  height: 30%;
+  // position: absolute;
+  display: inline-block;
+  width: 50%;
+  // float: left;
+  position: relative;
+  margin-left: -18px;
+  margin-top: 60px;
+}
+
+.backColor {
+  background-color: rgb(254, 82, 64);
+  text-align: center;
+}
+
+.progress{
+  height: 162px;
+  margin-top: -109px;
+  width: auto;
+  background-color: #fe5140;
+}
+
+.progress-bar{
+  height: 162px;
+  background-color: #cb3729;
+}
+
+#pbAm{
+  width: 10%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbKo{
+  width: 30%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbIt{
+  width: 60%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbMx{
+  width: 90%; //PORCENTAJE DE PROGRESS AMERICAN
+}
+
+#pbJp{
+  width: 100%; //PORCENTAJE DE PROGRESS AMERICAN
+}

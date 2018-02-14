@@ -1,0 +1,45 @@
+<div class="row PathRestaurant">
+  <div class="col-md-3 col-sm-6 resInfo">
+    <span>{{ restaurant.name}}</span><br>
+    <span>
+      <i class="{{restaurant.rating>=1 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=2 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=3 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=4 ? 'fas fa-star' : 'far fa-star'}}"></i>
+      <i class="{{restaurant.rating>=5 ? 'fas fa-star' : 'far fa-star'}}"></i>
+    </span>
+    <span>{{restaurant.review_count}} reviews</span><br>
+    <span *ngIf="restaurant.price">{{restaurant.price}} - </span>
+    <b *ngFor="let cat of restaurant.categories; let isLast=last">
+      {{cat.title}}{{isLast ? '' : ', '}}
+    </b>
+    <address>{{restaurant.location.display_address}}</address>
+  </div>
+
+  <div class="col-md-3 col-sm-6 bushours">
+    <b>{{today}}</b><br>
+    <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
+
+    <div class="underline"></div>
+    <i class="fas fa-phone"></i> {{restaurant.display_phone.length>0 ? restaurant.display_phone : 'Not available'}}
+    <br><button type="button"  (click)="Gochallenge()" class="btnGS" [ngClass]="{'hidden': !IsFollowed}">Go to challenge</button>
+  </div>
+{{op}}
+  <div class="col-md-3 hidden-sm-down" *ngIf="restaurant.image_url.length>0; else nopictemplate">
+    <img class="respic" [src]="restaurant.image_url" >
+    <div *ngIf="modal">
+     <modal-gallery [modalImages]="imagesArray" [imagePointer]="0"></modal-gallery>
+    </div>
+  </div>
+  <ng-template #nopictemplate>
+    <div class="col-md-3 hidden-sm-down">
+      <img class="respic" [src]="imgerror">
+    </div>
+  </ng-template>
+  
+  <div class="col-md-3 hidden-sm-down">
+    <agm-map  *ngIf="restaurant" [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" [zoom]=15>
+      <agm-marker [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" ></agm-marker>
+    </agm-map>
+  </div>
+</div>

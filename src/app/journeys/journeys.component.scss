@@ -1,0 +1,83 @@
+  .row{
+    // margin-bottom: 50px;
+    // margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      [class*="col-"] {
+          width: 100%;
+      }
+  }
+
+  .panel-default>.panel-heading {
+    color: #333;
+    background-color: white;
+    border-color: #ddd;
+}
+
+  .panel-group {
+    margin-top: 30px;
+  }
+
+  .panel-default {
+    margin-bottom: 8px;
+  }
+
+  .panelInfo {
+    // height: 100%;
+    // background-color: rgb(235, 235, 235);
+  }
+
+  .bodyNavPro {
+    background-color: white;
+  }
+
+  .step {
+    background-color: #4a4a4a;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 5px;
+    text-align: center;
+    width: 1.6em;
+  }
