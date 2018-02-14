@@ -52,7 +52,6 @@ export class YelpService {
   GetYelpList(lat,long,cat,subcat){
     this._yelplist="https://api.yelp.com/v3/businesses/search?latitude="+lat+"&longitude="+long+"&limit=2&sort_by=distance&categories="+this.categories[cat][subcat]["cat"];
     return this.http.get(this._yelplist,{ headers: {'Authorization':'Bearer Sqzw1brYWdYWUUJyGZSEMpOrwytiWLBdV2wAfUhIdzShVlKzwXGikTT-3YS1sY_fqxW08or17spgcwvDMcGy4Gw7tDQkHTc-vd37nklLs2_kiISYWJaq8r5MB5dwWnYx' } })
-    .do(data => console.log(data))
     .catch(this.handleError);
   }
   
