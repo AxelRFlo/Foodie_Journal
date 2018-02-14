@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     if (this.authService.isLoggedIn()){
       this._router.navigate(['/options']);
     }
-    alert('Please Login to continue!');
+    //alert('Please Login to continue!');
   }
 
 
