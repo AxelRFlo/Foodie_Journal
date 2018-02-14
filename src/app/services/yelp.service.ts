@@ -112,8 +112,15 @@ export class YelpService {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  Getday() {
-    return this.weekday[new Date().getDay()];
+  Getday(Schedule) {
+    if(Object.keys(Schedule).some(key => Schedule[key].day === (this.weekday[new Date().getDay()]))){
+      console.log("yes");
+      return this.GetTime(Schedule[this.weekday[new Date().getDay()]]["start"])+" - "+this.GetTime(Schedule[this.weekday[new Date().getDay()]]["end"]);
+    }
+    else{
+      console.log("no");
+      return "Not open today"
+    }
   }
 
   GetPathName(Path){

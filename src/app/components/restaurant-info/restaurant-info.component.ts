@@ -47,7 +47,7 @@ export class RestaurantInfoComponent implements OnInit{
     promise.then(result =>{
       this.restaurantData=result;
       if(this.restaurantData.hours){
-        this.today=this._YelpService.GetTime(this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this._YelpService.GetTime(this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
+        this.today=this._YelpService.Getday(this.restaurantData.hours[0]["open"]);
       }
       else{
         this.today='';
