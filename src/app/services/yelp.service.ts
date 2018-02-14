@@ -21,12 +21,12 @@ export class YelpService {
       3:{cat:"chicken_wings",name:"Chicken wings"},
       4:{cat:"bbq",name:"BBQ"},
       5:{cat:"sandwiches",name:"Sandwiches"}},
-    1:{0:{cat:"korean",name:"korean"},
+    1:{0:{cat:"korean",name:"Korean"},
       1:{cat:"ramen",name:"Ramen"},
       2:{cat:"japacurry",name:"Curry"},
-      3:{cat:"unagi",name:"unagi"},
-      4:{cat:"yakitori",name:"yakitori"},
-      5:{cat:"tempura",name:"tempura"}},
+      3:{cat:"unagi",name:"Unagi"},
+      4:{cat:"yakitori",name:"Yakitori"},
+      5:{cat:"tempura",name:"Tempura"}},
     2:{0:{cat:"italian",name:"Italian"}},
     3:{0:{cat:"mexican",name:"Mexican"},
       1:{cat:"tacos",name:"Tacos"},
@@ -115,6 +115,36 @@ export class YelpService {
   Getday() {
     return this.weekday[new Date().getDay()];
   }
+
+  GetPathName(Path){
+    return this.categories[Path][0]["name"];
+  }
+
+  GetTime(Time){
+    var hours = Time.slice(0, 2);
+    var minutes = Time.slice(2, 4);
+    var timeValue;
+
+    if (hours > 0 && hours <= 12)
+    {
+      timeValue= "" + (hours - 0);
+    }
+    else if (hours > 12)
+    {
+      timeValue= "" + (hours - 12);
+    }
+    else if (hours == 0)
+    {
+      timeValue= "12";
+    }
+    
+    timeValue += ":" + minutes;
+    timeValue += (hours >= 12) ? " P.M." : " A.M.";
+
+    return timeValue;
+  }
+
+  
   Getcat(id) {
     const array = [];
     for (let i in this.categories[id]) {

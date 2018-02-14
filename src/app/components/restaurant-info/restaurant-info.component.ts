@@ -47,7 +47,7 @@ export class RestaurantInfoComponent implements OnInit{
     promise.then(result =>{
       this.restaurantData=result;
       if(this.restaurantData.hours){
-        this.today=this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this.GetTime(this.today=this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
+        this.today=this._YelpService.GetTime(this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this._YelpService.GetTime(this.restaurantData.hours[0]["open"][this._YelpService.Getday()]["end"]);
       }
       else{
         this.today='';
@@ -68,30 +68,5 @@ export class RestaurantInfoComponent implements OnInit{
     // alert('cambio de pantalla');
     this._router.navigate(['/challenge/'+this.Path+'/'+this.Op+'/'+this.restaurant.id]);
   }
-  GetTime(Time){
-    var hours = Time.slice(0, 2);
-    var minutes = Time.slice(2, 4);
-    console.log("Time "+Time);
-    console.log("hours "+hours);
-    console.log("minutes "+minutes);
-    var timeValue;
 
-    if (hours > 0 && hours <= 12)
-    {
-      timeValue= "" + (hours - 0);
-    }
-    else if (hours > 12)
-    {
-      timeValue= "" + (hours - 12);
-    }
-    else if (hours == 0)
-    {
-      timeValue= "12";
-    }
-    
-    timeValue += ":" + minutes;
-    timeValue += (hours >= 12) ? " P.M." : " A.M.";
-
-    return timeValue;
-  }
 }
