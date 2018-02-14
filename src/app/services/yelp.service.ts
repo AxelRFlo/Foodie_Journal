@@ -114,11 +114,9 @@ export class YelpService {
 
   Getday(Schedule) {
     if(Object.keys(Schedule).some(key => Schedule[key].day === (this.weekday[new Date().getDay()]))){
-      console.log("yes");
       return this.GetTime(Schedule[this.weekday[new Date().getDay()]]["start"])+" - "+this.GetTime(Schedule[this.weekday[new Date().getDay()]]["end"]);
     }
     else{
-      console.log("no");
       return "Not open today"
     }
   }
@@ -162,7 +160,6 @@ export class YelpService {
   ValidChallengeURL(id,path,challenge){
     var categoryList= this.categories[path][challenge]["cat"].split(',');
     for (let j in categoryList) {
-      console.log(categoryList[j]);
       for (let i in id) {
         if (id[i]['alias'] == categoryList[j]){
           return true;
