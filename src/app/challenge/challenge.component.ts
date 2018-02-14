@@ -56,7 +56,7 @@ export class ChallengeComponent implements OnInit {
       promise.then(result =>{
         this.InfoRest=result;
         if(this.InfoRest.hours){
-          this.today=this._YelpService.GetTime(this.InfoRest.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this._YelpService.GetTime(this.InfoRest.hours[0]["open"][this._YelpService.Getday()]["end"]);
+          this.today=this._YelpService.Getday(this.InfoRest.hours[0]["open"]);  
         }
         else{
           this.today='Service hours unavailable';

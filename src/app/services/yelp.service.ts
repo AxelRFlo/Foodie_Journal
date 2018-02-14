@@ -52,7 +52,6 @@ export class YelpService {
   GetYelpList(lat,long,cat,subcat){
     this._yelplist="https://api.yelp.com/v3/businesses/search?latitude="+lat+"&longitude="+long+"&limit=2&sort_by=distance&categories="+this.categories[cat][subcat]["cat"];
     return this.http.get(this._yelplist,{ headers: {'Authorization':'Bearer Sqzw1brYWdYWUUJyGZSEMpOrwytiWLBdV2wAfUhIdzShVlKzwXGikTT-3YS1sY_fqxW08or17spgcwvDMcGy4Gw7tDQkHTc-vd37nklLs2_kiISYWJaq8r5MB5dwWnYx' } })
-    .do(data => console.log(data))
     .catch(this.handleError);
   }
   
@@ -65,24 +64,21 @@ export class YelpService {
       });
     }
     else{
-      var rest:any;
-      this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        const rest= data;
-      },
-      error => {
-        return new Promise(resolve=>{
-          setTimeout(()=>{
-            resolve('');
-          },800);
-        });
-      },
-      () => {
-        return new Promise(resolve=>{
-          setTimeout(()=>{
-            resolve(rest);
-          },800);
-        });
-      })
+      var rest:any={};
+       
+      return new Promise((resolve, reject) => {
+        this._yelplist="https://api.yelp.com/v3/businesses/"+id;
+        this.http.get(this._yelplist,{ headers: {'Authorization':'Bearer Sqzw1brYWdYWUUJyGZSEMpOrwytiWLBdV2wAfUhIdzShVlKzwXGikTT-3YS1sY_fqxW08or17spgcwvDMcGy4Gw7tDQkHTc-vd37nklLs2_kiISYWJaq8r5MB5dwWnYx' } })
+          .toPromise()
+          .then(
+            res => {
+              setTimeout(()=>{
+                this.LSSet("restaurant:"+id,res);
+                resolve();
+              },100);   
+            }
+          );
+      });
     }
   }
   
@@ -112,8 +108,13 @@ export class YelpService {
     localStorage.setItem(key, JSON.stringify(value));
   }
 
-  Getday() {
-    return this.weekday[new Date().getDay()];
+  Getday(Schedule) {
+    if(Object.keys(Schedule).some(key => Schedule[key].day === (this.weekday[new Date().getDay()]))){
+      return this.GetTime(Schedule[this.weekday[new Date().getDay()]]["start"])+" - "+this.GetTime(Schedule[this.weekday[new Date().getDay()]]["end"]);
+    }
+    else{
+      return "Not open today"
+    }
   }
 
   GetPathName(Path){
@@ -155,7 +156,6 @@ export class YelpService {
   ValidChallengeURL(id,path,challenge){
     var categoryList= this.categories[path][challenge]["cat"].split(',');
     for (let j in categoryList) {
-      console.log(categoryList[j]);
       for (let i in id) {
         if (id[i]['alias'] == categoryList[j]){
           return true;
