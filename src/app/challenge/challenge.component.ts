@@ -21,9 +21,11 @@ export class ChallengeComponent implements OnInit {
   idRest: string;
   InfoRest;
   path: any;
+  pathName:string;
   challenge: any;
   savePath: string;
   lsChallengeState: string;
+  today="";
   next() {
       this.disableBtn = !this.disableBtn;
   }
@@ -41,25 +43,26 @@ export class ChallengeComponent implements OnInit {
       console.log('Challengestate: ' + this.lsChallengeState);
       if (this._YelpService.LSGet(this.lsChallengeState)) {
         console.log('yes');
-      } else {
+      }
+      else {
         this.challengeState = 0;
         this._YelpService.LSSet(this.lsChallengeState, 0);
         console.log('Setting challenge state to: ' + this.challengeState);
       }
 
       this.challengeState = this._YelpService.LSGet(this.lsChallengeState);
-
-      console.log(this.idRest);
+      this.pathName=this._YelpService.GetPathName(this.path);
       const promise=this._YelpService.GetYelpRestaurant(this.idRest);
       promise.then(result =>{
         this.InfoRest=result;
+        if(this.InfoRest.hours){
+          this.today=this._YelpService.GetTime(this.InfoRest.hours[0]["open"][this._YelpService.Getday()]["start"])+" - "+this._YelpService.GetTime(this.InfoRest.hours[0]["open"][this._YelpService.Getday()]["end"]);
+        }
+        else{
+          this.today='Service hours unavailable';
+        }
       });
       //
-      if(!this._YelpService.ValidChallengeURL(this.InfoRest.categories,this.path,this.challenge)){
-        this._router.navigate(['/home']);
-      }
-
-      console.log(this.InfoRest);
       // Especificamos cual es mi journey actual en LS
       });
   }

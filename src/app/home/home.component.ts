@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 import { YelpService } from '../services/yelp.service';
+import { PopoverComponent } from '../popover/popover.component';
+import { NgbPopover } from '@ng-bootstrap/ng-bootstrap/popover/popover';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +13,7 @@ import { YelpService } from '../services/yelp.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public popover: PopoverComponent;
 
   // constructor() {}
   constructor(private _router: Router, public authService: AuthService, private _YelpService: YelpService) { }
@@ -29,12 +32,13 @@ export class HomeComponent implements OnInit {
     } else {
       this._router.navigate(['/options']);
     }
+    if (this.authService.isLoggedIn()){
+      this._router.navigate(['/options']);
+    }
+    alert('Please Login to continue!');
   }
 
-isLoggedIn(): any {
-  this.authService.loggedIn = !this.authService.loggedIn;
 
-}
 
 loggedIn() {
   if ( this.authService.isLoggedIn() ) {

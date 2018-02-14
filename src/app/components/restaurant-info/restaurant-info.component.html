@@ -17,7 +17,7 @@
   </div>
 
   <div class="col-md-3 col-sm-6 bushours">
-    {{today}}
+    <b>{{today}}</b><br>
     <b class="{{restaurant.is_closed ? 'red' : 'green'}}">{{restaurant.is_closed ? 'Closed' : 'Open now'}}</b>
 
     <div class="underline"></div>
@@ -38,7 +38,7 @@
   </ng-template>
   
   <div class="col-md-3 hidden-sm-down">
-    <agm-map [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" [zoom]=15>
+    <agm-map  *ngIf="restaurant" [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" [zoom]=15>
       <agm-marker [latitude]="restaurant.coordinates.latitude" [longitude]="restaurant.coordinates.longitude" ></agm-marker>
     </agm-map>
   </div>
