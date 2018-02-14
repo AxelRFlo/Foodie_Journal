@@ -64,24 +64,21 @@ export class YelpService {
       });
     }
     else{
-      var rest:any;
-      this.subRes=this.SearchRestaurant(id).subscribe(data => {
-        const rest= data;
-      },
-      error => {
-        return new Promise(resolve=>{
-          setTimeout(()=>{
-            resolve('');
-          },800);
-        });
-      },
-      () => {
-        return new Promise(resolve=>{
-          setTimeout(()=>{
-            resolve(rest);
-          },800);
-        });
-      })
+      var rest:any={};
+       
+      return new Promise((resolve, reject) => {
+        this._yelplist="https://api.yelp.com/v3/businesses/"+id;
+        this.http.get(this._yelplist,{ headers: {'Authorization':'Bearer Sqzw1brYWdYWUUJyGZSEMpOrwytiWLBdV2wAfUhIdzShVlKzwXGikTT-3YS1sY_fqxW08or17spgcwvDMcGy4Gw7tDQkHTc-vd37nklLs2_kiISYWJaq8r5MB5dwWnYx' } })
+          .toPromise()
+          .then(
+            res => {
+              setTimeout(()=>{
+                this.LSSet("restaurant:"+id,res);
+                resolve();
+              },100);   
+            }
+          );
+      });
     }
   }
   
